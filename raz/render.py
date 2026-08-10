@@ -63,19 +63,62 @@ def esc(text: str) -> str:
 BARE_URL = re.compile(r"https?://\S+")
 
 
-def text_to_tex(text: str) -> str:
+class UrlBank:
+    r"""Every address in the book, defined once at the top level.
+
+    ``\url`` cannot appear inside another command's argument. It works by
+    changing catcodes, which it can only do while reading its own argument --
+    inside ``\footnote{...}`` the argument has already been tokenised, so an
+    address containing ``%`` comments out the rest of the line and swallows
+    the closing brace. Nearly every address here is inside a footnote.
+
+    ``\urldef`` is url.sty's answer: it reads the address at the top level,
+    where the package can do its work, and binds it to a macro that is then
+    safe to use anywhere. So each distinct address gets one definition in the
+    preamble and every citation of it is a single token.
+    """
+
+    def __init__(self):
+        self.macros: dict[str, str] = {}
+
+    @staticmethod
+    def clean(url: str) -> str:
+        # The skin's soft hyphens would print as hyphens a reader could not
+        # tell from part of the address.
+        return url.replace("­", "").replace("​", "")
+
+    def ref(self, url: str) -> str:
+        url = self.clean(url)
+        if url not in self.macros:
+            n = len(self.macros)
+            # Macro names may only contain letters, so the index is spelled
+            # in them: 0 -> a, 27 -> bb.
+            name = ""
+            while True:
+                name = chr(ord("a") + n % 26) + name
+                n = n // 26 - 1
+                if n < 0:
+                    break
+            self.macros[url] = "\\razurl" + name
+        return self.macros[url]
+
+    def preamble(self) -> str:
+        return "\n".join(r"\urldef{%s}\url{%s}" % (macro, url)
+                         for url, macro in self.macros.items())
+
+
+def text_to_tex(text: str, bank: UrlBank) -> str:
     r"""Escape running text, handing any bare URL to \url.
 
     An unbroken 90-character address in a footnote leaves TeX no break point
     and it stretches the line's word spaces instead; \url lets it break at
-    punctuation. The skin's soft hyphens are stripped first, or they would
-    print as hyphens a reader could mistake for part of the address.
+    punctuation.
     """
     out, last = [], 0
     for m in BARE_URL.finditer(text):
         url = m.group(0).rstrip(".,;:)")
         out.append(esc(text[last:m.start()]))
-        out.append(r"\url{%s}" % url.replace("­", "").replace("​", ""))
+        out.append(bank.ref(url))
         out.append(esc(m.group(0)[len(url):]))
         last = m.end()
     out.append(esc(text[last:]))
@@ -142,6 +185,23 @@ WRAP = {
 }
 
 
+#: A run of two or more spaces inside a fixed-width display. One space is an
+#: ordinary word space; several are the author lining up a column.
+COLUMN_GAP = re.compile("[ \u00a0]{2,}")
+
+
+def keep_columns(tex: str) -> str:
+    r"""Hold a multi-space run at its exact width.
+
+    TeX collapses runs of input spaces, which would close up the gap the site
+    uses to right-align the numbers in Morality as Fixed Computation. A tie
+    is an unbreakable space of the current font's fixed width, so n of them in
+    a typewriter face reproduce n columns. Single spaces are left ordinary, or
+    the long data lines could not wrap at all.
+    """
+    return COLUMN_GAP.sub(lambda m: "~" * len(m.group(0)), tex)
+
+
 class Renderer:
     def __init__(self, doc, variant, opts, report):
         self.doc = doc
@@ -150,6 +210,9 @@ class Renderer:
         self.report = report
         self.notes = {f["n"]: f for f in doc["footnotes"]}
         self.used_notes: set[int] = set()
+        self.mono = False
+        self.shared: dict[tuple, str] = {}
+        self.bank = opts["bank"]
 
     # -- footnote text -------------------------------------------------------
 
@@ -157,8 +220,8 @@ class Renderer:
         # \url takes the raw URL: it sets its own catcodes, so the text must
         # not be pre-escaped. The arrow is the literal glyph from EB Garamond
         # rather than a maths-font \rightarrow, so it matches the text.
-        from .common import display_url
-        return "→\\ \\url{%s}" % display_url(node["_url"])
+        from .common import printed_url
+        return "→\\ " + self.bank.ref(printed_url(node["_url"]))
 
     def xref_note(self, node) -> str:
         entry = self.opts["spine"].get(node["page"])
@@ -167,6 +230,25 @@ class Renderer:
             return "see " + esc(node["page"])
         from .links import label
         return "see " + esc(label(entry))
+
+    def note_mark(self, key: tuple, body) -> str:
+        r"""One number per distinct note, however often the chapter cites it.
+
+        Two links to the same address, or two cross-references to the same
+        chapter, are the same note. Printing it twice under two numbers tells
+        a reader they are different things, and the second one earns its space
+        on the page by repeating the first.
+
+        The repeat is a \ref to a \label inside the original rather than a
+        number worked out here, so it stays right whatever LaTeX assigns --
+        the footnote counter is not ours to predict.
+        """
+        if key in self.shared:
+            self.report["footnote_shared"] += 1
+            return r"\repeatnote{%s}" % self.shared[key]
+        tag = "fn:%d:%d" % (self.doc["order"], len(self.shared) + 1)
+        self.shared[key] = tag
+        return r"\footnote{\label{%s}%s}" % (tag, body() if callable(body) else body)
 
     def marked(self, body: str, underline: bool) -> str:
         return r"\dotuline{%s}" % body if underline else body
@@ -185,9 +267,13 @@ class Renderer:
     def one(self, n) -> str:
         t = n.get("t")
         if t == "text":
-            return text_to_tex(n["v"])
+            tex = text_to_tex(n["v"], self.bank)
+            return keep_columns(tex) if self.mono else tex
         if t == "br":
-            return "\\\\\n"
+            # The comment eats the newline: without it the source line break
+            # becomes a space token at the head of the next line, indenting it
+            # by one character. Invisible in prose, glaring in a column.
+            return "\\\\%\n"
 
         # The wiki wraps a citation marker in <sup>, but \footnote raises its
         # own mark. Emitting \textsuperscript{\footnote{...}} typesets the note
@@ -217,17 +303,17 @@ class Renderer:
             # and stretches the whole paragraph's word spaces.
             if self.anchor_is_address(n):
                 self.report["link_printed_inline"] += 1
-                return r"\url{%s}" % plain_text(n).replace("­", "").replace("​", "")
+                return self.bank.ref(plain_text(n))
 
             return self.marked(body, self.v["underline_link"]) + \
-                r"\footnote{%s}" % self.link_note(n)
+                self.note_mark(("link", n["_url"]), lambda: self.link_note(n))
 
         if t == "xref":
             body = self.inline(n.get("c", []))
             if not self.v["xref_note"]:
                 return body
             return self.marked(body, self.v["underline_xref"]) + \
-                r"\footnote{%s}" % self.xref_note(n)
+                self.note_mark(("xref", n["page"]), lambda: self.xref_note(n))
 
         if t == "fn":
             note = self.notes.get(n["n"])
@@ -235,8 +321,9 @@ class Renderer:
                 self.report["fn_missing"] += 1
                 return ""
             self.used_notes.add(n["n"])
-            body = self.blocks(note["blocks"], inside_note=True).strip()
-            return r"\footnote{%s}" % body
+            return self.note_mark(
+                ("fn", n["n"]),
+                lambda: self.blocks(note["blocks"], inside_note=True).strip())
 
         if t == "img":
             return self.image(n)
@@ -280,11 +367,20 @@ class Renderer:
             body = self.inline(b.get("c", []))
             if not body.strip():
                 return ""
+            if b.get("dataset"):
+                return self.dataset_line(b["dataset"], body)
             if b.get("align") == "center":
                 return r"\begin{center}%s\end{center}" % body
             if b.get("indent"):
                 return r"\begin{quote}%s\end{quote}" % body
             return (r"\noindent " + body) if flush else body
+        if t == "monospaced":
+            was, self.mono = self.mono, True
+            try:
+                inner = self.blocks(b.get("c", []), inside_note)
+            finally:
+                self.mono = was
+            return "\\begin{fixedwidth}\n%s\n\\end{fixedwidth}" % inner
         if t == "byline":
             return r"\begin{flushright}\emph{%s}\end{flushright}" % \
                 self.inline(b.get("c", []))
@@ -293,6 +389,12 @@ class Renderer:
             return "%s{%s}" % (cmd.get(b.get("level", 3), r"\subsection*"),
                                self.inline(b.get("c", [])))
         if t == "quote":
+            # Inside a fixed-width display the site uses a blockquote purely to
+            # inset the block. Setting it as a real quotation would restore the
+            # per-paragraph indent the display exists to avoid.
+            if self.mono:
+                return "\\begin{adjustwidth}{2em}{0pt}\n%s\n\\end{adjustwidth}" % \
+                    self.blocks(b.get("c", []), inside_note)
             return "\\begin{quotation}\n%s\n\\end{quotation}" % \
                 self.blocks(b.get("c", []), inside_note, flush_first=True)
         if t == "list":
@@ -318,6 +420,27 @@ class Renderer:
                 esc(b.get("text", ""))
         self.report[f"block_unhandled_{t}"] += 1
         return ""
+
+    #: What the site's CSS puts in front of each training-data line. Set in
+    #: ASCII: the page uses U+2212 MINUS, which the typewriter face does not
+    #: carry, and a hyphen is unambiguous in a fixed-width listing.
+    DATASET_MARKS = {"plus": "+:", "minus": "-:", "none": ":"}
+
+    def dataset_line(self, role, body) -> str:
+        """A data line with its category mark hanging in the left margin.
+
+        The mark is what the passage turns on -- these are the positive and
+        negative examples -- so it has to be visible, and the lines have to
+        wrap under the text rather than under the mark for the grouping to
+        stay legible.
+        """
+        self.report[f"dataset_{role}"] += 1
+        # The wiki markup leaves one space after the opening tag. In a
+        # fixed-width face that prints as a column, pushing the first line one
+        # character right of the wrapped ones it should line up with.
+        return (r"\par\hangindent=2em\hangafter=1\noindent"
+                r"\makebox[2em][l]{%s}%s"
+                % (esc(self.DATASET_MARKS.get(role, ":")), body.lstrip()))
 
     def table(self, b) -> str:
         rows = b.get("rows", [])
@@ -368,13 +491,54 @@ PREAMBLE = r"""\documentclass[11pt,twoside,openright]{memoir}
 \makeoddfoot{razopen}{}{\thepage}{}
 \pagestyle{raz}
 
-% The chapter number, set above the title as its own line.
+% The chapter opener: number above title, both centred. \parskip is zeroed
+% inside, or the \par that ends each line would add a paragraph gap to the
+% spacing set here.
 \newcommand{\chapnum}[1]{%
-  {\textcolor[gray]{0.55}{\large\textperiodcentered\;#1\;\textperiodcentered}}\par
+  {\parskip=0pt\centering
+   \textcolor[gray]{0.55}{\large\textperiodcentered\;#1\;\textperiodcentered}\par}
   \vspace{0.4\baselineskip}}
+\newcommand{\chaptitle}[1]{%
+  {\parskip=0pt\centering\Large\bfseries #1\par}
+  \vspace{1.1\baselineskip}}
 
+% A display of data or pseudocode: fixed-width, ragged right (justifying a
+% listing invents word spaces that are not in the data).
+\newenvironment{fixedwidth}
+  {\par\addvspace{0.6\baselineskip}\begingroup
+   \ttfamily\small\raggedright\parskip=0pt\setlength{\parindent}{0pt}}
+  {\par\endgroup\addvspace{0.6\baselineskip}}
+
+% A displayed quotation, inset on both sides, its paragraphs separated the
+% same way the body's are. The stock environment indents every paragraph after
+% the first by 1.5em, which would be the only indentation left in the book.
+\renewenvironment{quotation}
+  {\list{}{\setlength{\listparindent}{0pt}%
+           \setlength{\itemindent}{0pt}%
+           \setlength{\rightmargin}{\leftmargin}%
+           \setlength{\parsep}{\parskip}}%
+   \item\relax}
+  {\endlist}
+
+% A note cited twice in one chapter is one note. The repeat is set from a
+% reference to the first, so it carries whatever number LaTeX assigns.
+\newcommand{\repeatnote}[1]{\textsuperscript{\ref{#1}}}
+
+% Paragraphs are separated by space rather than by a first-line indent. Doing
+% both is belt and braces; the half-line gap already marks the break.
 \graphicspath{{../assets_pdf/}}
-\setlength{\parindent}{1.2em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.5\baselineskip plus 1pt minus 1pt}
+% A dotted-underlined phrase is an unbreakable box; a line that ends on one
+% can miss the margin by a fraction of a point with nowhere to give.
+\setlength{\emergencystretch}{1em}
+
+% Footnotes set flush to the margin: mark, thin space, text, and continuation
+% lines under the mark rather than tabbed past it.
+\footmarkstyle{\textsuperscript{#1}\,}
+\setlength{\footmarkwidth}{0em}
+\setlength{\footmarksep}{0em}
+\setlength{\footparindent}{0em}
 \renewcommand{\footnoterule}{\kern-3pt\hrule width 2in\kern 2.6pt}
 \setlength{\skip\footins}{2\baselineskip}
 
@@ -383,6 +547,8 @@ PREAMBLE = r"""\documentclass[11pt,twoside,openright]{memoir}
 % is. The counter is reset per chapter by \setcounter, not \counterwithin,
 % because the sections are unnumbered and would number the notes "0.0.1".
 \tightlists
+
+%%URLDEFS%%
 
 \begin{document}
 \frenchspacing
@@ -399,7 +565,7 @@ def chapter_tex(doc, variant, opts, report) -> str:
     n = doc.get("number")
     if n:
         head.append(r"\chapnum{%d}" % n)
-    head.append(r"\section*{%s}" % esc(doc["title"]))
+    head.append(r"\chaptitle{%s}" % esc(doc["title"]))
     head.append(r"\markboth{%s}{%s}" % (esc(doc["title"]), esc(doc["title"])))
     return "\n".join(head) + "\n\n" + body
 
@@ -459,9 +625,13 @@ def main():
         doc["footnotes"] = apply_decisions(doc["footnotes"], rules, report)
         docs.append(doc)
 
-    opts = {"spine": spine, "ornaments": args.ornaments}
+    opts = {"spine": spine, "ornaments": args.ornaments, "bank": UrlBank()}
     parts = [chapter_tex(d, args.variant, opts, report) for d in docs]
-    tex = PREAMBLE + "\n\n\\clearpage\n\n".join(parts) + "\n\\end{document}\n"
+    # The address definitions have to be written after the chapters, since
+    # rendering is what discovers them, but read before -- \urldef only
+    # works at the top level.
+    tex = (PREAMBLE.replace("%%URLDEFS%%", opts["bank"].preamble())
+           + "\n\n\\clearpage\n\n".join(parts) + "\n\\end{document}\n")
 
     TEX.mkdir(parents=True, exist_ok=True)
     name = f"sample-{args.variant}"

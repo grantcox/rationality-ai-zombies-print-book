@@ -107,8 +107,23 @@ def normalize_url(url: str) -> str:
     return url
 
 
+def printed_url(url: str) -> str:
+    """The address as it appears in a footnote: complete enough to type in.
+
+    The scheme is whichever the link actually uses. 270 of the 492 addresses
+    in the book are http://, and printing https:// for those would be printing
+    an address that does not resolve.
+    """
+    return url.rstrip("/")
+
+
 def display_url(url: str) -> str:
-    """Shorten a URL for printing in a footnote."""
+    """The shortened form the site itself shows as link text.
+
+    Not what gets printed -- see printed_url. This exists so that a link whose
+    anchor text is the address can be recognised as such whether the page
+    wrote it out in full or dropped the scheme.
+    """
     url = re.sub(r"^https?://", "", url)
     url = re.sub(r"^www\.", "", url)
     return url.rstrip("/")

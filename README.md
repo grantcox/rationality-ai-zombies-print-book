@@ -90,7 +90,7 @@ JSON is also diffable, so extraction gets proof-read once.
 
     378 pages · 317 citations · 676 external references · 1,790 cross-references
     citation markers reconcile with bodies on 378/378 pages
-    2,417,553 characters of prose, 0 unaccounted for
+    2,416,765 characters of prose, 0 unaccounted for
     323/323 cross-reference targets resolve to a numbered place in the book
     491 distinct external URLs, all 105 needing a ruling now decided
 
@@ -222,9 +222,18 @@ character and currently reports zero loss.
   flagged rather than guessed at, so none are silently mangled.
 * **Link review is complete**: 105 decisions in `overrides.csv` — 61 `replace`,
   37 `keep`, 4 `remove`, 3 `unlink`, 1 `archive`. Nothing outstanding.
-* **Design decisions** settled so far: one numbered footnote series, external
-  links marked `→`, cross-references marked `📖` with book and chapter number,
-  anchor phrases set with a dotted underline.
+* **Design decisions** settled so far: one numbered footnote series per
+  chapter; external links footnoted as `→ http://example.org/path`;
+  cross-references footnoted as `see Book III, chapter 132, "…"`; anchor
+  phrases marked with a dotted underline; chapter number and title centred;
+  notes set flush left; paragraphs separated by half a line and never indented,
+  in quotations as well as in the body. A chapter that cites the same address
+  or the same other chapter twice gets one note, marked twice.
+
+  Addresses are printed whole, scheme included, because 270 of the 492 are
+  `http://` and the book cannot promise a reader that they are all `https://`.
+  A link whose anchor text *is* its address prints inline instead, with no
+  note: the footnote would only repeat the line above it.
 * **Volume split.** Six volumes matching Books I–VI. The two-column 8.5×11
   LaTeX build is 656pp, roughly 1,800–2,200pp at 6×9 single column — past what
   perfect binding takes in one piece.

@@ -66,6 +66,17 @@ SPAN_ROLES = {
 # the content.
 MATH_CLASSES = {"equation", "fraction", "bigsigma", "num", "frasl", "denom"}
 
+#: The category mark on each line of the Magical Categories training data.
+#: The site supplies it from CSS ``::before`` rather than from the markup, so
+#: it is invisible to a text extractor -- and it is not decoration: the whole
+#: passage is about which way a classifier splits the data. The role is
+#: recorded here and the glyph chosen at render time.
+DATASET_ROLES = {
+    "dataset": "none",
+    "dataset_plus": "plus",
+    "dataset_minus": "minus",
+}
+
 report = collections.Counter()
 unknown_samples: dict[str, str] = {}
 
@@ -303,9 +314,22 @@ def merge_text(nodes: list[dict]) -> list[dict]:
     return [n for n in out if n["t"] != "text" or n["v"]]
 
 
+#: Inside a fixed-width display, whitespace is content rather than layout: the
+#: site right-aligns a second column with runs of &nbsp;, and collapsing those
+#: to one space destroys the column. Set only while walking such a container.
+_preserve_ws = False
+
+#: A line break in the HTML *source* is still just formatting, even inside a
+#: preserving container -- it is the runs of spaces within a line that matter.
+SOURCE_BREAK = re.compile(r"[ \t]*\n[ \t\n]*")
+
+
 def inline(node) -> list[dict]:
     if isinstance(node, NavigableString):
-        return [{"t": "text", "v": re.sub(r"\s+", " ", str(node))}]
+        text = str(node)
+        text = (SOURCE_BREAK.sub(" ", text) if _preserve_ws
+                else re.sub(r"\s+", " ", text))
+        return [{"t": "text", "v": text}]
     if not isinstance(node, Tag):
         return []
 
@@ -447,6 +471,10 @@ def block(node) -> list[dict]:
         elif MATH_CLASSES & set(cls):
             note("math.p.equation")
             return [{"t": "math_block", "html": str(node), "text": node.get_text(" ", strip=True)}]
+        for c in cls:
+            if c in DATASET_ROLES:
+                b["dataset"] = DATASET_ROLES[c]
+                note(f"dataset.{b['dataset']}")
         style = node.get("style") or ""
         if "center" in style:
             b["align"] = "center"
@@ -482,6 +510,18 @@ def block(node) -> list[dict]:
         return [{"t": "pre", "v": node.get_text()}]
 
     if name == "div":
+        # Three chapters set a display of data or pseudocode in a fixed-width
+        # face. The class is on the container, so the grouping has to survive
+        # as a block of its own; flattening it loses the fact that the lines
+        # belong together.
+        if "monospaced" in cls:
+            note("monospaced_block")
+            global _preserve_ws
+            was, _preserve_ws = _preserve_ws, True
+            try:
+                return [{"t": "monospaced", "c": blocks(node)}]
+            finally:
+                _preserve_ws = was
         return blocks(node)  # wrapper, img, indent, nohyphens …
 
     if name in SIMPLE_INLINE or name in ("a", "span", "img", "br"):
