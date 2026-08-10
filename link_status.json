@@ -1,0 +1,2954 @@
+{
+ "https://www.lesswrong.com/lw/il/hindsight_bias/": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/posts/fkM9XsNvXdYH6PPAx/hindsight-bias",
+  "size": 689529,
+  "verdict": "ok"
+ },
+ "https://www.lesswrong.com/lw/kj/no_one_knows_what_science_doesnt_know/": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/posts/vNBxmcHpnozjrJnJP/no-one-knows-what-science-doesn-t-know",
+  "size": 1140541,
+  "verdict": "ok"
+ },
+ "https://www.lesswrong.com/lw/ji/conjunction_fallacy/": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/posts/QAK43nNCTQQycAcYe/conjunction-fallacy",
+  "size": 901683,
+  "verdict": "ok"
+ },
+ "http://intelligence.org/files/AIPosNegFactor.pdf": {
+  "status": "200",
+  "final": "http://intelligence.org/files/AIPosNegFactor.pdf",
+  "size": 475623,
+  "verdict": "ok"
+ },
+ "http://www.overcomingbias.com/2006/12/you_are_never_e.html": {
+  "status": "200",
+  "final": "https://www.overcomingbias.com/p/you_are_never_ehtml",
+  "size": 160217,
+  "verdict": "ok"
+ },
+ "http://yudkowsky.net/singularity/aibox/": {
+  "status": "403",
+  "final": "http://yudkowsky.net/singularity/aibox/",
+  "size": 5493,
+  "verdict": "blocked"
+ },
+ "https://www.lesswrong.com/lw/rl/the_psychological_unity_of_humankind/": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/posts/Cyj6wQLW6SeF6aGLy/the-psychological-unity-of-humankind",
+  "size": 720062,
+  "verdict": "ok"
+ },
+ "http://yudkowsky.net/singularity/simplified": {
+  "status": "403",
+  "final": "http://yudkowsky.net/singularity/simplified",
+  "size": 5493,
+  "verdict": "blocked"
+ },
+ "https://www.lesswrong.com/lw/kd/pascals_mugging_tiny_probabilities_of_vast/": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/posts/a5JAiTdytou3Jg749/pascal-s-mugging-tiny-probabilities-of-vast-utilities",
+  "size": 2990961,
+  "verdict": "ok"
+ },
+ "https://www.lesswrong.com/lw/mg/the_twoparty_swindle/": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/posts/qAJgWCWJJkke4mE8x/the-two-party-swindle",
+  "size": 1133593,
+  "verdict": "ok"
+ },
+ "https://www.lesswrong.com/lw/py/the_born_probabilities/": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/posts/3ZKvf9u2XEWddGZmS/the-born-probabilities",
+  "size": 1133423,
+  "verdict": "ok"
+ },
+ "https://www.lesswrong.com/lw/rc/the_ultimate_source/": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/posts/EsMhFZuycZorZNRF5/the-ultimate-source",
+  "size": 1324505,
+  "verdict": "ok"
+ },
+ "https://www.lesswrong.com/lw/s5/rebelling_within_nature/": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/posts/YhNGY6ypoNbLJvDBu/rebelling-within-nature",
+  "size": 885736,
+  "verdict": "ok"
+ },
+ "https://www.lesswrong.com/lw/sm/the_meaning_of_right/": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/posts/fG3g3764tSubr6xvs/the-meaning-of-right",
+  "size": 2133464,
+  "verdict": "ok"
+ },
+ "http://intelligence.org/files/TDT.pdf": {
+  "status": "200",
+  "final": "http://intelligence.org/files/TDT.pdf",
+  "size": 1804890,
+  "verdict": "ok"
+ },
+ "http://media.sethroberts.net/about/whatmakesfoodfattening.pdf": {
+  "status": "000",
+  "final": "http://media.sethroberts.net/about/whatmakesfoodfattening.pdf",
+  "size": 0,
+  "verdict": "dead"
+ },
+ "http://richardcarrier.blogspot.com/2007/01/defining-supernatural.html": {
+  "status": "200",
+  "final": "http://richardcarrier.blogspot.com/2007/01/defining-supernatural.html",
+  "size": 264030,
+  "verdict": "ok"
+ },
+ "http://slatestarcodex.com/2014/11/27/why-i-am-not-rene-descartes/": {
+  "status": "200",
+  "final": "https://slatestarcodex.com/2014/11/27/why-i-am-not-rene-descartes/",
+  "size": 1060450,
+  "verdict": "ok"
+ },
+ "http://www.2think.org/02_2_she.shtml": {
+  "status": "200",
+  "final": "https://2think.org/02_2_she.shtml",
+  "size": 35694,
+  "verdict": "ok"
+ },
+ "http://www.nickbostrom.com/papers/history.pdf": {
+  "status": "200",
+  "final": "https://nickbostrom.com/papers/a-history-of-transhumanist-thought/",
+  "size": 101899,
+  "verdict": "ok"
+ },
+ "http://www.overcomingbias.com/2007/04/expert_at_versu.html": {
+  "status": "200",
+  "final": "https://www.overcomingbias.com/p/expert_at_versuhtml",
+  "size": 148713,
+  "verdict": "ok"
+ },
+ "https://www.lesswrong.com/lw/5i8/the_power_of_agency/": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/posts/vbcjYg6h3XzuqaaN8/the-power-of-agency",
+  "size": 885566,
+  "verdict": "ok"
+ },
+ "https://www.lesswrong.com/lw/gn/the_martial_art_of_rationality/": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/posts/teaxCFgtmCQ3E9fy8/the-martial-art-of-rationality",
+  "size": 1033346,
+  "verdict": "ok"
+ },
+ "https://www.lesswrong.com/lw/ig/i_defy_the_data/": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/posts/vrHRcEDMjZcx5Yfru/i-defy-the-data",
+  "size": 545256,
+  "verdict": "ok"
+ },
+ "https://www.lesswrong.com/lw/j6/why_is_the_future_so_absurd/": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/posts/Ga2HSwf9iQe64JwAa/why-is-the-future-so-absurd",
+  "size": 608488,
+  "verdict": "ok"
+ },
+ "https://www.lesswrong.com/lw/m7/zen_and_the_art_of_rationality/": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/posts/HLERouG7QBt7jzLt4/zen-and-the-art-of-rationality",
+  "size": 761046,
+  "verdict": "ok"
+ },
+ "https://www.lesswrong.com/lw/na/trust_in_bayes/": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/posts/BL9DuE2iTCkrnuYzx/trust-in-bayes",
+  "size": 771448,
+  "verdict": "ok"
+ },
+ "https://www.lesswrong.com/lw/q2/spooky_action_at_a_distance_the_nocommunication/": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/posts/DY9h6zxq6EMHrkkxE/spooky-action-at-a-distance-the-no-communication-theorem",
+  "size": 915714,
+  "verdict": "ok"
+ },
+ "https://www.lesswrong.com/lw/rd/passing_the_recursive_buck/": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/posts/rw3oKLjG85BdKNXS2/passing-the-recursive-buck",
+  "size": 645720,
+  "verdict": "ok"
+ },
+ "https://www.lesswrong.com/lw/rj/surface_analogies_and_deep_causes/": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/posts/6ByPxcGDhmx74gPSm/surface-analogies-and-deep-causes",
+  "size": 822958,
+  "verdict": "ok"
+ },
+ "https://www.lesswrong.com/lw/rr/the_moral_void/": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/posts/K9JSM7d7bLJguMxEp/the-moral-void",
+  "size": 1312753,
+  "verdict": "ok"
+ },
+ "https://www.lesswrong.com/lw/te/three_fallacies_of_teleology/": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/posts/2HxAkCG7NWTrrn5R3/three-fallacies-of-teleology",
+  "size": 634044,
+  "verdict": "ok"
+ },
+ "https://www.lesswrong.com/lw/tj/dreams_of_friendliness/": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/posts/wKnwcjJGriTS9QxxL/dreams-of-friendliness",
+  "size": 1148870,
+  "verdict": "ok"
+ },
+ "https://www.lesswrong.com/lw/xr/in_praise_of_boredom/": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/posts/WMDy4GxbyYkNrbmrs/in-praise-of-boredom",
+  "size": 1101434,
+  "verdict": "ok"
+ },
+ "https://www.lesswrong.com/lw/xy/the_fun_theory_sequence/": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/posts/K4aGvLnHvYgX9pZHS/the-fun-theory-sequence",
+  "size": 871668,
+  "verdict": "ok"
+ },
+ "https://www.lesswrong.com/lw/ym/cynical_about_cynicism/": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/posts/R2crzhnqrytPycc6C/cynical-about-cynicism",
+  "size": 661036,
+  "verdict": "ok"
+ },
+ "http://darwin-online.org.uk/content/frameset?itemID=F944&viewtype=text&pageseq=1": {
+  "status": "200",
+  "final": "https://darwin-online.org.uk/content/frameset?itemID=F944&viewtype=text&pageseq=1",
+  "size": 1409,
+  "verdict": "ok"
+ },
+ "http://en.wikipedia.org/wiki/Bystander%20effect": {
+  "status": "200",
+  "final": "https://en.wikipedia.org/wiki/Bystander_effect",
+  "size": 410723,
+  "verdict": "ok"
+ },
+ "http://en.wikipedia.org/wiki/Ego%20depletion": {
+  "status": "200",
+  "final": "https://en.wikipedia.org/wiki/Ego_depletion",
+  "size": 309090,
+  "verdict": "ok"
+ },
+ "http://foreignpolicy.com/2007/03/13/numbed-by-numbers/": {
+  "status": "200",
+  "final": "https://foreignpolicy.com/2007/03/13/numbed-by-numbers/",
+  "size": 540019,
+  "verdict": "ok"
+ },
+ "http://gutenberg.net.au/ebooks03/0300011h.html#part42": {
+  "status": "200",
+  "final": "http://gutenberg.net.au/ebooks03/0300011h.html#part42",
+  "size": 1434508,
+  "verdict": "ok"
+ },
+ "http://intelligence.org/files/CognitiveBiases.pdf": {
+  "status": "200",
+  "final": "http://intelligence.org/files/CognitiveBiases.pdf",
+  "size": 421033,
+  "verdict": "ok"
+ },
+ "http://math.ucr.edu/home/baez/crackpot.html": {
+  "status": "200",
+  "final": "https://math.ucr.edu/home/baez/crackpot.html",
+  "size": 5108,
+  "verdict": "ok"
+ },
+ "http://people.virginia.edu/~tdw/nisbett&wilson.pdf": {
+  "status": "403",
+  "final": "https://search.people.virginia.edu/",
+  "size": 5417,
+  "verdict": "blocked"
+ },
+ "http://plato.stanford.edu/archives/fall2008/entries/qm-everett/": {
+  "status": "200",
+  "final": "https://plato.stanford.edu/archives/fall2008/entries/qm-everett/",
+  "size": 74209,
+  "verdict": "ok"
+ },
+ "http://ssc.wisc.edu/~jpiliavi/965/hwang.pdf": {
+  "status": "200",
+  "final": "https://users.ssc.wisc.edu/~japiliav/965/hwang.pdf",
+  "size": 843945,
+  "verdict": "changed-host"
+ },
+ "http://thedailywtf.com/articles/No%2c_We_Need_a_Neural_Network": {
+  "status": "200",
+  "final": "https://thedailywtf.com/articles/No%2c_We_Need_a_Neural_Network",
+  "size": 21022,
+  "verdict": "ok"
+ },
+ "http://web.cs.ucdavis.edu/~franklin/ecs188/2015/fall/pronin.pdf": {
+  "status": "200",
+  "final": "https://web.cs.ucdavis.edu/~franklin/ecs188/2015/fall/pronin.pdf",
+  "size": 378352,
+  "verdict": "ok"
+ },
+ "http://wjh-www.harvard.edu/~dtg/Gilbert%20&%20Malone%20%28CORRESPONDENCE%20BIAS%29.pdf": {
+  "status": "000",
+  "final": "http://wjh-www.harvard.edu/~dtg/Gilbert%20&%20Malone%20%28CORRESPONDENCE%20BIAS%29.pdf",
+  "size": 0,
+  "verdict": "dead"
+ },
+ "http://www.alcor.org/": {
+  "status": "200",
+  "final": "https://www.alcor.org/",
+  "size": 548857,
+  "verdict": "ok"
+ },
+ "http://www.hedweb.com/": {
+  "status": "200",
+  "final": "https://www.hedweb.com/",
+  "size": 4169,
+  "verdict": "ok"
+ },
+ "http://www.imagination-engines.com/ie.htm": {
+  "status": "404",
+  "final": "https://imagination-engines.com/ie.htm",
+  "size": 4968,
+  "verdict": "dead"
+ },
+ "http://www.jetpress.org/volume9/risks.html": {
+  "status": "406",
+  "final": "http://www.jetpress.org/volume9/risks.html",
+  "size": 226,
+  "verdict": "blocked"
+ },
+ "http://www.jstor.org/stable/2183914": {
+  "status": "403",
+  "final": "https://www.jstor.org/stable/2183914",
+  "size": 5816,
+  "verdict": "blocked"
+ },
+ "http://www.jstor.org/stable/27828530": {
+  "status": "403",
+  "final": "https://www.jstor.org/stable/27828530",
+  "size": 5816,
+  "verdict": "blocked"
+ },
+ "http://www.jstor.org/stable/3151931": {
+  "status": "403",
+  "final": "https://www.jstor.org/stable/3151931",
+  "size": 5816,
+  "verdict": "blocked"
+ },
+ "http://www.k-1.com/Orwell/site/work/essays/fun.html": {
+  "status": "200",
+  "final": "https://k-1.com/Orwell/site/work/essays/fun.html",
+  "size": 32714,
+  "verdict": "ok"
+ },
+ "http://www.mail-archive.com/agi@v2.listbox.com/": {
+  "status": "200",
+  "final": "http://www.mail-archive.com/agi@v2.listbox.com/",
+  "size": 36863,
+  "verdict": "ok"
+ },
+ "http://www.mathpages.com/rr/rrtoc.htm": {
+  "status": "406",
+  "final": "http://www.mathpages.com/rr/rrtoc.htm",
+  "size": 226,
+  "verdict": "blocked"
+ },
+ "http://www.nickbostrom.com/existential/risks.html": {
+  "status": "200",
+  "final": "https://nickbostrom.com/papers/existential-risks/",
+  "size": 113594,
+  "verdict": "ok"
+ },
+ "http://www.overcomingbias.com/2007/03/on_majoritarian.html": {
+  "status": "200",
+  "final": "https://www.overcomingbias.com/p/on_majoritarianhtml",
+  "size": 159747,
+  "verdict": "ok"
+ },
+ "http://www.overcomingbias.com/2008/02/my-favorite-lia.html": {
+  "status": "200",
+  "final": "https://www.overcomingbias.com/p/my-favorite-liahtml",
+  "size": 147872,
+  "verdict": "ok"
+ },
+ "http://www.siggraph.org/publications/newsletter/issues/v35/v35n1.pdf": {
+  "status": "404",
+  "final": "https://www.siggraph.org/inside-siggraph/publications/issues/v35/v35n1.pdf",
+  "size": 135537,
+  "verdict": "dead"
+ },
+ "http://www.slate.com/articles/arts/egghead/2002/02/thinkinginside_the_boxes.html": {
+  "status": "200",
+  "final": "https://slate.com/culture/2002/02/robert-nozick-and-newcomb-s-problem.html",
+  "size": 386010,
+  "verdict": "ok"
+ },
+ "http://www.slate.com/articles/arts/egghead/2002/02/thinkinginside_the_boxes.single.html": {
+  "status": "200",
+  "final": "https://slate.com/culture/2002/02/robert-nozick-and-newcomb-s-problem.html",
+  "size": 385994,
+  "verdict": "ok"
+ },
+ "http://www.ssec.wisc.edu/~billh/g/AIRisk_Reply.html": {
+  "status": "200",
+  "final": "https://www.ssec.wisc.edu/~billh/g/AIRisk_Reply.html",
+  "size": 2955,
+  "verdict": "ok"
+ },
+ "http://www.talkorigins.org/origins/faqs-qa.html": {
+  "status": "200",
+  "final": "https://talkorigins.org/origins/faqs-qa.html",
+  "size": 31881,
+  "verdict": "ok"
+ },
+ "http://yudkowsky.net/other/yehuda/": {
+  "status": "403",
+  "final": "http://yudkowsky.net/other/yehuda/",
+  "size": 5493,
+  "verdict": "blocked"
+ },
+ "http://yudkowsky.net/singularity/aibox": {
+  "status": "403",
+  "final": "http://yudkowsky.net/singularity/aibox",
+  "size": 5493,
+  "verdict": "blocked"
+ },
+ "http://zapatopi.net/kelvin/quotes/": {
+  "status": "200",
+  "final": "https://zapatopi.net/kelvin/quotes/",
+  "size": 65607,
+  "verdict": "ok"
+ },
+ "https://arxiv.org/abs/astro-ph/0302131": {
+  "status": "200",
+  "final": "https://arxiv.org/abs/astro-ph/0302131",
+  "size": 42027,
+  "verdict": "ok"
+ },
+ "https://books.google.com/books?id=k9VsqN24pNYC&dq=&pg=PP1&ots=WR9UGWdOdd&sig=w_Mrax-y4VVwZy5SQGySphNsKMc&prev=http://www.google.com/search%3Fhl%3Den%26safe%3Doff%26q%3Dpearl%2Bintelligent%2Bsystems%26btnG%3DSearch&sa=X&oi=print&ct=title#PPA143,M1": {
+  "status": "200",
+  "final": "https://books.google.com.au/books?id=k9VsqN24pNYC&dq=&pg=PP1&ots=WR9UGWdOdd&sig=w_Mrax-y4VVwZy5SQGySphNsKMc&prev=http://www.google.com/search%3Fhl%3Den%26safe%3Doff%26q%3Dpearl%2Bintelligent%2Bsystems%26btnG%3DSearch&sa=X&oi=print&ct=title&redir_esc=y",
+  "size": 118592,
+  "verdict": "changed-host"
+ },
+ "https://en.wikisource.org/wiki/Lamia": {
+  "status": "200",
+  "final": "https://en.wikisource.org/wiki/Lamia",
+  "size": 52599,
+  "verdict": "ok"
+ },
+ "https://hal.archives-ouvertes.fr/file/index/docid/904097/filename/MercierSperberWhydohumansreason.pdf": {
+  "status": "200",
+  "final": "https://hal.archives-ouvertes.fr/file/index/docid/904097/filename/MercierSperberWhydohumansreason.pdf",
+  "size": 12506,
+  "verdict": "ok"
+ },
+ "https://intelligence.org/files/TDT.pdf": {
+  "status": "200",
+  "final": "https://intelligence.org/files/TDT.pdf",
+  "size": 1804890,
+  "verdict": "ok"
+ },
+ "https://plato.stanford.edu/entries/zombies/": {
+  "status": "200",
+  "final": "https://plato.stanford.edu/entries/zombies/",
+  "size": 79870,
+  "verdict": "ok"
+ },
+ "https://smile.amazon.com/Probabilistic-Reasoning-Intelligent-Systems-Plausible/dp/1558604790/?sa-no-redirect=1": {
+  "status": "200",
+  "final": "https://www.amazon.com:443/Probabilistic-Reasoning-Intelligent-Systems-Plausible/dp/1558604790/?sa-no-redirect=1",
+  "size": 3781,
+  "verdict": "changed-host"
+ },
+ "https://web.archive.org/web/20080214135114/http://www.colorado.edu/physics/2000/bec/evap_cool.html": {
+  "status": "200",
+  "final": "https://web.archive.org/web/20080214135114/http://www.colorado.edu/physics/2000/bec/evap_cool.html",
+  "size": 7788,
+  "verdict": "ok"
+ },
+ "https://web.archive.org/web/20120617135456/http://singinst.org/blog/2007/10/21/should-ethicists-be-inside-or-outside-a-profession/": {
+  "status": "200",
+  "final": "https://web.archive.org/web/20120617135456/http://singinst.org/blog/2007/10/21/should-ethicists-be-inside-or-outside-a-profession/",
+  "size": 106888,
+  "verdict": "ok"
+ },
+ "https://wiki.lesswrong.com/wiki/Locate%20the%20hypothesis": {
+  "status": "200",
+  "final": "https://abcp.mywikis.com/challenge.php?redirect=https%3A%2F%2Fold-wiki.lesswrong.com%2Fwiki%2FLocate_the_hypothesis",
+  "size": 5224,
+  "verdict": "changed-host"
+ },
+ "https://www.lesswrong.com/lw/gr/the_modesty_argument/": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/posts/NKECtGX4RZPd7SqYp/the-modesty-argument",
+  "size": 962898,
+  "verdict": "ok"
+ },
+ "https://www.lesswrong.com/lw/h6/chronophone_motivations/": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/posts/7khK4DShZBR8gfyHv/chronophone-motivations",
+  "size": 634116,
+  "verdict": "ok"
+ },
+ "https://www.lesswrong.com/lw/hf/debiasing_as_nonselfdestruction/": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/posts/XZWMeeqKmfMSPTLha/debiasing-as-non-self-destruction",
+  "size": 613466,
+  "verdict": "ok"
+ },
+ "https://www.lesswrong.com/lw/i2/two_more_things_to_unlearn_from_school/": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/posts/48WeP7oTec3kBEada/two-more-things-to-unlearn-from-school",
+  "size": 1421192,
+  "verdict": "ok"
+ },
+ "https://www.lesswrong.com/lw/io/is_molecular_nanotechnology_scientific/": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/posts/XKcawbsB6Tj5e2QRK/is-molecular-nanotechnology-scientific",
+  "size": 846031,
+  "verdict": "ok"
+ },
+ "https://www.lesswrong.com/lw/l2/protein_reinforcement_and_dna_consequentialism/": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/posts/gTNB9CQd5hnbkMxAG/protein-reinforcement-and-dna-consequentialism",
+  "size": 650845,
+  "verdict": "ok"
+ },
+ "https://www.lesswrong.com/lw/lp/fake_fake_utility_functions/": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/posts/D6rsNhHM4pBCpDzSb/fake-fake-utility-functions",
+  "size": 516071,
+  "verdict": "ok"
+ },
+ "https://www.lesswrong.com/lw/m2/the_litany_against_gurus/": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/posts/t6Fe2PsEwb3HhcBEr/the-litany-against-gurus",
+  "size": 742244,
+  "verdict": "ok"
+ },
+ "https://www.lesswrong.com/lw/ps/where_physics_meets_experience/": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/posts/WajiC3YWeJutyAXTn/where-physics-meets-experience",
+  "size": 956197,
+  "verdict": "ok"
+ },
+ "https://www.lesswrong.com/lw/pu/on_being_decoherent/": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/posts/pRrksC5Y6TbyvKDJE/on-being-decoherent",
+  "size": 1038788,
+  "verdict": "ok"
+ },
+ "https://www.lesswrong.com/lw/q1/bells_theorem_no_epr_reality/": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/posts/AnHJX42C6r6deohTG/bell-s-theorem-no-epr-reality",
+  "size": 841967,
+  "verdict": "ok"
+ },
+ "https://www.lesswrong.com/lw/qd/science_isnt_strict_enough/k35": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/posts/PGfJdgemDJSwWBZSX/science-isn-t-strict-enough?commentId=ZdRB8WbvXqcctoFtg",
+  "size": 518953,
+  "verdict": "ok"
+ },
+ "https://www.lesswrong.com/lw/qm/machs_principle_antiepiphenomenal_physics/": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/posts/NsgcZx4BeTy5y84Ya/mach-s-principle-anti-epiphenomenal-physics",
+  "size": 737088,
+  "verdict": "ok"
+ },
+ "https://www.lesswrong.com/lw/qp/timeless_physics/": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/posts/rrW7yf42vQYDf8AcH/timeless-physics",
+  "size": 1531815,
+  "verdict": "ok"
+ },
+ "https://www.lesswrong.com/lw/r/no_really_ive_deceived_myself/#gk": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/posts/rZX4WuufAPbN6wQTv/no-really-i-ve-deceived-myself",
+  "size": 1082378,
+  "verdict": "ok"
+ },
+ "https://www.lesswrong.com/lw/ra/causality_and_moral_responsibility/": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/posts/FqJGfSrXphrcwpiZe/causality-and-moral-responsibility",
+  "size": 1139401,
+  "verdict": "ok"
+ },
+ "https://www.lesswrong.com/lw/sc/existential_angst_factory/": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/posts/8rdoea3g6QGhWQtmx/existential-angst-factory",
+  "size": 1249223,
+  "verdict": "ok"
+ },
+ "https://www.lesswrong.com/lw/si/math_is_subjunctively_objective/": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/posts/WAQ3qMD4vdXheQmui/math-is-subjunctively-objective",
+  "size": 1172243,
+  "verdict": "ok"
+ },
+ "https://www.lesswrong.com/lw/sn/interpersonal_morality/": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/posts/7HDtecu4qW9PCsSR6/interpersonal-morality",
+  "size": 753821,
+  "verdict": "ok"
+ },
+ "https://www.lesswrong.com/lw/sr/the_comedy_of_behaviorism/": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/posts/9fpWoXpNv83BAHJdc/the-comedy-of-behaviorism",
+  "size": 1038714,
+  "verdict": "ok"
+ },
+ "https://www.lesswrong.com/lw/sx/inseparably_right_or_joy_in_the_merely_good/": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/posts/JynJ6xfnpq9oN3zpb/inseparably-right-or-joy-in-the-merely-good",
+  "size": 752898,
+  "verdict": "ok"
+ },
+ "https://www.lesswrong.com/lw/tc/unnatural_categories/": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/posts/XeHYXXTGRuDrhk5XL/unnatural-categories",
+  "size": 579758,
+  "verdict": "ok"
+ },
+ "https://www.lesswrong.com/lw/tx/optimization/": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/posts/D7EcMhL26zFNbJ3ED/optimization",
+  "size": 928791,
+  "verdict": "ok"
+ },
+ "https://www.lesswrong.com/lw/uu/why_does_power_corrupt/": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/posts/v8rghtzWCziYuMdJ5/why-does-power-corrupt",
+  "size": 1024463,
+  "verdict": "ok"
+ },
+ "https://www.lesswrong.com/lw/uz/protected_from_myself/": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/posts/yz2btSaCLHmLWgWD5/protected-from-myself",
+  "size": 737691,
+  "verdict": "ok"
+ },
+ "https://www.lesswrong.com/lw/v7/expected_creative_surprises/": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/posts/rEDpaTTEzhPLz4fHh/expected-creative-surprises",
+  "size": 886724,
+  "verdict": "ok"
+ },
+ "https://www.lesswrong.com/lw/wv/prolegomena_to_a_theory_of_fun/": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/posts/pK4HTxuv6mftHXWC3/prolegomena-to-a-theory-of-fun",
+  "size": 978522,
+  "verdict": "ok"
+ },
+ "https://www.lesswrong.com/lw/xc/the_uses_of_fun_theory/": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/posts/4o3zwgofFPLutkqvd/the-uses-of-fun-theory",
+  "size": 581165,
+  "verdict": "ok"
+ },
+ "https://www.lesswrong.com/lw/y8/interlude_with_the_confessor_48/": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/posts/bojLBvsYck95gbKNM/interlude-with-the-confessor-4-8",
+  "size": 1240206,
+  "verdict": "ok"
+ },
+ "http://arxiv.org/pdf/0706.3639v1.pdf": {
+  "status": "200",
+  "final": "https://arxiv.org/pdf/0706.3639v1",
+  "size": 128127,
+  "verdict": "ok"
+ },
+ "http://ask.metafilter.com/54496/Feynman-Quote-Demystification": {
+  "status": "200",
+  "final": "https://ask.metafilter.com/54496/Feynman-Quote-Demystification",
+  "size": 30022,
+  "verdict": "ok"
+ },
+ "http://bayes.cs.ucla.edu/BOOK-2K/": {
+  "status": "200",
+  "final": "https://bayes.cs.ucla.edu/BOOK-2K/",
+  "size": 5281,
+  "verdict": "ok"
+ },
+ "http://bayes.wustl.edu/etj/articles/prob.as.logic.pdf": {
+  "status": "200",
+  "final": "https://bayes.wustl.edu/etj/articles/prob.as.logic.pdf",
+  "size": 168825,
+  "verdict": "ok"
+ },
+ "http://blog.sethroberts.net/": {
+  "status": "200",
+  "final": "http://blog.sethroberts.net/",
+  "size": 4665,
+  "verdict": "ok"
+ },
+ "http://bloggingheads.tv/videos/2220": {
+  "status": "200",
+  "final": "https://bloggingheads.tv/videos/2220",
+  "size": 44153,
+  "verdict": "ok"
+ },
+ "http://chem.tufts.edu/AnswersInScience/RelativityofWrong.htm": {
+  "status": "404",
+  "final": "https://chem.tufts.edu/AnswersInScience/RelativityofWrong.htm",
+  "size": 58164,
+  "verdict": "dead"
+ },
+ "http://condor.depaul.edu/mfiddler/hyphen/humunivers.htm": {
+  "status": "200",
+  "final": "https://condor.depaul.edu/mfiddler/hyphen/humunivers.htm",
+  "size": 37080,
+  "verdict": "ok"
+ },
+ "http://consc.net/papers/facing.pdf": {
+  "status": "200",
+  "final": "https://consc.net/papers/facing.pdf",
+  "size": 395399,
+  "verdict": "ok"
+ },
+ "http://csml.som.ohio-state.edu/Music829C/hindsight.bias.html": {
+  "status": "200",
+  "final": "https://music.osu.edu/",
+  "size": 87502,
+  "verdict": "redirected-to-root"
+ },
+ "http://darwin-online.org.uk/content/frameset?viewtype=text&itemID=F373&pageseq=1": {
+  "status": "200",
+  "final": "https://darwin-online.org.uk/content/frameset?viewtype=text&itemID=F373&pageseq=1",
+  "size": 1409,
+  "verdict": "ok"
+ },
+ "http://darwin-online.org.uk/content/frameset?viewtype=text&itemID=F373&pageseq=1;": {
+  "status": "200",
+  "final": "https://darwin-online.org.uk/content/frameset?viewtype=text&itemID=F373&pageseq=1;",
+  "size": 0,
+  "verdict": "ok"
+ },
+ "http://dykestowatchoutfor.com/more-on-consciousness#comment-72828": {
+  "status": "200",
+  "final": "https://dykestowatchoutfor.com/more-on-consciousness/",
+  "size": 167424,
+  "verdict": "ok"
+ },
+ "http://en.wikipedia.org/wiki/%20A%20priori%20and%20a%20posteriori": {
+  "status": "200",
+  "final": "https://en.wikipedia.org/wiki/A_priori_and_a_posteriori",
+  "size": 336614,
+  "verdict": "ok"
+ },
+ "http://en.wikipedia.org/wiki/%20Package-deal%20fallacy": {
+  "status": "200",
+  "final": "https://en.wikipedia.org/wiki/Package-deal_fallacy",
+  "size": 144974,
+  "verdict": "ok"
+ },
+ "http://en.wikipedia.org/wiki/%20Seven%20Bridges%20of%20K%c3%b6nigsberg": {
+  "status": "200",
+  "final": "https://en.wikipedia.org/wiki/Seven_Bridges_of_K%C3%B6nigsberg",
+  "size": 159136,
+  "verdict": "ok"
+ },
+ "http://en.wikipedia.org/wiki/Allais%20paradox": {
+  "status": "200",
+  "final": "https://en.wikipedia.org/wiki/Allais_paradox",
+  "size": 233900,
+  "verdict": "ok"
+ },
+ "http://en.wikipedia.org/wiki/Alu%20element": {
+  "status": "200",
+  "final": "https://en.wikipedia.org/wiki/Alu_element",
+  "size": 275979,
+  "verdict": "ok"
+ },
+ "http://en.wikipedia.org/wiki/Animism": {
+  "status": "200",
+  "final": "https://en.wikipedia.org/wiki/Animism",
+  "size": 781629,
+  "verdict": "ok"
+ },
+ "http://en.wikipedia.org/wiki/Archimedes": {
+  "status": "200",
+  "final": "https://en.wikipedia.org/wiki/Archimedes",
+  "size": 717641,
+  "verdict": "ok"
+ },
+ "http://en.wikipedia.org/wiki/Atom": {
+  "status": "200",
+  "final": "https://en.wikipedia.org/wiki/Atom",
+  "size": 865431,
+  "verdict": "ok"
+ },
+ "http://en.wikipedia.org/wiki/Availability%20heuristic": {
+  "status": "200",
+  "final": "https://en.wikipedia.org/wiki/Availability_heuristic",
+  "size": 317346,
+  "verdict": "ok"
+ },
+ "http://en.wikipedia.org/wiki/Azathoth": {
+  "status": "200",
+  "final": "https://en.wikipedia.org/wiki/Azathoth",
+  "size": 209850,
+  "verdict": "ok"
+ },
+ "http://en.wikipedia.org/wiki/Band%20society": {
+  "status": "200",
+  "final": "https://en.wikipedia.org/wiki/Band_society",
+  "size": 166201,
+  "verdict": "ok"
+ },
+ "http://en.wikipedia.org/wiki/Bias%20blind%20spot": {
+  "status": "200",
+  "final": "https://en.wikipedia.org/wiki/Bias_blind_spot",
+  "size": 138482,
+  "verdict": "ok"
+ },
+ "http://en.wikipedia.org/wiki/Blood%20type%20diet": {
+  "status": "200",
+  "final": "https://en.wikipedia.org/wiki/Blood_type_diet",
+  "size": 138823,
+  "verdict": "ok"
+ },
+ "http://en.wikipedia.org/wiki/Blood%20type%20personality%20theory": {
+  "status": "200",
+  "final": "https://en.wikipedia.org/wiki/Blood_type_personality_theory",
+  "size": 261700,
+  "verdict": "ok"
+ },
+ "http://en.wikipedia.org/wiki/Caloric%20theory": {
+  "status": "200",
+  "final": "https://en.wikipedia.org/wiki/Caloric_theory",
+  "size": 159447,
+  "verdict": "ok"
+ },
+ "http://en.wikipedia.org/wiki/Conway%27s%20game%20of%20life": {
+  "status": "200",
+  "final": "https://en.wikipedia.org/wiki/Conway%27s_game_of_life",
+  "size": 363115,
+  "verdict": "ok"
+ },
+ "http://en.wikipedia.org/wiki/David%20Chalmers": {
+  "status": "200",
+  "final": "https://en.wikipedia.org/wiki/David_Chalmers",
+  "size": 371826,
+  "verdict": "ok"
+ },
+ "http://en.wikipedia.org/wiki/Denver%20International%20Airport": {
+  "status": "200",
+  "final": "https://en.wikipedia.org/wiki/Denver_International_Airport",
+  "size": 1592153,
+  "verdict": "ok"
+ },
+ "http://en.wikipedia.org/wiki/Dunbar%27s%20number": {
+  "status": "200",
+  "final": "https://en.wikipedia.org/wiki/Dunbar%27s_number",
+  "size": 242258,
+  "verdict": "ok"
+ },
+ "http://en.wikipedia.org/wiki/Emergence": {
+  "status": "200",
+  "final": "https://en.wikipedia.org/wiki/Emergence",
+  "size": 492978,
+  "verdict": "ok"
+ },
+ "http://en.wikipedia.org/wiki/Eurofighter%20Typhoon": {
+  "status": "200",
+  "final": "https://en.wikipedia.org/wiki/Eurofighter_Typhoon",
+  "size": 1625106,
+  "verdict": "ok"
+ },
+ "http://en.wikipedia.org/wiki/Evolutionary%20psychology#Environment_of_evolutionary_adaptedness": {
+  "status": "200",
+  "final": "https://en.wikipedia.org/wiki/Evolutionary_psychology",
+  "size": 1237532,
+  "verdict": "ok"
+ },
+ "http://en.wikipedia.org/wiki/File:Mars_Hubble.jpg": {
+  "status": "200",
+  "final": "https://en.wikipedia.org/wiki/File:Mars_Hubble.jpg",
+  "size": 124126,
+  "verdict": "ok"
+ },
+ "http://en.wikipedia.org/wiki/Fisherian%20runaway": {
+  "status": "200",
+  "final": "https://en.wikipedia.org/wiki/Fisherian_runaway",
+  "size": 229524,
+  "verdict": "ok"
+ },
+ "http://en.wikipedia.org/wiki/Hong%e2%80%93Ou%e2%80%93Mandel%20effect": {
+  "status": "200",
+  "final": "https://en.wikipedia.org/wiki/Hong%E2%80%93Ou%E2%80%93Mandel_effect",
+  "size": 210504,
+  "verdict": "ok"
+ },
+ "http://en.wikipedia.org/wiki/Illusory%20superiority": {
+  "status": "200",
+  "final": "https://en.wikipedia.org/wiki/Illusory_superiority",
+  "size": 391858,
+  "verdict": "ok"
+ },
+ "http://en.wikipedia.org/wiki/Just-world%20hypothesis": {
+  "status": "200",
+  "final": "https://en.wikipedia.org/wiki/Just-world_hypothesis",
+  "size": 438540,
+  "verdict": "ok"
+ },
+ "http://en.wikipedia.org/wiki/Lady%20Justice": {
+  "status": "200",
+  "final": "https://en.wikipedia.org/wiki/Lady_Justice",
+  "size": 271749,
+  "verdict": "ok"
+ },
+ "http://en.wikipedia.org/wiki/List%20of%20fallacies": {
+  "status": "200",
+  "final": "https://en.wikipedia.org/wiki/List_of_fallacies",
+  "size": 534074,
+  "verdict": "ok"
+ },
+ "http://en.wikipedia.org/wiki/Long-Term%20Capital%20Management": {
+  "status": "200",
+  "final": "https://en.wikipedia.org/wiki/Long-Term_Capital_Management",
+  "size": 320882,
+  "verdict": "ok"
+ },
+ "http://en.wikipedia.org/wiki/Marcus%20Einfeld#Criminal_conviction": {
+  "status": "200",
+  "final": "https://en.wikipedia.org/wiki/Marcus_Einfeld",
+  "size": 298211,
+  "verdict": "ok"
+ },
+ "http://en.wikipedia.org/wiki/Modern%20Orthodox%20Judaism": {
+  "status": "200",
+  "final": "https://en.wikipedia.org/wiki/Modern_Orthodox_Judaism",
+  "size": 400198,
+  "verdict": "ok"
+ },
+ "http://en.wikipedia.org/wiki/Moore%27s%20Paradox": {
+  "status": "200",
+  "final": "https://en.wikipedia.org/wiki/Moore%27s_Paradox",
+  "size": 156880,
+  "verdict": "ok"
+ },
+ "http://en.wikipedia.org/wiki/No%20true%20Scotsman": {
+  "status": "200",
+  "final": "https://en.wikipedia.org/wiki/No_true_Scotsman",
+  "size": 139167,
+  "verdict": "ok"
+ },
+ "http://en.wikipedia.org/wiki/Package-deal%20fallacy": {
+  "status": "200",
+  "final": "https://en.wikipedia.org/wiki/Package-deal_fallacy",
+  "size": 144974,
+  "verdict": "ok"
+ },
+ "http://en.wikipedia.org/wiki/Peak%e2%80%93end%20rule": {
+  "status": "200",
+  "final": "https://en.wikipedia.org/wiki/Peak%E2%80%93end_rule",
+  "size": 197618,
+  "verdict": "ok"
+ },
+ "http://en.wikipedia.org/wiki/Plant%20reproductive%20morphology": {
+  "status": "200",
+  "final": "https://en.wikipedia.org/wiki/Plant_reproductive_morphology",
+  "size": 285253,
+  "verdict": "ok"
+ },
+ "http://en.wikipedia.org/wiki/Polywell": {
+  "status": "200",
+  "final": "https://en.wikipedia.org/wiki/Polywell",
+  "size": 655228,
+  "verdict": "ok"
+ },
+ "http://en.wikipedia.org/wiki/Price%20equation": {
+  "status": "200",
+  "final": "https://en.wikipedia.org/wiki/Price_equation",
+  "size": 417846,
+  "verdict": "ok"
+ },
+ "http://en.wikipedia.org/wiki/Prisoner%27s%20Dilemma": {
+  "status": "200",
+  "final": "https://en.wikipedia.org/wiki/Prisoner%27s_Dilemma",
+  "size": 600656,
+  "verdict": "ok"
+ },
+ "http://en.wikipedia.org/wiki/Quine%20%28computing%29": {
+  "status": "200",
+  "final": "https://en.wikipedia.org/wiki/Quine_(computing)",
+  "size": 253148,
+  "verdict": "ok"
+ },
+ "http://en.wikipedia.org/wiki/SF%20Hydro": {
+  "status": "200",
+  "final": "https://en.wikipedia.org/wiki/SF_Hydro",
+  "size": 161157,
+  "verdict": "ok"
+ },
+ "http://en.wikipedia.org/wiki/Scarcity%20%28social%20psychology%29": {
+  "status": "200",
+  "final": "https://en.wikipedia.org/wiki/Scarcity_(social_psychology)",
+  "size": 175352,
+  "verdict": "ok"
+ },
+ "http://en.wikipedia.org/wiki/Sunk%20cost": {
+  "status": "200",
+  "final": "https://en.wikipedia.org/wiki/Sunk_cost",
+  "size": 322388,
+  "verdict": "ok"
+ },
+ "http://en.wikipedia.org/wiki/Sydney%20Opera%20House": {
+  "status": "200",
+  "final": "https://en.wikipedia.org/wiki/Sydney_Opera_House",
+  "size": 719481,
+  "verdict": "ok"
+ },
+ "http://en.wikipedia.org/wiki/Theory%20of%20heat": {
+  "status": "200",
+  "final": "https://en.wikipedia.org/wiki/Theory_of_heat",
+  "size": 368751,
+  "verdict": "ok"
+ },
+ "http://en.wikipedia.org/wiki/Tikhonov_regularization#Bayesian_interpretation": {
+  "status": "200",
+  "final": "https://en.wikipedia.org/wiki/Tikhonov_regularization",
+  "size": 476496,
+  "verdict": "ok"
+ },
+ "http://en.wikipedia.org/wiki/Transposable%20element": {
+  "status": "200",
+  "final": "https://en.wikipedia.org/wiki/Transposable_element",
+  "size": 522144,
+  "verdict": "ok"
+ },
+ "http://en.wikipedia.org/wiki/Turing%20machine": {
+  "status": "200",
+  "final": "https://en.wikipedia.org/wiki/Turing_machine",
+  "size": 543700,
+  "verdict": "ok"
+ },
+ "http://en.wikipedia.org/wiki/Ultimatum%20Game": {
+  "status": "200",
+  "final": "https://en.wikipedia.org/wiki/Ultimatum_Game",
+  "size": 419551,
+  "verdict": "ok"
+ },
+ "http://en.wikipedia.org/wiki/Von%20Neumann%e2%80%93Morgenstern%20utility%20theorem": {
+  "status": "200",
+  "final": "https://en.wikipedia.org/wiki/Von_Neumann%E2%80%93Morgenstern_utility_theorem",
+  "size": 308477,
+  "verdict": "ok"
+ },
+ "http://en.wikipedia.org/wiki/Wikipedia:Neutral_point_of_view": {
+  "status": "200",
+  "final": "https://en.wikipedia.org/wiki/Wikipedia:Neutral_point_of_view",
+  "size": 379175,
+  "verdict": "ok"
+ },
+ "http://en.wikipedia.org/wiki/XML": {
+  "status": "200",
+  "final": "https://en.wikipedia.org/wiki/XML",
+  "size": 462167,
+  "verdict": "ok"
+ },
+ "http://en.wikipedia.org/wiki/ZFC": {
+  "status": "200",
+  "final": "https://en.wikipedia.org/wiki/ZFC",
+  "size": 523392,
+  "verdict": "ok"
+ },
+ "http://en.wikipedia.org/wiki/ambiguity%20aversion": {
+  "status": "200",
+  "final": "https://en.wikipedia.org/wiki/Ambiguity_aversion",
+  "size": 198090,
+  "verdict": "ok"
+ },
+ "http://en.wikipedia.org/wiki/conjunction%20fallacy": {
+  "status": "200",
+  "final": "https://en.wikipedia.org/wiki/Conjunction_fallacy",
+  "size": 234501,
+  "verdict": "ok"
+ },
+ "http://en.wikipedia.org/wiki/covariance": {
+  "status": "200",
+  "final": "https://en.wikipedia.org/wiki/Covariance",
+  "size": 570814,
+  "verdict": "ok"
+ },
+ "http://en.wikipedia.org/wiki/dukkha": {
+  "status": "200",
+  "final": "https://en.wikipedia.org/wiki/Dukkha",
+  "size": 480467,
+  "verdict": "ok"
+ },
+ "http://en.wikipedia.org/wiki/false%20dilemma": {
+  "status": "200",
+  "final": "https://en.wikipedia.org/wiki/False_dilemma",
+  "size": 263060,
+  "verdict": "ok"
+ },
+ "http://en.wikipedia.org/wiki/minimax": {
+  "status": "200",
+  "final": "https://en.wikipedia.org/wiki/Minimax",
+  "size": 336612,
+  "verdict": "ok"
+ },
+ "http://en.wikipedia.org/wiki/neglect%20of%20probability": {
+  "status": "200",
+  "final": "https://en.wikipedia.org/wiki/Neglect_of_probability",
+  "size": 103976,
+  "verdict": "ok"
+ },
+ "http://en.wikipedia.org/wiki/package-deal%20fallacy": {
+  "status": "200",
+  "final": "https://en.wikipedia.org/wiki/Package-deal_fallacy",
+  "size": 144974,
+  "verdict": "ok"
+ },
+ "http://extropians.weidai.com/extropians.1Q99/0380.html": {
+  "status": "200",
+  "final": "http://extropians.weidai.com/extropians.1Q99/0380.html",
+  "size": 4953,
+  "verdict": "ok"
+ },
+ "http://extropians.weidai.com/extropians.4Q01/4153.html": {
+  "status": "200",
+  "final": "http://extropians.weidai.com/extropians.4Q01/4153.html",
+  "size": 3909,
+  "verdict": "ok"
+ },
+ "http://faculty.econ.ucdavis.edu/faculty/nehring/teaching/econ106/readings/Extensional%20Versus%20Intuitive.pdf": {
+  "status": "200",
+  "final": "https://faculty.econ.ucdavis.edu/faculty/nehring/teaching/econ106/readings/Extensional%20Versus%20Intuitive.pdf",
+  "size": 1593469,
+  "verdict": "ok"
+ },
+ "http://fastandfrugal.com/": {
+  "status": "000",
+  "final": "http://fastandfrugal.com/",
+  "size": 0,
+  "verdict": "dead"
+ },
+ "http://forums.keenspot.com/viewtopic.php?p=1099960#p1099960": {
+  "status": "200",
+  "final": "http://forums.keenspot.com/viewtopic.php?p=1099960#p1099960",
+  "size": 0,
+  "verdict": "ok"
+ },
+ "http://intelligence.org/files/TilingAgentsDraft.pdf": {
+  "status": "200",
+  "final": "http://intelligence.org/files/TilingAgentsDraft.pdf",
+  "size": 390743,
+  "verdict": "ok"
+ },
+ "http://intelligence.org/files/TowardIdealizedDecisionTheory.pdf": {
+  "status": "200",
+  "final": "https://arxiv.org/abs/1507.01986",
+  "size": 39605,
+  "verdict": "changed-host"
+ },
+ "http://interstice.com/~simon/AfterLife/": {
+  "status": "200",
+  "final": "https://interstice.com/~simon/AfterLife/",
+  "size": 11285,
+  "verdict": "ok"
+ },
+ "http://journals.cambridge.org/abstract_": {
+  "status": "200",
+  "final": "https://www.cambridge.org/core/redirect-support",
+  "size": 661459,
+  "verdict": "changed-host"
+ },
+ "http://journals.cambridge.org/abstract_S0140525X00003435": {
+  "status": "200",
+  "final": "https://www.cambridge.org/core/journals/behavioral-and-brain-sciences/article/abs/individual-differences-in-reasoning-implications-for-the-rationality-debate/2906AEF620B36C10018DD291F790BE97",
+  "size": 778163,
+  "verdict": "changed-host"
+ },
+ "http://kops.ub.uni-konstanz.de/bitstream/handle/urn:nbn:de:bsz:352-opus-5241/ledwig.pdf?sequence=1": {
+  "status": "000",
+  "final": "http://kops.ub.uni-konstanz.de/bitstream/handle/urn:nbn:de:bsz:352-opus-5241/ledwig.pdf?sequence=1",
+  "size": 0,
+  "verdict": "dead"
+ },
+ "http://machall.com/view.php?date=2003-04-21": {
+  "status": "200",
+  "final": "http://machall.com/view.php?date=2003-04-21",
+  "size": 10839,
+  "verdict": "ok"
+ },
+ "http://marginalrevolution.com/marginalrevolution/2005/05/why_dont_people.html": {
+  "status": "200",
+  "final": "http://marginalrevolution.com/marginalrevolution/2005/05/why_dont_people.html",
+  "size": 60707,
+  "verdict": "ok"
+ },
+ "http://marginalrevolution.com/marginalrevolution/2007/08/how-important-i.html": {
+  "status": "200",
+  "final": "http://marginalrevolution.com/marginalrevolution/2007/08/how-important-i.html",
+  "size": 69882,
+  "verdict": "ok"
+ },
+ "http://marginalrevolution.com/marginalrevolution/2007/12/how-my-views-di.html": {
+  "status": "200",
+  "final": "http://marginalrevolution.com/marginalrevolution/2007/12/how-my-views-di.html",
+  "size": 69580,
+  "verdict": "ok"
+ },
+ "http://mason.gmu.edu/~rhanson/mangledworlds.html": {
+  "status": "200",
+  "final": "https://mason.gmu.edu/~rhanson/mangledworlds.html",
+  "size": 12924,
+  "verdict": "ok"
+ },
+ "http://medicine.plosjournals.org/perlserv/?request=get-document&doi=10.1371/journal.pmed.0020124&ct=1": {
+  "status": "000",
+  "final": "http://medicine.plosjournals.org/perlserv/?request=get-document&doi=10.1371/journal.pmed.0020124&ct=1",
+  "size": 0,
+  "verdict": "dead"
+ },
+ "http://migs.concordia.ca/memoirs/kron/chpt_8.html": {
+  "status": "000",
+  "final": "http://migs.concordia.ca/memoirs/kron/chpt_8.html",
+  "size": 0,
+  "verdict": "dead"
+ },
+ "http://mind.sourceforge.net/diagrams.html": {
+  "status": "403",
+  "final": "https://mind.sourceforge.net/diagrams.html",
+  "size": 2,
+  "verdict": "blocked"
+ },
+ "http://news.bbc.co.uk/2/hi/technology/4137782.stm": {
+  "status": "200",
+  "final": "http://news.bbc.co.uk/2/hi/technology/4137782.stm",
+  "size": 35925,
+  "verdict": "ok"
+ },
+ "http://news.bbc.co.uk/2/hi/uk_news/magazine/7967982.stm": {
+  "status": "200",
+  "final": "http://news.bbc.co.uk/2/hi/uk_news/magazine/7967982.stm",
+  "size": 85375,
+  "verdict": "ok"
+ },
+ "http://news.xinhuanet.com/english/2005-11/01/content_3714003.htm": {
+  "status": "404",
+  "final": "http://www.xinhuanet.com//english/2005-11/01/content_3714003.htm",
+  "size": 4655,
+  "verdict": "dead"
+ },
+ "http://onlinelibrary.wiley.com/doi/10.1111/j.1540-5907.2006.00214.x/abstract": {
+  "status": "403",
+  "final": "https://onlinelibrary.wiley.com/doi/10.1111/j.1540-5907.2006.00214.x/abstract",
+  "size": 5634,
+  "verdict": "blocked"
+ },
+ "http://ozyandmillie.org/2003/03/24/ozy-and-millie-1134/": {
+  "status": "404",
+  "final": "https://ozyandmillie.org/2003/03/24/ozy-and-millie-1134/",
+  "size": 236,
+  "verdict": "dead"
+ },
+ "http://ozyandmillie.org/2006/11/16/ozy-and-millie-1770/": {
+  "status": "404",
+  "final": "https://ozyandmillie.org/2006/11/16/ozy-and-millie-1770/",
+  "size": 236,
+  "verdict": "dead"
+ },
+ "http://plato": {
+  "status": "000",
+  "final": "http://plato/",
+  "size": 0,
+  "verdict": "dead"
+ },
+ "http://plato.stanford.edu/archives/win2002/entries/popper/": {
+  "status": "200",
+  "final": "https://plato.stanford.edu/archives/win2002/entries/popper/",
+  "size": 85639,
+  "verdict": "ok"
+ },
+ "http://postbiota.org/pipermail/tt/2007-December/001947.html": {
+  "status": "410",
+  "final": "http://postbiota.org/pipermail/tt/2007-December/001947.html",
+  "size": 222,
+  "verdict": "dead"
+ },
+ "http://postbiota.org/pipermail/tt/2008-May/002997.html": {
+  "status": "410",
+  "final": "http://postbiota.org/pipermail/tt/2008-May/002997.html",
+  "size": 222,
+  "verdict": "dead"
+ },
+ "http://psychclassics.yorku.ca/Sherif/": {
+  "status": "200",
+  "final": "http://psychclassics.yorku.ca/Sherif/",
+  "size": 2131,
+  "verdict": "ok"
+ },
+ "http://psycnet.apa.org/?&fa=main.doiLanding&doi=10.1037/0022-3514.65.2.221": {
+  "status": "403",
+  "final": "http://psycnet.apa.org/?&fa=main.doiLanding&doi=10.1037/0022-3514.65.2.221",
+  "size": 960,
+  "verdict": "blocked"
+ },
+ "http://rationality.org/": {
+  "status": "200",
+  "final": "https://rationality.org/",
+  "size": 20639,
+  "verdict": "ok"
+ },
+ "http://space.mit.edu/home/tegmark/crazy.html": {
+  "status": "403",
+  "final": "https://www.space.mit.edu/home/tegmark/crazy.html",
+  "size": 5493,
+  "verdict": "blocked"
+ },
+ "http://tvtropes.org/pmwiki/pmwiki.php/Main/CreepyCoolCrosses": {
+  "status": "403",
+  "final": "https://tvtropes.org/pmwiki/pmwiki.php/Main/CreepyCoolCrosses",
+  "size": 5502,
+  "verdict": "blocked"
+ },
+ "http://tvtropes.org/pmwiki/pmwiki.php/Main/JesusTaboo": {
+  "status": "403",
+  "final": "https://tvtropes.org/pmwiki/pmwiki.php/Main/JesusTaboo",
+  "size": 5480,
+  "verdict": "blocked"
+ },
+ "http://tvtropes.org/pmwiki/pmwiki.php/Main/KilledOffForReal": {
+  "status": "403",
+  "final": "https://tvtropes.org/pmwiki/pmwiki.php/Main/KilledOffForReal",
+  "size": 5499,
+  "verdict": "blocked"
+ },
+ "http://tvtropes.org/pmwiki/pmwiki.php/Main/TookALevelInBadass": {
+  "status": "403",
+  "final": "https://tvtropes.org/pmwiki/pmwiki.php/Main/TookALevelInBadass",
+  "size": 5505,
+  "verdict": "blocked"
+ },
+ "http://users.ecs.soton.ac.uk/harnad/Papers/Harnad/harnad90.sgproblem.html": {
+  "status": "200",
+  "final": "https://www.southampton.ac.uk/~harnad/Papers/Harnad/harnad90.sgproblem.html",
+  "size": 19979,
+  "verdict": "changed-host"
+ },
+ "http://utminers.utep.edu/omwilliamson/engl1311/fallacies.htm": {
+  "status": "200",
+  "final": "https://utminers.utep.edu/omwilliamson/engl1311/fallacies.htm",
+  "size": 223983,
+  "verdict": "ok"
+ },
+ "http://web.archive.org/web/": {
+  "status": "200",
+  "final": "http://web.archive.org/",
+  "size": 154263,
+  "verdict": "redirected-to-root"
+ },
+ "http://web.archive.org/web/20060424082937/http:": {
+  "status": "200",
+  "final": "http://web.archive.org/",
+  "size": 154262,
+  "verdict": "redirected-to-root"
+ },
+ "http://web.archive.org/web/20080214014017/http://www.ranprieur.com/me/100things.html": {
+  "status": "200",
+  "final": "http://web.archive.org/web/20080214014017/http://www.ranprieur.com/me/100things.html",
+  "size": 18498,
+  "verdict": "ok"
+ },
+ "http://web.archive.org/web/20080703182200/http://very.net/~nikolai/nasty/games.html": {
+  "status": "200",
+  "final": "http://web.archive.org/web/20080703182200/http://very.net/~nikolai/nasty/games.html",
+  "size": 7541,
+  "verdict": "ok"
+ },
+ "http://web.archive.org/web/20100312042939/http://www.nccbuscc.org/nab/bible/1kings/1kings18.htm": {
+  "status": "200",
+  "final": "http://web.archive.org/web/20100312042939/http://www.nccbuscc.org/nab/bible/1kings/1kings18.htm",
+  "size": 15840,
+  "verdict": "ok"
+ },
+ "http://web.archive.org/web/20130328012735/http://commonsenseatheism.com/wp-content/uploads/2011/09/Fetherstonhaugh-et-al-Insensitivity-to-the-value-of-human-life-A-study-of-psychophysical-numbing.pdf": {
+  "status": "200",
+  "final": "http://web.archive.org/web/20130328012735/http://commonsenseatheism.com/wp-content/uploads/2011/09/Fetherstonhaugh-et-al-Insensitivity-to-the-value-of-human-life-A-study-of-psychophysical-numbing.pdf",
+  "size": 206035,
+  "verdict": "ok"
+ },
+ "http://web.maths.unsw.edu.au/~jim/wrongthoughts.html": {
+  "status": "200",
+  "final": "https://web.maths.unsw.edu.au/~jim/wrongthoughts.html",
+  "size": 68839,
+  "verdict": "ok"
+ },
+ "http://web.mit.edu/ariely/www/MIT/Papers/duration1.pdf": {
+  "status": "200",
+  "final": "https://web.mit.edu/ariely/www/MIT/Papers/duration1.pdf",
+  "size": 1244663,
+  "verdict": "ok"
+ },
+ "http://web.stanford.edu/group/SITE/archive/SITE_2006/Web%20Session%207/Ozdenoren_Paper.pdf": {
+  "status": "404",
+  "final": "http://web.stanford.edu/group/SITE/archive/SITE_2006/Web%20Session%207/Ozdenoren_Paper.pdf",
+  "size": 5847,
+  "verdict": "dead"
+ },
+ "http://wjh-www.harvard.edu/~dtg/Gilbert%20et%20al%20UNBELIEVING.pdf": {
+  "status": "000",
+  "final": "http://wjh-www.harvard.edu/~dtg/Gilbert%20et%20al%20UNBELIEVING.pdf",
+  "size": 0,
+  "verdict": "dead"
+ },
+ "http://www-abc.mpib-berlin.mpg.de/users/r20/finucane00_the_affect_heuristic.pdf": {
+  "status": "000",
+  "final": "http://www-abc.mpib-berlin.mpg.de/users/r20/finucane00_the_affect_heuristic.pdf",
+  "size": 0,
+  "verdict": "dead"
+ },
+ "http://www-formal.stanford.edu/jmc/sayings.html": {
+  "status": "200",
+  "final": "http://www-formal.stanford.edu/jmc/sayings.html",
+  "size": 19819,
+  "verdict": "ok"
+ },
+ "http://www.3ammagazine.com/litarchives/2003/jan/interview_catherine_camus.html": {
+  "status": "403",
+  "final": "https://www.3ammagazine.com/litarchives/2003/jan/interview_catherine_camus.html",
+  "size": 239,
+  "verdict": "blocked"
+ },
+ "http://www.aft.org/sites/default/files/periodicals/Crit_Thinking.pdf": {
+  "status": "404",
+  "final": "https://www.aft.org/sites/default/files/Crit_Thinking.pdf",
+  "size": 50263,
+  "verdict": "dead"
+ },
+ "http://www.anthropic-principle.com/?q=anthropic_principle/primer": {
+  "status": "200",
+  "final": "https://anthropic-principle.com/?q=anthropic_principle/primer",
+  "size": 4492,
+  "verdict": "ok"
+ },
+ "http://www.av8n.com/physics/phase-space-thin-lens.htm": {
+  "status": "404",
+  "final": "http://www.av8n.com/physics/phase-space-thin-lens.htm",
+  "size": 274,
+  "verdict": "dead"
+ },
+ "http://www.bartleby.com/73/1211.html": {
+  "status": "403",
+  "final": "https://www.bartleby.com/73/1211.html",
+  "size": 919,
+  "verdict": "blocked"
+ },
+ "http://www.bit-tech.net/news/gaming/2007/09/18/chinese_man_days_after_3-day_gaming_session/1": {
+  "status": "200",
+  "final": "https://www.bit-tech.net/news/gaming/chinese_man_days_after_3-day_gaming_session/1/",
+  "size": 72418,
+  "verdict": "ok"
+ },
+ "http://www.catb.org/jargon/html/G/Godwins-Law.html": {
+  "status": "200",
+  "final": "http://www.catb.org/jargon/html/G/Godwins-Law.html",
+  "size": 2486,
+  "verdict": "ok"
+ },
+ "http://www.cep.ucsb.edu/papers/pfc92.pdf": {
+  "status": "404",
+  "final": "https://www.cep.ucsb.edu/papers/pfc92.pdf",
+  "size": 65864,
+  "verdict": "dead"
+ },
+ "http://www.danielgilbert.com/Gilbert%20et%20al%20EVERYTHING%20YOU%20READ.pdf": {
+  "status": "200",
+  "final": "https://dtg.sites.fas.harvard.edu/",
+  "size": 68453,
+  "verdict": "redirected-to-root"
+ },
+ "http://www.ditext.com/carroll/tortoise.html": {
+  "status": "200",
+  "final": "https://www.ditext.com/carroll/tortoise.html",
+  "size": 3713,
+  "verdict": "ok"
+ },
+ "http://www.economist.com/blogs/freeexchange/2007/04/the_future_of_fantasy": {
+  "status": "403",
+  "final": "https://www.economist.com/blogs/freeexchange/2007/04/the_future_of_fantasy",
+  "size": 5594,
+  "verdict": "blocked"
+ },
+ "http://www.excelsior.edu/exams/choose-your-exam": {
+  "status": "200",
+  "final": "https://www.excelsior.edu/start-with-more-credit/transfer-more-credits/",
+  "size": 218974,
+  "verdict": "ok"
+ },
+ "http://www.expatsingapore.com/forum/index.php?topic=16763.msg126809": {
+  "status": "521",
+  "final": "http://www.expatsingapore.com/forum/index.php?topic=16763.msg126809",
+  "size": 16,
+  "verdict": "blocked"
+ },
+ "http://www.fallacyfiles.org/genefall.html": {
+  "status": "200",
+  "final": "http://www.fallacyfiles.org/genefall.html",
+  "size": 13098,
+  "verdict": "ok"
+ },
+ "http://www.fdareview.org/05_harm.php": {
+  "status": "200",
+  "final": "http://www.fdareview.org/issues/theory-evidence-and-examples-of-fda-harm/",
+  "size": 91008,
+  "verdict": "ok"
+ },
+ "http://www.foreignpolicy.com/articles/2007/03/12/numbed_by_numbers": {
+  "status": "200",
+  "final": "https://foreignpolicy.com/2007/03/13/numbed-by-numbers/",
+  "size": 540020,
+  "verdict": "ok"
+ },
+ "http://www.givewell.org/charities/against-malaria-foundation#Whatdoyougetforyourdollar": {
+  "status": "200",
+  "final": "https://www.givewell.org/charities/amf",
+  "size": 283416,
+  "verdict": "ok"
+ },
+ "http://www.global-catastrophic-risks.com/": {
+  "status": "200",
+  "final": "https://global-catastrophic-risks.com/",
+  "size": 8892,
+  "verdict": "ok"
+ },
+ "http://www.global-catastrophic-risks.com/abstracts/ab_hillerbrand_ord_sandberg.html": {
+  "status": "200",
+  "final": "https://global-catastrophic-risks.com/abstracts/ab_hillerbrand_ord_sandberg",
+  "size": 7635,
+  "verdict": "ok"
+ },
+ "http://www.godlessgeeks.com/LINKS/Dragon.htm": {
+  "status": "000",
+  "final": "http://www.godlessgeeks.com/LINKS/Dragon.htm",
+  "size": 0,
+  "verdict": "dead"
+ },
+ "http://www.gokanji.com/cgi-bin/j-e/inline/dosearch?sDict=on&H=PS&L=J&T=issho+kenmei&WC=none&FG=r&BG=b&S=26&I=on": {
+  "status": "200",
+  "final": "https://www.gokanji.com/cgi-bin/j-e/inline/dosearch?sDict=on&H=PS&L=J&T=issho+kenmei&WC=none&FG=r&BG=b&S=26&I=on",
+  "size": 5279,
+  "verdict": "ok"
+ },
+ "http://www.hpmor.com/": {
+  "status": "403",
+  "final": "http://www.hpmor.com/",
+  "size": 5493,
+  "verdict": "blocked"
+ },
+ "http://www.hutter1.net/ai/": {
+  "status": "200",
+  "final": "http://www.hutter1.net/ai/",
+  "size": 815,
+  "verdict": "ok"
+ },
+ "http://www.iep.utm.edu/apriori": {
+  "status": "200",
+  "final": "https://iep.utm.edu/apriori/",
+  "size": 62297,
+  "verdict": "ok"
+ },
+ "http://www.imdb.com/title/tt0116629/": {
+  "status": "202",
+  "final": "https://www.imdb.com/title/tt0116629/",
+  "size": 0,
+  "verdict": "ok"
+ },
+ "http://www.indiana.edu/~kruschke/articles/Kruschke2010TiCS.pdf": {
+  "status": "200",
+  "final": "https://bloomington.iu.edu/",
+  "size": 308329,
+  "verdict": "redirected-to-root"
+ },
+ "http://www.math.utah.edu/~pa/math/polya.html": {
+  "status": "404",
+  "final": "http://www.math.utah.edu/~pa/math/polya.html",
+  "size": 263,
+  "verdict": "dead"
+ },
+ "http://www.metafilter.com/79752/More-Right-was-too-political#2477702": {
+  "status": "200",
+  "final": "https://www.metafilter.com/79752/More-Right-was-too-political",
+  "size": 72334,
+  "verdict": "ok"
+ },
+ "http://www.nickbostrom.com/ethics/artificial-intelligence.pdf": {
+  "status": "200",
+  "final": "https://nickbostrom.com/ethics/artificial-intelligence.pdf",
+  "size": 232143,
+  "verdict": "ok"
+ },
+ "http://www.nickbostrom.com/ethics/human-enhancement-ethics.pdf": {
+  "status": "200",
+  "final": "https://nickbostrom.com/ethics/human-enhancement-ethics.pdf",
+  "size": 139807,
+  "verdict": "ok"
+ },
+ "http://www.nizkor.org/features/fallacies/appeal-to-consequences.html": {
+  "status": "404",
+  "final": "https://www.nizkor.org/features/fallacies/appeal-to-consequences.html",
+  "size": 142242,
+  "verdict": "dead"
+ },
+ "http://www.nizkor.org/features/fallacies/genetic-fallacy.html": {
+  "status": "404",
+  "final": "https://www.nizkor.org/features/fallacies/genetic-fallacy.html",
+  "size": 142242,
+  "verdict": "dead"
+ },
+ "http://www.nothingisreal.com/mentifex_faq.html": {
+  "status": "200",
+  "final": "http://www.nothingisreal.com/mentifex_faq.html",
+  "size": 77226,
+  "verdict": "ok"
+ },
+ "http://www.nothingisreal.com/mentifex_faq.html#x1-190002.3.1": {
+  "status": "200",
+  "final": "http://www.nothingisreal.com/mentifex_faq.html#x1-190002.3.1",
+  "size": 77226,
+  "verdict": "ok"
+ },
+ "http://www.nvon.nl/scheik/best/diversen/scijokes/scijokes.txt": {
+  "status": "404",
+  "final": "https://www.nvon.nl/scheik/best/diversen/scijokes/scijokes.txt",
+  "size": 24846,
+  "verdict": "dead"
+ },
+ "http://www.overcomingbias.com/": {
+  "status": "200",
+  "final": "https://www.overcomingbias.com/",
+  "size": 97382,
+  "verdict": "ok"
+ },
+ "http://www.overcomingbias.com/2006/12/agreeing_to_agr.html": {
+  "status": "200",
+  "final": "https://www.overcomingbias.com/p/agreeing_to_agrhtml",
+  "size": 152757,
+  "verdict": "ok"
+ },
+ "http://www.overcomingbias.com/2006/12/biases_of_scien.html": {
+  "status": "200",
+  "final": "https://www.overcomingbias.com/p/biases_of_scienhtml",
+  "size": 148297,
+  "verdict": "ok"
+ },
+ "http://www.overcomingbias.com/2007/01/conspicuous_con.html": {
+  "status": "200",
+  "final": "https://www.overcomingbias.com/p/conspicuous_conhtml",
+  "size": 153495,
+  "verdict": "ok"
+ },
+ "http://www.overcomingbias.com/2007/01/we_cant_foresee.html": {
+  "status": "200",
+  "final": "https://www.overcomingbias.com/p/we_cant_foreseehtml",
+  "size": 152962,
+  "verdict": "ok"
+ },
+ "http://www.overcomingbias.com/2007/02/what_evidence_i.html?cid=61577404#comment-518293876": {
+  "status": "200",
+  "final": "https://www.overcomingbias.com/p/what_evidence_ihtml",
+  "size": 155006,
+  "verdict": "ok"
+ },
+ "http://www.overcomingbias.com/2007/03/paternalism_is_.html": {
+  "status": "200",
+  "final": "https://www.overcomingbias.com/p/paternalism_is_html",
+  "size": 150610,
+  "verdict": "ok"
+ },
+ "http://www.overcomingbias.com/2007/05/policy_tugowar.html": {
+  "status": "200",
+  "final": "https://www.overcomingbias.com/p/policy_tugowarhtml",
+  "size": 157756,
+  "verdict": "ok"
+ },
+ "http://www.overcomingbias.com/2007/05/rand_health_ins.html": {
+  "status": "200",
+  "final": "https://www.overcomingbias.com/p/rand_health_inshtml",
+  "size": 155881,
+  "verdict": "ok"
+ },
+ "http://www.overcomingbias.com/2007/06/1_2_3_infinity.html": {
+  "status": "200",
+  "final": "https://www.overcomingbias.com/p/1_2_3_infinityhtml",
+  "size": 154498,
+  "verdict": "ok"
+ },
+ "http://www.overcomingbias.com/2007/06/1_2_3_infinity.html#comment-518292560": {
+  "status": "200",
+  "final": "https://www.overcomingbias.com/p/1_2_3_infinityhtml",
+  "size": 154498,
+  "verdict": "ok"
+ },
+ "http://www.overcomingbias.com/2007/06/1_2_3_infinity.html#comment-518292606": {
+  "status": "200",
+  "final": "https://www.overcomingbias.com/p/1_2_3_infinityhtml",
+  "size": 154498,
+  "verdict": "ok"
+ },
+ "http://www.overcomingbias.com/2007/06/against_free_th.html": {
+  "status": "200",
+  "final": "https://www.overcomingbias.com/p/against_free_thhtml",
+  "size": 158185,
+  "verdict": "ok"
+ },
+ "http://www.overcomingbias.com/2007/07/tell-your-anti-.html": {
+  "status": "404",
+  "final": "https://www.overcomingbias.com/tell-your-anti-html",
+  "size": 253102,
+  "verdict": "dead"
+ },
+ "http://www.overcomingbias.com/2007/08/truth-bias.html": {
+  "status": "200",
+  "final": "https://www.overcomingbias.com/p/truth-biashtml",
+  "size": 143208,
+  "verdict": "ok"
+ },
+ "http://www.overcomingbias.com/2007/09/false-findings-.html": {
+  "status": "404",
+  "final": "https://www.overcomingbias.com/false-findings-html",
+  "size": 253102,
+  "verdict": "dead"
+ },
+ "http://www.overcomingbias.com/2007/10/what-evidence-i.html": {
+  "status": "200",
+  "final": "https://www.overcomingbias.com/p/what-evidence-ihtml",
+  "size": 158719,
+  "verdict": "ok"
+ },
+ "http://www.overcomingbias.com/2007/11/merry-hallowmas.html": {
+  "status": "200",
+  "final": "https://www.overcomingbias.com/p/merry-hallowmashtml",
+  "size": 148548,
+  "verdict": "ok"
+ },
+ "http://www.overcomingbias.com/2007/12/economist-judgm.html": {
+  "status": "200",
+  "final": "https://www.overcomingbias.com/p/economist-judgmhtml",
+  "size": 159406,
+  "verdict": "ok"
+ },
+ "http://www.overcomingbias.com/2008/09/deafening-silen.html": {
+  "status": "200",
+  "final": "https://www.overcomingbias.com/p/deafening-silenhtml",
+  "size": 149335,
+  "verdict": "ok"
+ },
+ "http://www.overcomingbias.com/2008/09/deafening-silen.html#comment-518221902": {
+  "status": "200",
+  "final": "https://www.overcomingbias.com/p/deafening-silenhtml",
+  "size": 149418,
+  "verdict": "ok"
+ },
+ "http://www.overcomingbias.com/2008/12/voting-kills.html": {
+  "status": "200",
+  "final": "https://www.overcomingbias.com/p/voting-killshtml",
+  "size": 152253,
+  "verdict": "ok"
+ },
+ "http://www.overcomingbias.com/2009/02/against-propaganda-.html": {
+  "status": "404",
+  "final": "https://www.overcomingbias.com/against-propaganda-html",
+  "size": 253114,
+  "verdict": "dead"
+ },
+ "http://www.overcomingbias.com/2009/02/the-cost-of-talking-values.html": {
+  "status": "200",
+  "final": "https://www.overcomingbias.com/p/the-cost-of-talking-valueshtml",
+  "size": 153517,
+  "verdict": "ok"
+ },
+ "http://www.overcomingbias.com/2009/03/loving-cranks-to-death.html": {
+  "status": "200",
+  "final": "https://www.overcomingbias.com/p/loving-cranks-to-deathhtml",
+  "size": 151299,
+  "verdict": "ok"
+ },
+ "http://www.overcomingbias.com/2009/04/choke-to-submit.html": {
+  "status": "200",
+  "final": "https://www.overcomingbias.com/p/choke-to-submithtml",
+  "size": 153941,
+  "verdict": "ok"
+ },
+ "http://www.paulgraham.com/hamming.html": {
+  "status": "200",
+  "final": "https://paulgraham.com/hamming.html",
+  "size": 76525,
+  "verdict": "ok"
+ },
+ "http://www.philosophyetc.net/2008/03/arguing-with-eliezer-part-ii.html": {
+  "status": "200",
+  "final": "https://www.philosophyetc.net/2008/03/arguing-with-eliezer-part-ii.html",
+  "size": 114831,
+  "verdict": "ok"
+ },
+ "http://www.pnas.org/content/73/12/4604.full.pdf": {
+  "status": "403",
+  "final": "https://www.pnas.org/content/73/12/4604.full.pdf",
+  "size": 5505,
+  "verdict": "blocked"
+ },
+ "http://www.poemhunter.com/poem/a-poem-sacred-to-the-memory-of-sir-isaac-newton/": {
+  "status": "200",
+  "final": "https://www.poemhunter.com/poem/a-poem-sacred-to-the-memory-of-sir-isaac-newton/",
+  "size": 126869,
+  "verdict": "ok"
+ },
+ "http://www.prem-rawat-talk.org/forum/uploads/CultCharacteristics.htm": {
+  "status": "406",
+  "final": "http://www.prem-rawat-talk.org/forum/uploads/CultCharacteristics.htm",
+  "size": 226,
+  "verdict": "blocked"
+ },
+ "http://www.radford": {
+  "status": "000",
+  "final": "http://www.radford/",
+  "size": 0,
+  "verdict": "dead"
+ },
+ "http://www.radford.edu/~jaspelme/443/spring-2007/Articles/Jones_n_Harris_1967.pdf": {
+  "status": "403",
+  "final": "https://sites.radford.edu/~jaspelme/443/spring-2007/Articles/Jones_n_Harris_1967.pdf",
+  "size": 199,
+  "verdict": "blocked"
+ },
+ "http://www.reuters.com/article/us-crash-idUSTRE52N63B20090325": {
+  "status": "401",
+  "final": "https://www.reuters.com/article/us-crash-idUSTRE52N63B20090325",
+  "size": 773,
+  "verdict": "blocked"
+ },
+ "http://www.richrock.com/gifs/optical-illusion-wheels-circles-rotating.png": {
+  "status": "200",
+  "final": "http://www.richrock.com/gifs/optical-illusion-wheels-circles-rotating.png",
+  "size": 269933,
+  "verdict": "ok"
+ },
+ "http://www.robertboynton.com/articleDisplay.php?article_id=1535": {
+  "status": "404",
+  "final": "http://robertboynton.com/articleDisplay.php?article_id=1535",
+  "size": 24830,
+  "verdict": "dead"
+ },
+ "http://www.samharris.org/blog/item/sam-harris-vs.-andrew-sullivan": {
+  "status": "404",
+  "final": "https://www.samharris.org/blog/item/sam-harris-vs.-andrew-sullivan",
+  "size": 26147,
+  "verdict": "dead"
+ },
+ "http://www.scottaaronson.com/blog/?p=326": {
+  "status": "406",
+  "final": "https://www.scottaaronson.com/blog/?p=326",
+  "size": 226,
+  "verdict": "blocked"
+ },
+ "http://www.scottaaronson.com/blog/?p=87#comment-2092": {
+  "status": "406",
+  "final": "https://www.scottaaronson.com/blog/?p=87",
+  "size": 226,
+  "verdict": "blocked"
+ },
+ "http://www.sfgate.com/bayarea/article/Science-courses-nearly-extinct-in-elementary-3236187.php": {
+  "status": "200",
+  "final": "https://www.sfgate.com/bayarea/article/Science-courses-nearly-extinct-in-elementary-3236187.php",
+  "size": 497395,
+  "verdict": "ok"
+ },
+ "http://www.simulation-argument.com/simulation.html": {
+  "status": "200",
+  "final": "https://simulation-argument.com/simulation/",
+  "size": 44292,
+  "verdict": "ok"
+ },
+ "http://www.sirlin.net/articles/playing-to-win": {
+  "status": "200",
+  "final": "https://www.sirlin.net/articles/playing-to-win",
+  "size": 126403,
+  "verdict": "ok"
+ },
+ "http://www.skepticfiles.org/atheist/genesisd.htm": {
+  "status": "301",
+  "final": "https://www.skepticfiles.org/atheist/genesisd.htm",
+  "size": 0,
+  "verdict": "ok"
+ },
+ "http://www.sl4.org/archive/0606/15138.html": {
+  "status": "200",
+  "final": "http://sl4.org/archive/0606/15138.html",
+  "size": 8962,
+  "verdict": "ok"
+ },
+ "http://www.smbc-comics.com/index.php?db=comics&id=1038": {
+  "status": "200",
+  "final": "http://www.smbc-comics.com/index.php?db=comics&id=1038",
+  "size": 20275,
+  "verdict": "ok"
+ },
+ "http://www.spaceandgames.com/?p=27": {
+  "status": "503",
+  "final": "http://www.spaceandgames.com/?p=27",
+  "size": 4929,
+  "verdict": "dead"
+ },
+ "http://www.spectacle.org/1095/stop1.html": {
+  "status": "200",
+  "final": "https://www.spectacle.org/1095/stop1.html",
+  "size": 5709,
+  "verdict": "ok"
+ },
+ "http://www.spectacle.org/yearzero/godvgod.html": {
+  "status": "200",
+  "final": "https://www.spectacle.org/yearzero/godvgod.html",
+  "size": 22254,
+  "verdict": "ok"
+ },
+ "http://www.spiegel.de/international/spiegel/spiegel-interview-with-african-economics-expert-for-god-s-sake-please-stop-the-aid-a-363663.html": {
+  "status": "200",
+  "final": "https://www.spiegel.de/international/spiegel/spiegel-interview-with-african-economics-expert-for-god-s-sake-please-stop-the-aid-a-363663.html",
+  "size": 531697,
+  "verdict": "ok"
+ },
+ "http://www.ssec.wisc.edu/~billh/visfiles.html": {
+  "status": "200",
+  "final": "https://www.ssec.wisc.edu/~billh/visfiles.html",
+  "size": 17540,
+  "verdict": "ok"
+ },
+ "http://www.textbookleague.org/103feyn.htm": {
+  "status": "200",
+  "final": "https://www.textbookleague.org/",
+  "size": 160964,
+  "verdict": "redirected-to-root"
+ },
+ "http://www.theregister.co.uk/2007/12/04/wikipedia_secret_mailing/": {
+  "status": "200",
+  "final": "https://www.theregister.com/offbeat/2007/12/04/secret-mailing-list-rocks-wikipedia/874413",
+  "size": 166886,
+  "verdict": "changed-host"
+ },
+ "http://www.theregister.co.uk/2007/12/06/wikipedia_and_overstock/": {
+  "status": "200",
+  "final": "https://www.theregister.com/offbeat/2007/12/06/wikipedia-black-helicopters-circle-utahs-traverse-mountain/276831",
+  "size": 187980,
+  "verdict": "changed-host"
+ },
+ "http://www.tiem.utk.edu/~gavrila/583/583.html": {
+  "status": "000",
+  "final": "http://www.tiem.utk.edu/~gavrila/583/583.html",
+  "size": 0,
+  "verdict": "dead"
+ },
+ "http://www.tobyord.com/": {
+  "status": "200",
+  "final": "https://www.tobyord.com/",
+  "size": 58215,
+  "verdict": "ok"
+ },
+ "http://www.worldchanging.com/archives/008009.html": {
+  "status": "000",
+  "final": "http://www.worldchanging.com/archives/008009.html",
+  "size": 0,
+  "verdict": "dead"
+ },
+ "http://www.yudkowsky.net": {
+  "status": "403",
+  "final": "http://www.yudkowsky.net/",
+  "size": 5493,
+  "verdict": "blocked"
+ },
+ "http://www2": {
+  "status": "000",
+  "final": "http://www2/",
+  "size": 0,
+  "verdict": "dead"
+ },
+ "http://www2.psych.ubc.ca/~schaller/Psyc590Readings/": {
+  "status": "404",
+  "final": "https://www2.psych.ubc.ca/~schaller/Psyc590Readings/",
+  "size": 196,
+  "verdict": "dead"
+ },
+ "http://yosemite.epa.gov/ee/epa/eerm.nsf/": {
+  "status": "000",
+  "final": "http://yosemite.epa.gov/ee/epa/eerm.nsf/",
+  "size": 0,
+  "verdict": "dead"
+ },
+ "http://yosemite.epa.gov/ee/epa/eerm.nsf/vwAN/EE-0280B-04.pdf/$file/EE-0280B-04.pdf": {
+  "status": "000",
+  "final": "http://yosemite.epa.gov/ee/epa/eerm.nsf/vwAN/EE-0280B-04.pdf/$file/EE-0280B-04.pdf",
+  "size": 0,
+  "verdict": "dead"
+ },
+ "http://yudkowsky.net/other/fiction": {
+  "status": "403",
+  "final": "http://yudkowsky.net/other/fiction",
+  "size": 5493,
+  "verdict": "blocked"
+ },
+ "http://yudkowsky.net/other/fiction/npc": {
+  "status": "403",
+  "final": "http://yudkowsky.net/other/fiction/npc",
+  "size": 5493,
+  "verdict": "blocked"
+ },
+ "http://yudkowsky.net/rational/bayes": {
+  "status": "403",
+  "final": "http://yudkowsky.net/rational/bayes",
+  "size": 5493,
+  "verdict": "blocked"
+ },
+ "https://arxiv.org/abs/0706.3639": {
+  "status": "200",
+  "final": "https://arxiv.org/abs/0706.3639",
+  "size": 39292,
+  "verdict": "ok"
+ },
+ "https://arxiv.org/abs/1507.01986": {
+  "status": "200",
+  "final": "https://arxiv.org/abs/1507.01986",
+  "size": 39605,
+  "verdict": "ok"
+ },
+ "https://bioethicsarchive.georgetown.edu/pcbe/background/sandelpaper.html": {
+  "status": "200",
+  "final": "https://sitearchives.georgetown.edu:443/kie-pcbe/background/sandelpaper.html",
+  "size": 18773,
+  "verdict": "changed-host"
+ },
+ "https://books.google.com/books/about/Breaking_the_Spell.html?id=yWtwDDqR61QC": {
+  "status": "200",
+  "final": "https://books.google.com.au/books/about/Breaking_the_Spell.html?id=yWtwDDqR61QC&redir_esc=y",
+  "size": 100941,
+  "verdict": "changed-host"
+ },
+ "https://books.google.com/books?id=0fZZQHOfdAAC&dq=the+conscious+mind&pg=PP1&ots=qjv14gGUOR&sig=98dNHve8xZp-yltM37iN8mgq2AQ&hl=en&prev=http://www.google.com/search?hl=en&q=the+conscious+mind&sa=X&oi=print&ct=title&cad=one-book-with-thumbnail#v=onepage&q=the%20conscious%20mind&f=false": {
+  "status": "200",
+  "final": "https://books.google.com.au/books?id=0fZZQHOfdAAC&dq=the+conscious+mind&pg=PP1&ots=qjv14gGUOR&sig=98dNHve8xZp-yltM37iN8mgq2AQ&hl=en&prev=http://www.google.com/search%3Fhl%3Den&q=the+conscious+mind&sa=X&oi=print&ct=title&redir_esc=y",
+  "size": 120035,
+  "verdict": "changed-host"
+ },
+ "https://books.google.com/books?id=b924ifrqfosC&printsec=frontcover#v=onepage&q&f=false": {
+  "status": "200",
+  "final": "https://books.google.com.au/books?id=b924ifrqfosC&printsec=frontcover&redir_esc=y",
+  "size": 87142,
+  "verdict": "changed-host"
+ },
+ "https://books.google.com/books?id=cEPNtxAoYPAC&pg=PA18&lpg=PA18&dq=h2o+logically+possible&source=web&ots=R9zyWvo3Uz&sig=FjyegdF0D-2I77l7dHQ-RRkSR88&hl=en#v=onepage&q=h2o%20logically%20possible&f=false": {
+  "status": "200",
+  "final": "https://books.google.com.au/books?id=cEPNtxAoYPAC&pg=PA18&lpg=PA18&dq=h2o+logically+possible&source=web&ots=R9zyWvo3Uz&sig=FjyegdF0D-2I77l7dHQ-RRkSR88&hl=en&redir_esc=y",
+  "size": 113065,
+  "verdict": "changed-host"
+ },
+ "https://books.google.com/books?id=xWjTZhw1MiUC&pg=PA68#v=onepage&q&f=false": {
+  "status": "200",
+  "final": "https://books.google.com.au/books?id=xWjTZhw1MiUC&pg=PA68&redir_esc=y",
+  "size": 101253,
+  "verdict": "changed-host"
+ },
+ "https://chaitanya1.files.wordpress.com/2008/06/bigbang.gif": {
+  "status": "200",
+  "final": "https://chaitanya1.wordpress.com/wp-content/uploads/2008/06/bigbang.gif",
+  "size": 60375,
+  "verdict": "changed-host"
+ },
+ "https://en.wikiquote.org/wiki/John_McCarthy_computer_scientist": {
+  "status": "404",
+  "final": "https://en.wikiquote.org/wiki/John_McCarthy_computer_scientist",
+  "size": 40988,
+  "verdict": "dead"
+ },
+ "https://entertainment.slashdot.org/story/07/03/26/197253/a-million-dollar-laptop-created": {
+  "status": "200",
+  "final": "https://entertainment.slashdot.org/story/07/03/26/197253/a-million-dollar-laptop-created",
+  "size": 292970,
+  "verdict": "ok"
+ },
+ "https://godescalc.wordpress.com/2012/06/24/overlooked-elephant/": {
+  "status": "200",
+  "final": "https://godescalc.wordpress.com/2012/06/24/overlooked-elephant/",
+  "size": 120015,
+  "verdict": "ok"
+ },
+ "https://intelligence.org/": {
+  "status": "403",
+  "final": "https://intelligence.org/",
+  "size": 5493,
+  "verdict": "blocked"
+ },
+ "https://intelligence.org/2007/09/30/three-major-singularity-schools/": {
+  "status": "403",
+  "final": "https://intelligence.org/2007/09/30/three-major-singularity-schools/",
+  "size": 5493,
+  "verdict": "blocked"
+ },
+ "https://intelligence.org/files/AIPosNegFactor.pdf": {
+  "status": "200",
+  "final": "https://intelligence.org/files/AIPosNegFactor.pdf",
+  "size": 475623,
+  "verdict": "ok"
+ },
+ "https://intelligence.org/files/CognitiveBiases.pdf": {
+  "status": "200",
+  "final": "https://intelligence.org/files/CognitiveBiases.pdf",
+  "size": 421033,
+  "verdict": "ok"
+ },
+ "https://intelligence.org/wp-content/uploads/2014/10/Hintze-Problem-Class-Dominance-In-Predictive-Dilemmas.pdf": {
+  "status": "404",
+  "final": "https://intelligence.org/wp-content/uploads/2014/10/Hintze-Problem-Class-Dominance-In-Predictive-Dilemmas.pdf",
+  "size": 146,
+  "verdict": "dead"
+ },
+ "https://journalism.berkeley.edu/projects/biplog/archive/000748.html": {
+  "status": "403",
+  "final": "https://journalism.berkeley.edu/projects/biplog/archive/000748.html",
+  "size": 5493,
+  "verdict": "blocked"
+ },
+ "https://news.ycombinator.com/item?id=195959": {
+  "status": "200",
+  "final": "https://news.ycombinator.com/item?id=195959",
+  "size": 75018,
+  "verdict": "ok"
+ },
+ "https://news.ycombinator.com/item?id=489702": {
+  "status": "200",
+  "final": "https://news.ycombinator.com/item?id=489702",
+  "size": 12923,
+  "verdict": "ok"
+ },
+ "https://news.ycombinator.com/item?id=489863": {
+  "status": "200",
+  "final": "https://news.ycombinator.com/item?id=489863",
+  "size": 8155,
+  "verdict": "ok"
+ },
+ "https://plato.stanford.edu/archives/fall2008/entries/qm-everett/": {
+  "status": "200",
+  "final": "https://plato.stanford.edu/archives/fall2008/entries/qm-everett/",
+  "size": 74209,
+  "verdict": "ok"
+ },
+ "https://plato.stanford.edu/archives/fall2008/entries/qm-manyworlds/": {
+  "status": "200",
+  "final": "https://plato.stanford.edu/archives/fall2008/entries/qm-manyworlds/",
+  "size": 70746,
+  "verdict": "ok"
+ },
+ "https://plato.stanford.edu/archives/fall2013/entries/epistemology-bayesian/": {
+  "status": "200",
+  "final": "https://plato.stanford.edu/archives/fall2013/entries/epistemology-bayesian/",
+  "size": 68273,
+  "verdict": "ok"
+ },
+ "https://plato.stanford.edu/archives/fall2013/entries/qt-measurement/": {
+  "status": "200",
+  "final": "https://plato.stanford.edu/archives/fall2013/entries/qt-measurement/",
+  "size": 50678,
+  "verdict": "ok"
+ },
+ "https://smile.amazon.com/Causality-Reasoning-Inference-Judea-Pearl/dp/052189560X/ref=dp_ob_title_bk?sa-no-redirect=1": {
+  "status": "200",
+  "final": "https://www.amazon.com:443/Causality-Reasoning-Inference-Judea-Pearl/dp/052189560X/ref=dp_ob_title_bk?sa-no-redirect=1",
+  "size": 3781,
+  "verdict": "changed-host"
+ },
+ "https://smile.amazon.com/Second-Stage-Lensmen-Lensman-Book/dp/1882968131?sa-no-redirect=1": {
+  "status": "200",
+  "final": "https://www.amazon.com:443/Second-Stage-Lensmen-Lensman-Book/dp/1882968131?sa-no-redirect=1",
+  "size": 163132,
+  "verdict": "changed-host"
+ },
+ "https://smile.amazon.com/Why-Smart-People-Can-Stupid/dp/0300090331?sa-no-redirect=1": {
+  "status": "200",
+  "final": "https://www.amazon.com:443/Why-Smart-People-Can-Stupid/dp/0300090331?sa-no-redirect=1",
+  "size": 179155,
+  "verdict": "changed-host"
+ },
+ "https://takaos.wordpress.com/2005/03/30/working-very-hard/": {
+  "status": "200",
+  "final": "https://takaos.wordpress.com/2005/03/30/working-very-hard/",
+  "size": 89545,
+  "verdict": "ok"
+ },
+ "https://web.archive.org/web/20070217180304/http://iamfacingforeclosure.com/": {
+  "status": "200",
+  "final": "https://web.archive.org/web/20070217180304/http://iamfacingforeclosure.com/",
+  "size": 159701,
+  "verdict": "ok"
+ },
+ "https://web.archive.org/web/20080517120832/http://www.beloit.edu/~pubaff/mindset/2003.php": {
+  "status": "200",
+  "final": "https://web.archive.org/web/20080517120832/http://www.beloit.edu/~pubaff/mindset/2003.php",
+  "size": 15244,
+  "verdict": "ok"
+ },
+ "https://web.archive.org/web/20080823053541/http://www.inference.phy.cam.ac.uk/mackay/itila/book.html": {
+  "status": "200",
+  "final": "https://web.archive.org/web/20080823053541/http://www.inference.phy.cam.ac.uk/mackay/itila/book.html",
+  "size": 17644,
+  "verdict": "ok"
+ },
+ "https://web.archive.org/web/20081007125245/http://www.very.net/~nikolai/tb/coroner.html": {
+  "status": "200",
+  "final": "https://web.archive.org/web/20081007125245/http://www.very.net/~nikolai/tb/coroner.html",
+  "size": 4705,
+  "verdict": "ok"
+ },
+ "https://web.archive.org/web/20081116034128/http://www.inference.phy.cam.ac.uk/mackay/itprnn/ps/457.466.pdf": {
+  "status": "200",
+  "final": "https://web.archive.org/web/20081116034128/http://www.inference.phy.cam.ac.uk/mackay/itprnn/ps/457.466.pdf",
+  "size": 193664,
+  "verdict": "ok"
+ },
+ "https://web.archive.org/web/20100426003038/http://iamfacingforeclosure.com/oldsite/147/top-5-advice-they-say-i-have-been-ignoring-2.html": {
+  "status": "200",
+  "final": "https://web.archive.org/web/20100426003038/http://iamfacingforeclosure.com/oldsite/147/top-5-advice-they-say-i-have-been-ignoring-2.html",
+  "size": 90983,
+  "verdict": "ok"
+ },
+ "https://web.archive.org/web/20111217210507/http://homeonthestrange.com/phpBB2/viewtopic.php?t=95": {
+  "status": "200",
+  "final": "https://web.archive.org/web/20111217210507/http://homeonthestrange.com/phpBB2/viewtopic.php?t=95",
+  "size": 86076,
+  "verdict": "ok"
+ },
+ "https://web.archive.org/web/20120502203055/http://artsci.wustl.edu/~grussell/epistemicviciousness.pdf": {
+  "status": "200",
+  "final": "https://web.archive.org/web/20120502203055/http://artsci.wustl.edu/~grussell/epistemicviciousness.pdf",
+  "size": 107378,
+  "verdict": "ok"
+ },
+ "https://web.archive.org/web/20160304060027/http://www.foresight.org/guidelines/current.html": {
+  "status": "200",
+  "final": "https://web.archive.org/web/20160304060027/http://www.foresight.org/guidelines/current.html",
+  "size": 65603,
+  "verdict": "ok"
+ },
+ "https://web.archive.org/web/20160512203730/http://www.gnxp.com/MT2/archives/003540.html": {
+  "status": "200",
+  "final": "https://web.archive.org/web/20160512203730/http://www.gnxp.com/MT2/archives/003540.html",
+  "size": 106285,
+  "verdict": "ok"
+ },
+ "https://wiki.lesswrong.com/wiki/AIXI": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/w/aixi",
+  "size": 778578,
+  "verdict": "changed-host"
+ },
+ "https://wiki.lesswrong.com/wiki/Amount%20of%20evidence": {
+  "status": "200",
+  "final": "https://abcp.mywikis.com/challenge.php?redirect=https%3A%2F%2Fold-wiki.lesswrong.com%2Fwiki%2FAmount_of_evidence",
+  "size": 5221,
+  "verdict": "changed-host"
+ },
+ "https://wiki.lesswrong.com/wiki/Occam%27s_razor": {
+  "status": "200",
+  "final": "https://abcp.mywikis.com/challenge.php?redirect=https%3A%2F%2Fold-wiki.lesswrong.com%2Fwiki%2FOccam%2527s_razor",
+  "size": 5218,
+  "verdict": "changed-host"
+ },
+ "https://wiki.lesswrong.com/wiki/Privileging%20the%20hypothesis": {
+  "status": "200",
+  "final": "https://abcp.mywikis.com/challenge.php?redirect=https%3A%2F%2Fold-wiki.lesswrong.com%2Fwiki%2FPrivileging_the_hypothesis",
+  "size": 5229,
+  "verdict": "changed-host"
+ },
+ "https://wiki.lesswrong.com/wiki/anti-epistemology": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/w/anti-epistemology",
+  "size": 267047,
+  "verdict": "changed-host"
+ },
+ "https://wiki.lesswrong.com/wiki/burdensome%20details": {
+  "status": "200",
+  "final": "https://abcp.mywikis.com/challenge.php?redirect=https%3A%2F%2Fold-wiki.lesswrong.com%2Fwiki%2FBurdensome_details",
+  "size": 5221,
+  "verdict": "changed-host"
+ },
+ "https://wiki.lesswrong.com/wiki/free%20will": {
+  "status": "200",
+  "final": "https://abcp.mywikis.com/challenge.php?redirect=https%3A%2F%2Fold-wiki.lesswrong.com%2Fwiki%2FFree_will",
+  "size": 5212,
+  "verdict": "changed-host"
+ },
+ "https://wiki.lesswrong.com/wiki/rational%20evidence": {
+  "status": "200",
+  "final": "https://abcp.mywikis.com/challenge.php?redirect=https%3A%2F%2Fold-wiki.lesswrong.com%2Fwiki%2FRational_evidence",
+  "size": 5220,
+  "verdict": "changed-host"
+ },
+ "https://wrldrels.org/2016/10/08/unarius-academy-of-science/": {
+  "status": "404",
+  "final": "https://wrldrels.org/2016/10/08/unarius-academy-of-science/",
+  "size": 66271,
+  "verdict": "dead"
+ },
+ "https://www.cs.auckland.ac.nz/~andwhay/postlist.html": {
+  "status": "404",
+  "final": "https://www.cs.auckland.ac.nz/~andwhay/postlist.html",
+  "size": 12182,
+  "verdict": "dead"
+ },
+ "https://www.fightaging.org/": {
+  "status": "200",
+  "final": "https://www.fightaging.org/",
+  "size": 130820,
+  "verdict": "ok"
+ },
+ "https://www.google.com/search?hl=en&safe=off&q=G+*+1+gram+%2F+%2810+meters%29%5E2&btnG=Search": {
+  "status": "200",
+  "final": "https://www.google.com/search?hl=en&safe=off&q=G+*+1+gram+%2F+%2810+meters%29%5E2&btnG=Search",
+  "size": 91320,
+  "verdict": "ok"
+ },
+ "https://www.lesswrong.com/": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/",
+  "size": 880049,
+  "verdict": "ok"
+ },
+ "https://www.lesswrong.com/lw/1d/simultaneously_right_and_wrong/": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/posts/P3uavjFmZD5RopJKk/simultaneously-right-and-wrong",
+  "size": 959284,
+  "verdict": "ok"
+ },
+ "https://www.lesswrong.com/lw/1f/moores_paradox/#u3": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/posts/ERRk4thxxYNcScqR4/moore-s-paradox",
+  "size": 703840,
+  "verdict": "ok"
+ },
+ "https://www.lesswrong.com/lw/1gc/frequentist_statistics_are_frequently_subjective/": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/posts/9qCN6tRBtksSyXfHu/frequentist-statistics-are-frequently-subjective",
+  "size": 968752,
+  "verdict": "ok"
+ },
+ "https://www.lesswrong.com/lw/2k/the_least_convenient_possible_world/": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/posts/neQ7eXuaXpiYw7SBy/the-least-convenient-possible-world",
+  "size": 1742766,
+  "verdict": "ok"
+ },
+ "https://www.lesswrong.com/lw/2o/soulless_morality/1q1#comments": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/posts/E5QXf3tCeE7fZGq4t/soulless-morality?commentId=dvgH2dQYpk9FE4HBH",
+  "size": 450156,
+  "verdict": "ok"
+ },
+ "https://www.lesswrong.com/lw/2s/3_levels_of_rationality_verification/#1xv": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/posts/5K7CMa6dEL7TN7sae/3-levels-of-rationality-verification",
+  "size": 2040110,
+  "verdict": "ok"
+ },
+ "https://www.lesswrong.com/lw/2s/3_levels_of_rationality_verification/1ym": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/posts/5K7CMa6dEL7TN7sae/3-levels-of-rationality-verification?commentId=EaNn9mK5s8CESpTuJ",
+  "size": 506522,
+  "verdict": "ok"
+ },
+ "https://www.lesswrong.com/lw/2v/the_tragedy_of_the_anticommons/242#comments": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/posts/RAftfkp3NqDDR2o79/the-tragedy-of-the-anticommons?commentId=NxvJkW2QfAGrQLcN2",
+  "size": 454164,
+  "verdict": "ok"
+ },
+ "https://www.lesswrong.com/lw/4i/bhtv_yudkowsky_adam_frank_on_religious_experience/": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/posts/xDroHJ3AzWwJ45ufJ/bhtv-yudkowsky-and-adam-frank-on-religious-experience",
+  "size": 700272,
+  "verdict": "ok"
+ },
+ "https://www.lesswrong.com/lw/52/why_i_fail_to_act_rationally/#3tm": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/posts/uLhrHa5Q4PqwLz2P6/why-i-fail-to-act-rationally",
+  "size": 574119,
+  "verdict": "ok"
+ },
+ "https://www.lesswrong.com/lw/7i/rationality_is_systematized_winning/": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/posts/4ARtkT3EYox3THYjF/rationality-is-systematized-winning",
+  "size": 1936401,
+  "verdict": "ok"
+ },
+ "https://www.lesswrong.com/lw/7k/incremental_progress_and_the_valley/": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/posts/oZNXmHcdhb4m7vwsv/incremental-progress-and-the-valley",
+  "size": 1126720,
+  "verdict": "ok"
+ },
+ "https://www.lesswrong.com/lw/9/the_most_important_thing_you_learned/": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/posts/bsdxuNdSGbfEKZREP/the-most-important-thing-you-learned",
+  "size": 1155937,
+  "verdict": "ok"
+ },
+ "https://www.lesswrong.com/lw/9c/mandatory_secret_identities/": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/posts/gBewgmzcEiks2XdoQ/mandatory-secret-identities",
+  "size": 1414765,
+  "verdict": "ok"
+ },
+ "https://www.lesswrong.com/lw/9o/stuck_in_the_middle_with_bruce/": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/posts/FZaDFYbnRoHmde7F6/stuck-in-the-middle-with-bruce",
+  "size": 1031362,
+  "verdict": "ok"
+ },
+ "https://www.lesswrong.com/lw/a6/the_unfinished_mystery_of_the_shangrila_diet/": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/posts/BD4oExxQguTgpESdm/the-unfinished-mystery-of-the-shangri-la-diet",
+  "size": 1716123,
+  "verdict": "ok"
+ },
+ "https://www.lesswrong.com/lw/f43/proofs_implications_and_models/": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/posts/Z2CuyKtkCmWGQtAEh/proofs-implications-and-models",
+  "size": 1813496,
+  "verdict": "ok"
+ },
+ "https://www.lesswrong.com/lw/h0/burchs_law/": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/posts/6dSitnwYPg8i8NHn3/burch-s-law",
+  "size": 679811,
+  "verdict": "ok"
+ },
+ "https://www.lesswrong.com/lw/h2/blue_or_green_on_regulation/": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/posts/uaPc4NHi5jGXGQKFS/blue-or-green-on-regulation",
+  "size": 847471,
+  "verdict": "ok"
+ },
+ "https://www.lesswrong.com/lw/h5/archimedess_chronophone/": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/posts/cKrgy7hLdszkse2pq/archimedes-s-chronophone",
+  "size": 1262512,
+  "verdict": "ok"
+ },
+ "https://www.lesswrong.com/lw/he/knowing_about_biases_can_hurt_people/dza": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/posts/AdYdLP2sRqPMoe8fb/knowing-about-biases-can-hurt-people?commentId=Z9LacBsgsH7cPAnhu",
+  "size": 528470,
+  "verdict": "ok"
+ },
+ "https://www.lesswrong.com/lw/hg/inductive_bias/": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/posts/H59YqogX94z5jb8xx/inductive-bias",
+  "size": 717997,
+  "verdict": "ok"
+ },
+ "https://www.lesswrong.com/lw/hk/priors_as_mathematical_objects/": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/posts/jzf4Rcienrm6btRyt/priors-as-mathematical-objects",
+  "size": 719927,
+  "verdict": "ok"
+ },
+ "https://www.lesswrong.com/lw/hl/lotteries_a_waste_of_hope/e1u": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/posts/vYsuM8cpuRgZS5rYB/lotteries-a-waste-of-hope?commentId=g5jFX4e8LvcFiEPTm",
+  "size": 491271,
+  "verdict": "ok"
+ },
+ "https://www.lesswrong.com/lw/hl/lotteries_a_waste_of_hope/e20": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/posts/vYsuM8cpuRgZS5rYB/lotteries-a-waste-of-hope?commentId=ALEZptd2zFT3bYcoS",
+  "size": 501766,
+  "verdict": "ok"
+ },
+ "https://www.lesswrong.com/lw/i6/professing_and_cheering/egb": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/posts/RmCjazjupRGcHSm5N/professing-and-cheering?commentId=xXzMzN5Dz94kKAQAC",
+  "size": 502476,
+  "verdict": "ok"
+ },
+ "https://www.lesswrong.com/lw/j0/making_history_available/ewg": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/posts/TLKPj4GDXetZuPDH5/making-history-available?commentId=yWtaX2A8vuAaT9mLA",
+  "size": 501304,
+  "verdict": "ok"
+ },
+ "https://www.lesswrong.com/lw/j4/absurdity_heuristic_absurdity_bias/": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/posts/P792Z4QA9dzcLdKkE/absurdity-heuristic-absurdity-bias",
+  "size": 534770,
+  "verdict": "ok"
+ },
+ "https://www.lesswrong.com/lw/j7/anchoring_and_adjustment/eza": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/posts/bMkCEZoBNhgRBtzoj/anchoring-and-adjustment?commentId=cAhBMDY2Mk9g5333a",
+  "size": 529213,
+  "verdict": "ok"
+ },
+ "https://www.lesswrong.com/lw/ja/we_dont_really_want_your_participation/": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/posts/RiWPdNaoL8fq7phbY/we-don-t-really-want-your-participation",
+  "size": 666176,
+  "verdict": "ok"
+ },
+ "https://www.lesswrong.com/lw/jj/conjunction_controversy_or_how_they_nail_it_down/": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/posts/cXzTpSiCrNGzeoRAz/conjunction-controversy-or-how-they-nail-it-down",
+  "size": 738349,
+  "verdict": "ok"
+ },
+ "https://www.lesswrong.com/lw/jl/what_is_evidence/f7h": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/posts/6s3xABaXKPdFwA3FS/what-is-evidence?commentId=ubFQTM2SK3MtWNWdy",
+  "size": 566706,
+  "verdict": "ok"
+ },
+ "https://www.lesswrong.com/lw/kb/cant_say_no_spending/": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/posts/LxcJHS2Lt22mHQ4Hm/can-t-say-no-spending",
+  "size": 720907,
+  "verdict": "ok"
+ },
+ "https://www.lesswrong.com/lw/kf/selfanchoring/": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/posts/sWtvoBsknYvS6QPTb/self-anchoring",
+  "size": 516661,
+  "verdict": "ok"
+ },
+ "https://www.lesswrong.com/lw/ki/double_illusion_of_transparency/": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/posts/sBBGxdvhKcppQWZZE/double-illusion-of-transparency",
+  "size": 772902,
+  "verdict": "ok"
+ },
+ "https://www.lesswrong.com/lw/l8/conjuring_an_evolution_to_serve_you/": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/posts/KE8wPzGiX5QPotyS8/conjuring-an-evolution-to-serve-you",
+  "size": 682490,
+  "verdict": "ok"
+ },
+ "https://www.lesswrong.com/lw/lf/purpose_and_pragmatism/": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/posts/AZfBrZfBu8Aa2FK9D/purpose-and-pragmatism",
+  "size": 477362,
+  "verdict": "ok"
+ },
+ "https://www.lesswrong.com/lw/lm/affective_death_spirals/gp5": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/posts/XrzQW69HpidzvBxGr/affective-death-spirals?commentId=entyDfAzEPoTXDkhu",
+  "size": 502523,
+  "verdict": "ok"
+ },
+ "https://www.lesswrong.com/lw/m8/the_amazing_virgin_pregnancy/": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/posts/FkwKGQFS5XL9mQSQb/the-amazing-virgin-pregnancy",
+  "size": 1791628,
+  "verdict": "ok"
+ },
+ "https://www.lesswrong.com/lw/mk/a_failed_justso_story/": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/posts/kX6C2qdngKp4AdEAk/a-failed-just-so-story",
+  "size": 882860,
+  "verdict": "ok"
+ },
+ "https://www.lesswrong.com/lw/mm/the_fallacy_of_gray/hho": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/posts/dLJv2CoRCgeC2mPgj/the-fallacy-of-gray?commentId=KivJL8n3DcsCxGwki",
+  "size": 521703,
+  "verdict": "ok"
+ },
+ "https://www.lesswrong.com/lw/mr/expecting_beauty/": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/posts/uichBYWKcGAqRZZdP/expecting-beauty",
+  "size": 446977,
+  "verdict": "ok"
+ },
+ "https://www.lesswrong.com/lw/mt/beautiful_probability/hnz": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/posts/bkSkRwo9SRYxJMiSY/beautiful-probability?commentId=MXfWCChPMQi5vya4d",
+  "size": 599779,
+  "verdict": "ok"
+ },
+ "https://www.lesswrong.com/lw/my/the_allais_paradox/hr3": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/posts/zJZvoiwydJ5zvzTHK/the-allais-paradox?commentId=BAhM7JNYbeL5yqbdZ",
+  "size": 586536,
+  "verdict": "ok"
+ },
+ "https://www.lesswrong.com/lw/n1/allais_malaise/": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/posts/knpAQ4F3gmguxy39z/allais-malaise",
+  "size": 819768,
+  "verdict": "ok"
+ },
+ "https://www.lesswrong.com/lw/ni/buy_now_or_forever_hold_your_peace/": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/posts/QDHcpmTXMqPrrsddr/buy-now-or-forever-hold-your-peace",
+  "size": 915884,
+  "verdict": "ok"
+ },
+ "https://www.lesswrong.com/lw/nw/fallacies_of_compression/ia9": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/posts/y5MxoeacRKKM3KQth/fallacies-of-compression?commentId=GmWd9Tu8kbrpNjxr2",
+  "size": 498238,
+  "verdict": "ok"
+ },
+ "https://www.lesswrong.com/lw/on/reductionism/irh": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/posts/tPqQdLCuxanjhoaNs/reductionism?commentId=wSRmBhxG4tjTnkjT7",
+  "size": 552203,
+  "verdict": "ok"
+ },
+ "https://www.lesswrong.com/lw/p3l/a_new_better_way_to_read_the_sequences/": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/posts/YoWLYphmLRYpC2qMQ/a-new-better-way-to-read-the-sequences",
+  "size": 444712,
+  "verdict": "ok"
+ },
+ "https://www.lesswrong.com/lw/p7/zombies_zombies/j7g": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/posts/fdEWWr8St59bXLbQr/zombies-zombies?commentId=5YEY3LQXGzpb8apkG",
+  "size": 707875,
+  "verdict": "ok"
+ },
+ "https://www.lesswrong.com/lw/pk/feynman_paths/": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/posts/oiu7YhzrDTvCxMhdS/feynman-paths",
+  "size": 771345,
+  "verdict": "ok"
+ },
+ "https://www.lesswrong.com/lw/pm/identity_isnt_in_specific_atoms/": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/posts/RLScTpwc5W2gGGrL9/identity-isn-t-in-specific-atoms",
+  "size": 976586,
+  "verdict": "ok"
+ },
+ "https://www.lesswrong.com/lw/pp/decoherence/": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/posts/JrhoMTgMrMRJJiS48/decoherence",
+  "size": 784421,
+  "verdict": "ok"
+ },
+ "https://www.lesswrong.com/lw/pq/the_socalled_heisenberg_uncertainty_principle/": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/posts/eWuuznxeebcjWpdnH/the-so-called-heisenberg-uncertainty-principle",
+  "size": 759203,
+  "verdict": "ok"
+ },
+ "https://www.lesswrong.com/lw/pw/decoherence_is_pointless/": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/posts/aWFwfk3MBEyR4Ne8C/decoherence-is-pointless",
+  "size": 483285,
+  "verdict": "ok"
+ },
+ "https://www.lesswrong.com/lw/q4/decoherence_is_falsifiable_and_testable/jtw": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/posts/DFxoaWGEh9ndwtZhk/decoherence-is-falsifiable-and-testable?commentId=srooxhyPgcBfJpPRi",
+  "size": 2499891,
+  "verdict": "ok"
+ },
+ "https://www.lesswrong.com/lw/q5/quantum_nonrealism/juk": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/posts/k3823vuarnmL5Pqin/quantum-non-realism?commentId=8nELC59tybRtCg9z8",
+  "size": 755956,
+  "verdict": "ok"
+ },
+ "https://www.lesswrong.com/lw/q8/many_worlds_one_best_guess/jxl": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/posts/S8ysHqeRGuySPttrS/many-worlds-one-best-guess?commentId=ryPG3MzzXuM5uaAzg",
+  "size": 711150,
+  "verdict": "ok"
+ },
+ "https://www.lesswrong.com/lw/qb/science_doesnt_trust_your_rationality/k0k": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/posts/5bJyRMZzwMov5u3hW/science-doesn-t-trust-your-rationality?commentId=Kf2xAFKtmw7QgKqZa",
+  "size": 488540,
+  "verdict": "ok"
+ },
+ "https://www.lesswrong.com/lw/qd/science_isnt_strict_enough/k39": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/posts/PGfJdgemDJSwWBZSX/science-isn-t-strict-enough?commentId=FCzfuiKAmvEGwMCHZ",
+  "size": 520689,
+  "verdict": "ok"
+ },
+ "https://www.lesswrong.com/lw/qr/timeless_causality/": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/posts/KipiHsTA3pw4joQkG/timeless-causality",
+  "size": 1151968,
+  "verdict": "ok"
+ },
+ "https://www.lesswrong.com/lw/qu/a_premature_word_on_ai/": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/posts/iD5baT42zYAkWJPMB/a-premature-word-on-ai",
+  "size": 1195927,
+  "verdict": "ok"
+ },
+ "https://www.lesswrong.com/lw/qx/timeless_identity/": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/posts/924arDrTu3QRHFA5r/timeless-identity",
+  "size": 2302385,
+  "verdict": "ok"
+ },
+ "https://www.lesswrong.com/lw/r/no_really_ive_deceived_myself/#ga": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/posts/rZX4WuufAPbN6wQTv/no-really-i-ve-deceived-myself",
+  "size": 1082380,
+  "verdict": "ok"
+ },
+ "https://www.lesswrong.com/lw/r5/the_quantum_physics_sequence/": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/posts/hc9Eg6erp6hk9bWhn/the-quantum-physics-sequence",
+  "size": 816439,
+  "verdict": "ok"
+ },
+ "https://www.lesswrong.com/lw/r8/and_the_winner_is_manyworlds/": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/posts/9cgBF6BQ2TRB3Hy4E/and-the-winner-is-many-worlds",
+  "size": 685254,
+  "verdict": "ok"
+ },
+ "https://www.lesswrong.com/lw/re/grasping_slippery_things/": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/posts/HnS6c5Xm9p9sbm4a8/grasping-slippery-things",
+  "size": 653915,
+  "verdict": "ok"
+ },
+ "https://www.lesswrong.com/lw/ru/the_bedrock_of_fairness/": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/posts/iAxkfiyG8WizPSPbq/the-bedrock-of-fairness",
+  "size": 1336567,
+  "verdict": "ok"
+ },
+ "https://www.lesswrong.com/lw/ry/is_morality_given/": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/posts/iQNKfYb7aRYopojTX/is-morality-given",
+  "size": 1443390,
+  "verdict": "ok"
+ },
+ "https://www.lesswrong.com/lw/s3/the_genetic_fallacy/lls": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/posts/KZLa74SzyKhSJ3M55/the-genetic-fallacy?commentId=arzu8aX3bf4PvkvMK",
+  "size": 484797,
+  "verdict": "ok"
+ },
+ "https://www.lesswrong.com/lw/se/should_we_ban_physics/": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/posts/rnk9gmWSrcqNfg7p8/should-we-ban-physics",
+  "size": 603465,
+  "verdict": "ok"
+ },
+ "https://www.lesswrong.com/lw/sj/does_your_morality_care_what_you_think/": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/posts/GAR8gT3d9uCtr4kv8/does-your-morality-care-what-you-think",
+  "size": 731281,
+  "verdict": "ok"
+ },
+ "https://www.lesswrong.com/lw/sm/the_meaning_of_right/toz": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/posts/fG3g3764tSubr6xvs/the-meaning-of-right?commentId=QpskFjAR9qxcD8Pzr",
+  "size": 660576,
+  "verdict": "ok"
+ },
+ "https://www.lesswrong.com/lw/t0/abstracted_idealized_dynamics/": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/posts/9KacKm5yBv27rxWnJ/abstracted-idealized-dynamics",
+  "size": 771013,
+  "verdict": "ok"
+ },
+ "https://www.lesswrong.com/lw/ta/invisible_frameworks/": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/posts/sCs48JtMnQwQsZwyN/invisible-frameworks",
+  "size": 1045509,
+  "verdict": "ok"
+ },
+ "https://www.lesswrong.com/lw/tg/against_modal_logics/": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/posts/vzLrQaGPa9DNCpuZz/against-modal-logics",
+  "size": 1130344,
+  "verdict": "ok"
+ },
+ "https://www.lesswrong.com/lw/tt/points_of_departure/": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/posts/zrGzan92SxP27LWP9/points-of-departure",
+  "size": 774125,
+  "verdict": "ok"
+ },
+ "https://www.lesswrong.com/lw/tv/excluding_the_supernatural/n6f": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/posts/u6JzcFtPGiznFgDxP/excluding-the-supernatural?commentId=FpupuGhkbvSYbb925",
+  "size": 559598,
+  "verdict": "ok"
+ },
+ "https://www.lesswrong.com/lw/u/the_ethic_of_handwashing_and_community_epistemic/": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/posts/ZP2om2oWHPhvWP2Q3/the-ethic-of-hand-washing-and-community-epistemic-practice",
+  "size": 984823,
+  "verdict": "ok"
+ },
+ "https://www.lesswrong.com/lw/uc/aboveaverage_ai_scientists/": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/posts/9HGR5qatMGoz4GhKj/above-average-ai-scientists",
+  "size": 1279426,
+  "verdict": "ok"
+ },
+ "https://www.lesswrong.com/lw/uy/dark_side_epistemology/4xbv": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/posts/XTWkjCJScy2GFAgDt/dark-side-epistemology?commentId=wErC5Xsau3mxybFcq",
+  "size": 537257,
+  "verdict": "ok"
+ },
+ "https://www.lesswrong.com/lw/vc/economic_definition_of_intelligence/": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/posts/uPCehCa7Ecidfn2Xe/economic-definition-of-intelligence",
+  "size": 527960,
+  "verdict": "ok"
+ },
+ "https://www.lesswrong.com/lw/vs/selling_nonapples/": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/posts/2mLZiWxWKZyaRgcn7/selling-nonapples",
+  "size": 1012736,
+  "verdict": "ok"
+ },
+ "https://www.lesswrong.com/lw/wq/you_only_live_twice/": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/posts/yKXKcyoBzWtECzXrE/you-only-live-twice",
+  "size": 1840612,
+  "verdict": "ok"
+ },
+ "https://www.lesswrong.com/lw/wy/sensual_experience/": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/posts/eLHCWi8sotQT6CmTX/sensual-experience",
+  "size": 993043,
+  "verdict": "ok"
+ },
+ "https://www.lesswrong.com/lw/x9/dunbars_function/": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/posts/W5PhyEQqEWTcpRpqn/dunbar-s-function",
+  "size": 1117732,
+  "verdict": "ok"
+ },
+ "https://www.lesswrong.com/lw/xk/continuous_improvement/": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/posts/QfpHRAMRM2HjteKFK/continuous-improvement",
+  "size": 766604,
+  "verdict": "ok"
+ },
+ "https://www.lesswrong.com/lw/xw/higher_purpose/": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/posts/5Pjq3mxuiXu2Ys3gM/higher-purpose",
+  "size": 695095,
+  "verdict": "ok"
+ },
+ "https://www.lesswrong.com/lw/y5/the_babyeating_aliens_18/": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/posts/n5TqCuizyJDfAPjkr/the-baby-eating-aliens-1-8",
+  "size": 1250479,
+  "verdict": "ok"
+ },
+ "https://www.lesswrong.com/lw/y7/the_super_happy_people_38/": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/posts/qCsxiojX7BSLuuBgQ/the-super-happy-people-3-8",
+  "size": 1026605,
+  "verdict": "ok"
+ },
+ "https://www.lesswrong.com/lw/yh/cynicism_in_evpsych_and_econ/": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/posts/KC5qGJiWSxt9zpyDy/cynicism-in-ev-psych-and-econ",
+  "size": 821039,
+  "verdict": "ok"
+ },
+ "https://www.lesswrong.com/lw/yi/the_evolutionarycognitive_boundary/": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/posts/o8Bh82hKGpRNA2q36/the-evolutionary-cognitive-boundary",
+  "size": 717233,
+  "verdict": "ok"
+ },
+ "https://www.lesswrong.com/lw/yo/against_maturity/": {
+  "status": "200",
+  "final": "https://www.lesswrong.com/posts/rM7hcz67N7WtwGGjq/against-maturity",
+  "size": 962309,
+  "verdict": "ok"
+ },
+ "https://www.newscientist.com/article/mg19826551-700-do-we-need-to-change-the-definition-of-science/": {
+  "status": "406",
+  "final": "https://www.newscientist.com/article/mg19826551-700-do-we-need-to-change-the-definition-of-science/",
+  "size": 0,
+  "verdict": "blocked"
+ },
+ "https://www.samharris.org/blog/item/the-pleasures-of-drowning": {
+  "status": "404",
+  "final": "https://www.samharris.org/blog/item/the-pleasures-of-drowning",
+  "size": 26147,
+  "verdict": "dead"
+ },
+ "https://www.thoughtco.com/ethics-descriptive-normative-and-analytic-4037543": {
+  "status": "402",
+  "final": "https://www.thoughtco.com/ethics-descriptive-normative-and-analytic-4037543",
+  "size": 612,
+  "verdict": "blocked"
+ },
+ "https://www.youtube.com/watch?v=Diuv3XZQXyc": {
+  "status": "200",
+  "final": "https://www.youtube.com/watch?v=Diuv3XZQXyc",
+  "size": 1195786,
+  "verdict": "ok"
+ },
+ "https://www.youtube.com/watch?v=LQqq3e03EBQ": {
+  "status": "200",
+  "final": "https://www.youtube.com/watch?v=LQqq3e03EBQ",
+  "size": 765559,
+  "verdict": "ok"
+ },
+ "https://www.youtube.com/watch?v=LQqq3e03EBQ&feature=kp": {
+  "status": "200",
+  "final": "https://www.youtube.com/watch?v=LQqq3e03EBQ&feature=kp",
+  "size": 768044,
+  "verdict": "ok"
+ },
+ "https://www.youtube.com/watch?v=ORqc1x3_Evg&feature=related": {
+  "status": "200",
+  "final": "https://www.youtube.com/watch?v=ORqc1x3_Evg&feature=related",
+  "size": 1130667,
+  "verdict": "ok"
+ },
+ "https://www.youtube.com/watch?v=X66jntR0MVE": {
+  "status": "200",
+  "final": "https://www.youtube.com/watch?v=X66jntR0MVE",
+  "size": 1114187,
+  "verdict": "ok"
+ },
+ "https://www.youtube.com/watch?v=iYhCn0jf46U": {
+  "status": "200",
+  "final": "https://www.youtube.com/watch?v=iYhCn0jf46U",
+  "size": 1154917,
+  "verdict": "ok"
+ },
+ "https://www.youtube.com/watch?v=tRVUOGUmxJI": {
+  "status": "200",
+  "final": "https://www.youtube.com/watch?v=tRVUOGUmxJI",
+  "size": 1110340,
+  "verdict": "ok"
+ },
+ "https://www.youtube.com/watch?v=tZZv5Z2Iz_s": {
+  "status": "200",
+  "final": "https://www.youtube.com/watch?v=tZZv5Z2Iz_s",
+  "size": 990373,
+  "verdict": "ok"
+ },
+ "https://xkcd.com/397/": {
+  "status": "200",
+  "final": "https://xkcd.com/397/",
+  "size": 7609,
+  "verdict": "ok"
+ },
+ "https://xkcd.com/447/": {
+  "status": "200",
+  "final": "https://xkcd.com/447/",
+  "size": 7284,
+  "verdict": "ok"
+ }
+}
