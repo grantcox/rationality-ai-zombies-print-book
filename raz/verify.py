@@ -25,6 +25,7 @@ import sys
 from bs4 import BeautifulSoup
 
 from .common import BUILD, NAV_CLASSES, mirror_path
+from .extract import looks_like_css
 
 ORNAMENTS = set("❦✦✳❖*")
 # "back to citation" arrows; navigation within the page, dropped on purpose.
@@ -70,6 +71,11 @@ def main() -> int:
         for sel in [f".{c}" for c in NAV_CLASSES] + ["div.toc", "h1", "style"]:
             for n in body.select(sel):
                 n.decompose()
+        # Mirrors extract's rule, so stylesheet text the crawl leaked into two
+        # pages is not counted as prose that went missing.
+        for el in list(body.children):
+            if hasattr(el, "get_text") and looks_like_css(el.get_text(" ", strip=True)):
+                el.decompose()
 
         markers = {str(fn["n"]) for fn in doc["footnotes"]}
 

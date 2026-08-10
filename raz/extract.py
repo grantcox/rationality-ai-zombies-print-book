@@ -69,6 +69,14 @@ MATH_CLASSES = {"equation", "fraction", "bigsigma", "num", "frasl", "denom"}
 report = collections.Counter()
 unknown_samples: dict[str, str] = {}
 
+#: A CSS rule body: a brace pair containing at least one "property: value".
+#: Narrow on purpose -- it decides what gets deleted from the page.
+CSS_RULE = re.compile(r"\{[^{}]*[a-z-]+\s*:\s*[^{};]+;?[^{}]*\}", re.I)
+
+
+def looks_like_css(text: str) -> bool:
+    return bool(CSS_RULE.search(text))
+
 
 def note(key: str, sample: Tag | None = None):
     report[key] += 1
@@ -499,6 +507,21 @@ def extract(entry: dict) -> dict:
     for sel in DROP_SELECTORS:
         for n in body.select(sel):
             n.decompose()
+
+    # On two pages the Feb 2020 crawl caught PmWiki leaking a page's (:css:)
+    # block as literal text ahead of the title; the live site has since fixed
+    # both. Only stylesheet text is dropped, and only from ahead of the <h1>:
+    # the six book title pages legitimately carry "Book III" up there.
+    h1 = body.find("h1")
+    if h1 is not None:
+        for el in list(body.children):
+            if el is h1:
+                break
+            if not isinstance(el, Tag):
+                continue
+            if looks_like_css(el.get_text(" ", strip=True)):
+                note("dropped_leaked_css")
+                el.decompose()
 
     # Consumes and removes only those footnote blocks it can actually read.
     footnotes = take_footnotes(body)
