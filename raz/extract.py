@@ -77,6 +77,31 @@ DATASET_ROLES = {
     "dataset_minus": "minus",
 }
 
+def qa_role(node: Tag, cls: list[str]) -> str | None:
+    """Is this paragraph a question or its answer?
+
+    Two pages set out a mock interview. The skin marks the question with a
+    class and then reaches the answer with an adjacent-sibling selector --
+    ``.question + p::before`` -- so the answer carries no class at all and
+    its label exists only in the stylesheet. This reads the same relation
+    from the document: the paragraph immediately after a question is its
+    answer, whatever else it is.
+    """
+    if "question" in cls:
+        return "Q"
+    prev = node.find_previous_sibling()
+    if prev is not None and prev.name == "p" and "question" in (prev.get("class") or []):
+        return "A"
+    return None
+
+
+#: An inline style that scales a block's text well past body size is a display
+#: heading -- the wiki has no markup for one. The corpus holds a single such
+#: block, "Bayes's Theorem:" at 350%, and no other div is above 144%.
+BANNER_SIZE = re.compile(r"font-size:\s*(\d+)%")
+BANNER_MIN = 200
+
+
 report = collections.Counter()
 unknown_samples: dict[str, str] = {}
 
@@ -525,6 +550,10 @@ def block(node) -> list[dict]:
             if c in DATASET_ROLES:
                 b["dataset"] = DATASET_ROLES[c]
                 note(f"dataset.{b['dataset']}")
+        role = qa_role(node, cls)
+        if role:
+            b["qa"] = role
+            note(f"qa.{role}")
         style = node.get("style") or ""
         if "center" in style:
             b["align"] = "center"
@@ -564,6 +593,10 @@ def block(node) -> list[dict]:
         # face. The class is on the container, so the grouping has to survive
         # as a block of its own; flattening it loses the fact that the lines
         # belong together.
+        m = BANNER_SIZE.search(node.get("style") or "")
+        if m and int(m.group(1)) >= BANNER_MIN:
+            note("banner")
+            return [{"t": "banner", "scale": int(m.group(1)), "c": blocks(node)}]
         if "monospaced" in cls:
             note("monospaced_block")
             global _preserve_ws

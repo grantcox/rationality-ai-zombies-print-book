@@ -215,6 +215,24 @@ Anything the extractor does not recognise is preserved and counted in
 backstop — it compares the extracted text against the source page character by
 character and currently reports zero loss.
 
+## Things the stylesheet says and the markup does not
+
+Three constructs exist only in CSS. Each is read back out of the document
+rather than hardcoded, and each is counted in the run report.
+
+| construct | how it is found | how it prints |
+|---|---|---|
+| the `+:` / `-:` category marks on the *Magical Categories* training data | `p.dataset_plus` / `p.dataset_minus`, whose marks are `::before` content | a label hanging in the left margin, wrapped lines aligned under the text |
+| the `Q:` / `A:` labels in the two mock interviews | `p.question`, and for the answer the same adjacent-sibling relation the selector `.question + p::before` uses — the answer carries no class at all | the same gutter label; the question bold, as the skin sets it |
+| the one display heading, "Bayes's Theorem:" | an inline `font-size` at 350%; no other block in the book is above 144% | set at that size, centred and bold |
+
+The display heading is grey with a black outline on screen. That is a screen
+effect which muddies at print resolution, so it is set solid.
+
+An `<hr>` prints as a short centred rule. memoir's `\pfbreak` hooks the output
+routine and shows its mark only when the break does not land on a page
+boundary, which is why these were coming out as bare white space.
+
 ## Mathematics
 
 There is no MathML and no TeX in the source. Every expression is assembled out
@@ -269,6 +287,11 @@ currently **426 expressions, 0 lost characters**.
   notes set flush left; paragraphs separated by half a line and never indented,
   in quotations as well as in the body. A chapter that cites the same address
   or the same other chapter twice gets one note, marked twice.
+
+  Every vertical gap is that same half line: `\raggedbottom`, zeroed display
+  skips and `\centering` in place of the `center` environment keep it so.
+  `\flushbottom` and `center`'s `\topsep` were each inflating gaps well past
+  it, unevenly and only on some pages.
 
   Addresses are printed whole, scheme included, because 270 of the 492 are
   `http://` and the book cannot promise a reader that they are all `https://`.

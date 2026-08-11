@@ -374,8 +374,14 @@ class Renderer:
                 return ""
             if b.get("dataset"):
                 return self.dataset_line(b["dataset"], body)
+            if b.get("qa"):
+                return self.qa_line(b["qa"], body)
             if b.get("align") == "center":
-                return r"\begin{center}%s\end{center}" % body
+                # \centering, not the center environment: center is built on a
+                # list and adds \topsep above and below, which on a centred
+                # line between two paragraphs reads as a much bigger gap than
+                # the half-line everything else gets.
+                return r"{\centering %s\par}" % body
             if b.get("indent"):
                 return r"\begin{quote}%s\end{quote}" % body
             return (r"\noindent " + body) if flush else body
@@ -416,9 +422,12 @@ class Renderer:
         if t == "table":
             return self.table(b)
         if t == "hr":
-            return r"\pfbreak"
+            return r"\sectionbreak"
         if t == "pre":
             return "\\begin{verbatim}\n%s\n\\end{verbatim}" % b.get("v", "")
+        if t == "banner":
+            self.report["banner"] += 1
+            return self.banner(b, inside_note)
         if t == "math_block":
             self.report["math_block"] += 1
             return maths_tex(b, self.report)
@@ -430,21 +439,51 @@ class Renderer:
     #: carry, and a hyphen is unambiguous in a fixed-width listing.
     DATASET_MARKS = {"plus": "+:", "minus": "-:", "none": ":"}
 
-    def dataset_line(self, role, body) -> str:
-        """A data line with its category mark hanging in the left margin.
+    def gutter_line(self, mark: str, body: str) -> str:
+        """A paragraph with a label hanging in the left margin.
 
-        The mark is what the passage turns on -- these are the positive and
-        negative examples -- so it has to be visible, and the lines have to
-        wrap under the text rather than under the mark for the grouping to
-        stay legible.
+        The label is content, not decoration -- it says which category a data
+        line belongs to, or whether a paragraph is the question or the answer
+        -- so wrapped lines align under the text rather than under the label,
+        keeping the block readable as one unit.
         """
+        return (r"\par\hangindent=2em\hangafter=1\noindent"
+                r"\makebox[2em][l]{%s}%s" % (mark, body.lstrip()))
+
+    def dataset_line(self, role, body) -> str:
         self.report[f"dataset_{role}"] += 1
         # The wiki markup leaves one space after the opening tag. In a
         # fixed-width face that prints as a column, pushing the first line one
         # character right of the wrapped ones it should line up with.
-        return (r"\par\hangindent=2em\hangafter=1\noindent"
-                r"\makebox[2em][l]{%s}%s"
-                % (esc(self.DATASET_MARKS.get(role, ":")), body.lstrip()))
+        return self.gutter_line(esc(self.DATASET_MARKS.get(role, ":")), body)
+
+    def banner(self, b, inside_note) -> str:
+        r"""A display heading the wiki had no markup for.
+
+        Sized from the source's own percentage rather than a chosen \Huge, so
+        the one place the author wanted display type gets the size asked for.
+        The screen version is grey with a black outline; that is a effect that
+        muddies at print resolution, so it is set solid.
+        """
+        pt = 11.0 * b.get("scale", 200) / 100.0
+        return ("{\\parskip=0pt\\centering\\fontsize{%.1f}{%.1f}\\selectfont"
+                "\\bfseries\n%s\n\\par}" % (pt, pt * 1.1,
+                                            self.blocks(b.get("c", []), inside_note)))
+
+    def qa_line(self, role, body) -> str:
+        """A question or its answer, labelled the way the skin labels them.
+
+        The question is set bold, as the stylesheet sets it; the answer is
+        not. Both labels are bold, so the exchange reads as an exchange.
+        """
+        self.report[f"qa_{role}"] += 1
+        # Stripped before the bold wrapper goes on, or gutter_line's lstrip
+        # would be looking at a backslash and the question would sit a space
+        # further right than its answer.
+        body = body.lstrip()
+        if role == "Q":
+            body = r"\textbf{%s}" % body
+        return self.gutter_line(r"\textbf{%s:}" % role, body)
 
     def table(self, b) -> str:
         rows = b.get("rows", [])
@@ -528,6 +567,24 @@ PREAMBLE = r"""\documentclass[11pt,twoside,openright]{memoir}
            \setlength{\parsep}{\parskip}}%
    \item\relax}
   {\endlist}
+
+% What an <hr> becomes: a short centred rule. memoir's \pfbreak hooks the
+% output routine and shows its mark only when the break does not land on a
+% page boundary, which is why most of these were printing as bare space.
+\newcommand{\sectionbreak}{%
+  \par\addvspace{0.8\baselineskip}%
+  {\parskip=0pt\centering\rule{0.18\textwidth}{0.4pt}\par}%
+  \addvspace{0.8\baselineskip}}
+
+% Displayed maths sits in the same half-line gap as everything else. The
+% stock skips are elastic and differ above and below, so a run of formulae
+% ends up unevenly spaced; the surrounding \parskip already provides the air.
+% Set at \begin{document}, because selecting a font size resets them.
+\AtBeginDocument{%
+  \setlength{\abovedisplayskip}{0pt}%
+  \setlength{\belowdisplayskip}{0pt}%
+  \setlength{\abovedisplayshortskip}{0pt}%
+  \setlength{\belowdisplayshortskip}{0pt}}
 
 % A note cited twice in one chapter is one note. The repeat is set from a
 % reference to the first, so it carries whatever number LaTeX assigns.
