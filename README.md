@@ -94,7 +94,7 @@ JSON is also diffable, so extraction gets proof-read once.
     323/323 cross-reference targets resolve to a numbered place in the book
     491 distinct external URLs, all 105 needing a ruling now decided
     426 expressions converted to LaTeX maths, 0 lost characters
-    the whole book typesets: 1,573pp in one volume, no undefined references
+    the whole book typesets: 1,571pp in one volume, no undefined references
 
 Both link counts match the source DOM exactly, which is the check that the
 walk is not quietly skipping a container.
@@ -224,7 +224,7 @@ rather than hardcoded, and each is counted in the run report.
 |---|---|---|
 | the `+:` / `-:` category marks on the *Magical Categories* training data | `p.dataset_plus` / `p.dataset_minus`, whose marks are `::before` content | a label hanging in the left margin, wrapped lines aligned under the text |
 | the `Q:` / `A:` labels in the two mock interviews | `p.question`, and for the answer the same adjacent-sibling relation the selector `.question + p::before` uses — the answer carries no class at all | the same gutter label; the question bold, as the skin sets it |
-| the one display heading, "Bayes's Theorem:" | an inline `font-size` at 350%; no other block in the book is above 144% | set at that size, centred and bold |
+| the one display heading, "Bayes's Theorem:" | an inline `font-size` at 350%; no other block in the book is above 144% | centred and bold, at two-thirds that size — 350% of an 11pt body is display type scaled for a browser window, and on a 6×9 measure it stranded the plate's caption overleaf |
 
 The display heading is grey with a black outline on screen. That is a screen
 effect which muddies at print resolution, so it is set solid.
@@ -288,10 +288,27 @@ currently **426 expressions, 0 lost characters**.
   in quotations as well as in the body. A chapter that cites the same address
   or the same other chapter twice gets one note, marked twice.
 
-  Every vertical gap is that same half line: `\raggedbottom`, zeroed display
-  skips and `\centering` in place of the `center` environment keep it so.
-  `\flushbottom` and `center`'s `\topsep` were each inflating gaps well past
-  it, unevenly and only on some pages.
+  Every vertical gap is that same half line. Three separate things were
+  inflating it, each on different pages: `\flushbottom` stretching short
+  pages, the `center` *environment*'s `\topsep`, and LaTeX's display
+  machinery, which fakes a preceding line with `\makebox[.6\linewidth]{}`
+  whenever a display starts in vertical mode. Measured before the fix: 21.8pt
+  above a display against 6.7pt below, where every other gap was 5.8pt. Now
+  `\raggedbottom`, `\centering`, and the box forms of the maths environments
+  (`aligned`, `gathered`) — see *Mathematics*.
+
+  A display then goes into the vertical list as a plain centred box with
+  `\nointerlineskip` on both sides, because TeX's interline glue is computed
+  from the height of the box *below* it: a tall formula pushes itself away
+  from the line above while sitting normally against the line below, so the
+  asymmetry varies with the formula. With that dependency gone,
+  `\razdisplayabove` and `\razdisplaybelow` set the gap outright. They are
+  not equal (0.56 and 0.63 of a line) because the glue is measured from the
+  box edges and the eye reads the ink: they are calibrated so the *white*
+  above and below comes out the same, 9.4pt against a 9.1pt paragraph gap.
+  Measured by counting blank pixel rows in the rendered page — `pdftotext`
+  reports font-metric boxes, which disagree with what is actually on paper by
+  a couple of points and mislead badly around fractions.
 
   Addresses are printed whole, scheme included, because 270 of the 492 are
   `http://` and the book cannot promise a reader that they are all `https://`.

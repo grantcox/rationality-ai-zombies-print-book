@@ -223,6 +223,26 @@ def bigsigma(node, rep) -> str:
 # --- displays -----------------------------------------------------------------
 
 
+def display(body: str) -> str:
+    r"""A display, set as an ordinary centred paragraph.
+
+    LaTeX's display machinery -- \[ \], align, gather -- fakes a preceding
+    line with \makebox[.6\linewidth]{} whenever a display starts in vertical
+    mode, so TeX's \predisplaysize logic has a line to measure. Where the
+    display *is* its own paragraph, which is how every one in this book is
+    built, that phantom prints as close to a blank line above the formula and
+    nothing below it: measured in the book, 21.8pt above against 6.7pt below,
+    where every other gap on the page is 5.8pt.
+
+    The box forms of the same environments (aligned, gathered) carry none of
+    that machinery, so the display can be placed as a plain centred box with
+    glue this file controls -- see \razdisplay in render.py. They cannot break
+    across a page, which is no constraint here: the tallest display in the
+    book is seven rows.
+    """
+    return r"\razdisplay{$\displaystyle %s$}" % body
+
+
 def cell_text(td) -> str:
     return td.get_text(" ", strip=True)
 
@@ -266,7 +286,7 @@ def table(node, rep) -> str:
         lines.append(align_row(cells, rep, merged))
         i += 1
     body = " \\\\\n".join(l for l in lines if l.strip(" &"))
-    return "\\begin{align*}\n%s\n\\end{align*}" % body
+    return display("\\begin{aligned}\n%s\n\\end{aligned}" % body)
 
 
 def classes(cell) -> list[str]:
@@ -347,15 +367,15 @@ def grid(rows, rep) -> str:
     body = " \\\\\n".join(
         " & ".join(tidy(expr(c, rep)) for c in r) + " &" * (width - len(r))
         for r in rows)
-    return "\\[\n\\begin{array}{%s}\n%s\n\\end{array}\n\\]" % ("l" * width, body)
+    return display("\\begin{array}{%s}\n%s\n\\end{array}" % ("l" * width, body))
 
 
 def paragraph(node, rep) -> str:
     body = expr(node, rep).strip()
     if "\\\\" in body:
         # Several lines: the author broke a long sum by hand.
-        return "\\begin{gather*}\n%s\n\\end{gather*}" % body
-    return "\\[\n%s\n\\]" % body
+        return display("\\begin{gathered}\n%s\n\\end{gathered}" % body)
+    return display(body)
 
 
 # --- entry point --------------------------------------------------------------
@@ -378,7 +398,7 @@ def convert(node: dict, rep) -> str:
         return table(root, rep)
     if root.name == "p":
         return paragraph(root, rep)
-    return "\\[\n%s\n\\]" % expr(root, rep).strip()
+    return display(expr(root, rep).strip())
 
 
 # --- verification -------------------------------------------------------------

@@ -186,6 +186,13 @@ WRAP = {
 }
 
 
+#: How much of the source's own size a display heading is set at. 350% of an
+#: 11pt body is 38.5pt, which on a 6x9 measure is display type sized for a
+#: browser window rather than a page: it filled the line and pushed the plate
+#: at the end of the chapter far enough down to strand its caption overleaf.
+#: Two-thirds still reads unmistakably as display type.
+BANNER_SCALE = 2 / 3
+
 #: A run of two or more spaces inside a fixed-width display. One space is an
 #: ordinary word space; several are the author lining up a column.
 COLUMN_GAP = re.compile("[ \u00a0]{2,}")
@@ -465,7 +472,7 @@ class Renderer:
         The screen version is grey with a black outline; that is a effect that
         muddies at print resolution, so it is set solid.
         """
-        pt = 11.0 * b.get("scale", 200) / 100.0
+        pt = 11.0 * b.get("scale", 200) / 100.0 * BANNER_SCALE
         return ("{\\parskip=0pt\\centering\\fontsize{%.1f}{%.1f}\\selectfont"
                 "\\bfseries\n%s\n\\par}" % (pt, pt * 1.1,
                                             self.blocks(b.get("c", []), inside_note)))
@@ -575,6 +582,23 @@ PREAMBLE = r"""\documentclass[11pt,twoside,openright]{memoir}
   \par\addvspace{0.8\baselineskip}%
   {\parskip=0pt\centering\rule{0.18\textwidth}{0.4pt}\par}%
   \addvspace{0.8\baselineskip}}
+
+% A display goes into the vertical list as a plain centred box, with glue set
+% here and TeX's interline glue suppressed on both sides. Interline glue is
+% computed from the height of the box *below* it, so a tall formula pushes
+% itself away from the line above while sitting normally against the line
+% below -- which is the asymmetry, and it varies with the formula.
+% \nointerlineskip removes that dependency; the two lengths then control the
+% gap outright. \parskip is cancelled below because the following paragraph
+% adds it back.
+\newlength{\razdisplayabove}
+\newlength{\razdisplaybelow}
+\setlength{\razdisplayabove}{0.56\baselineskip}
+\setlength{\razdisplaybelow}{0.63\baselineskip}
+\newcommand{\razdisplay}[1]{%
+  \par\addvspace{\razdisplayabove}\nointerlineskip
+  \hbox to \linewidth{\hfil #1\hfil}%
+  \nointerlineskip\vskip\razdisplaybelow\vskip-\parskip}
 
 % Displayed maths sits in the same half-line gap as everything else. The
 % stock skips are elastic and differ above and below, so a run of formulae
