@@ -29,6 +29,7 @@ import sys
 from pathlib import Path
 
 from . import overrides
+from .maths import convert as maths_tex
 from .common import BUILD, REPO
 
 TEX = BUILD / "tex"
@@ -329,15 +330,19 @@ class Renderer:
             return self.image(n)
         if t == "math":
             self.report["math_inline"] += 1
-            return r"\textbf{[maths:~%s]}" % esc(n.get("text", ""))
+            return maths_tex(n, self.report)
         return self.inline(n.get("c", []))
 
     def image(self, n) -> str:
-        name = Path(n["src"]).stem + ".pdf"
-        if not (ASSETS_PDF / name).exists():
-            self.report["image_missing"] += 1
-            return r"\textbf{[missing image: %s]}" % esc(n["src"])
-        return r"\includegraphics[max width=\linewidth]{%s}" % name
+        # Only the SVGs become PDFs; a photograph keeps its own name and
+        # extension, which lualatex places directly. Looking only for a .pdf
+        # reported every photograph in the book as missing.
+        src = Path(n["src"])
+        for name in (src.stem + ".pdf", src.name):
+            if (ASSETS_PDF / name).exists():
+                return r"\includegraphics[max width=\linewidth]{%s}" % name
+        self.report["image_missing"] += 1
+        return r"\textbf{[missing image: %s]}" % esc(n["src"])
 
     # -- blocks --------------------------------------------------------------
 
@@ -416,8 +421,7 @@ class Renderer:
             return "\\begin{verbatim}\n%s\n\\end{verbatim}" % b.get("v", "")
         if t == "math_block":
             self.report["math_block"] += 1
-            return r"\begin{center}\textbf{[maths block:~%s]}\end{center}" % \
-                esc(b.get("text", ""))
+            return maths_tex(b, self.report)
         self.report[f"block_unhandled_{t}"] += 1
         return ""
 
@@ -477,6 +481,11 @@ PREAMBLE = r"""\documentclass[11pt,twoside,openright]{memoir}
 \usepackage{url}
 \urlstyle{same}   % URLs set in the text face, not typewriter
 \usepackage{amsmath}
+\usepackage{unicode-math}
+% Garamond-Math is EB Garamond's companion: without it the equations would
+% be set in Computer Modern, a different century from the text around them.
+\setmathfont{Garamond-Math.otf}
+\usepackage{xfrac}   % \sfrac: the diagonal fraction the skin sets with OpenType
 
 % Running head carries the chapter title on the outer edge; the page number
 % sits centred in the foot. A chapter's opening page shows the folio only --
@@ -529,6 +538,10 @@ PREAMBLE = r"""\documentclass[11pt,twoside,openright]{memoir}
 \graphicspath{{../assets_pdf/}}
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{0.5\baselineskip plus 1pt minus 1pt}
+% Half a line means half a line. \flushbottom would meet the bottom margin
+% by stretching every gap on a short page, which on a page of six
+% paragraphs reads as double spacing.
+\raggedbottom
 % A dotted-underlined phrase is an unbreakable box; a line that ends on one
 % can miss the margin by a fraction of a point with nowhere to give.
 \setlength{\emergencystretch}{1em}

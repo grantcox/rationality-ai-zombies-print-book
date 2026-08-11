@@ -93,6 +93,8 @@ JSON is also diffable, so extraction gets proof-read once.
     2,416,765 characters of prose, 0 unaccounted for
     323/323 cross-reference targets resolve to a numbered place in the book
     491 distinct external URLs, all 105 needing a ruling now decided
+    426 expressions converted to LaTeX maths, 0 lost characters
+    the whole book typesets: 1,573pp in one volume, no undefined references
 
 Both link counts match the source DOM exactly, which is the check that the
 walk is not quietly skipping a container.
@@ -213,13 +215,51 @@ Anything the extractor does not recognise is preserved and counted in
 backstop — it compares the extracted text against the source page character by
 character and currently reports zero loss.
 
+## Mathematics
+
+There is no MathML and no TeX in the source. Every expression is assembled out
+of `<em>`, `<sub>`, `<sup>` and a few styled spans, and laid out with tables
+when it needs more than one line. `raz/maths.py` converts all 426 of them.
+
+The conversion turns on one thing the markup already records: **`<em>` marks a
+variable**. So the italic/upright split — *P*(cancer), not *P*(*cancer*) —
+comes from the source rather than from a guess about which letters are
+symbols. Inside `<em>`, a short run is a variable and a longer one is still a
+name: the corpus holds 1,293 single-letter runs there and exactly four longer
+ones (`colors` three times, as a summation index, and one `Si`).
+
+| source | becomes |
+|---|---|
+| `span.equation` | inline `$…$` |
+| `span.fraction`, and `num`+`frasl`+`denom` built by hand | `\sfrac` — a diagonal fraction, as the skin's OpenType `frac` feature draws it |
+| `p.equation` | `\[…\]`, or `gather*` where the author broke the line |
+| `table.equation` | `align*`, aligned on the relation column |
+| `td.numerator` / `td.denominator` on consecutive rows | one `\frac` per pair, left to right |
+| `span.bigsigma`, `span.sigma` | `\sum` with its index |
+| the two oversized bracket images | `\left(` … `\right)` |
+
+Set in Garamond-Math, EB Garamond's companion; the stock maths font would put
+Computer Modern next to a Renaissance text face.
+
+Two places where the printed form deliberately departs from the source, both
+counted in the run report:
+
+* **Punctuation is lifted out of a denominator** (3). A table-drawn fraction
+  has nowhere to put the full stop that ends the sentence, so the source puts
+  it under the bar. A real `\frac` does have somewhere.
+* **One fraction over unmarked rows** (1). A two-line sum under a bar, drawn
+  with bracket images in cells spanning both rows and no `denominator` class
+  anywhere; a cell that spans every remaining row is hoisted to the side it
+  sits on, which is how it reads on the page.
+
+Nothing is guessed at: a tag, class or character with no rule is counted and
+printed as a visible marker. `python -m raz.maths` reconverts everything and
+checks that every letter and digit of each source expression survived —
+currently **426 expressions, 0 lost characters**.
+
 ## Known follow-ups
 
-* **454 HTML-built equations** (`span.equation`, `table.equation`,
-  `td.numerator`/`denominator`, `span.fraction`, `span.bigsigma`) are captured
-  as `math` / `math_block` nodes carrying both the original HTML and a text
-  rendering. Converting them to real LaTeX maths is a separate pass — they are
-  flagged rather than guessed at, so none are silently mangled.
+* ~~HTML-built equations~~ **done** — see *Mathematics* below.
 * **Link review is complete**: 105 decisions in `overrides.csv` — 61 `replace`,
   37 `keep`, 4 `remove`, 3 `unlink`, 1 `archive`. Nothing outstanding.
 * **Design decisions** settled so far: one numbered footnote series per

@@ -268,11 +268,61 @@ def looks_like_url_tail(tail: str) -> bool:
 # --- inline walk -------------------------------------------------------------
 
 
+def finish(nodes: list[dict]) -> list[dict]:
+    """Everything a finished run of inline content needs.
+
+    Both paths that build one -- inlines() for a container, and blocks()'s
+    buffer for loose content between block children -- go through here.
+    Splitting them was a bug: the hand-built fractions in Zut Allais sit
+    directly in list items, which take the second path, so the splice below
+    never saw them.
+    """
+    return splice_fractions(splice_split_urls(merge_text(nodes)))
+
+
 def inlines(node: Tag) -> list[dict]:
     out: list[dict] = []
     for ch in node.children:
         out.extend(inline(ch))
-    return splice_split_urls(merge_text(out))
+    return finish(out)
+
+
+def splice_fractions(nodes: list[dict]) -> list[dict]:
+    """Rejoin a fraction the page built out of three separate spans.
+
+    Six fractions in Zut Allais are set by hand rather than with the skin's
+    .fraction class -- a raised numerator, a fraction slash and a lowered
+    denominator, as three adjacent spans. Read separately they are three
+    unrelated fragments; joined, they are the same diagonal fraction the rest
+    of the book uses, and get the same treatment.
+    """
+    out, i = [], 0
+    while i < len(nodes):
+        three = nodes[i:i + 3]
+        marks = [_math_class(n) for n in three]
+        if marks == ["num", "frasl", "denom"]:
+            # The page's own fraction slash is kept rather than an ASCII one:
+            # it is a character of the source, and substituting it would show
+            # up in raz.verify as text that went missing -- correctly.
+            num, slash, den = (n["text"] for n in three)
+            out.append({
+                "t": "math",
+                "html": f'<span class="fraction">{num}{slash}{den}</span>',
+                "text": f"{num}{slash}{den}",
+            })
+            note("math.fraction.spliced")
+            i += 3
+            continue
+        out.append(nodes[i])
+        i += 1
+    return out
+
+
+def _math_class(node: dict) -> str | None:
+    if node.get("t") != "math":
+        return None
+    m = re.search(r'class=["\']([a-z]+)', node.get("html", ""))
+    return m.group(1) if m else None
 
 
 def splice_split_urls(nodes: list[dict]) -> list[dict]:
@@ -423,7 +473,7 @@ def blocks(node: Tag) -> list[dict]:
 
     def flush():
         if buf:
-            merged = merge_text(buf)
+            merged = finish(buf)
             if any(n["t"] != "text" or n["v"].strip() for n in merged):
                 out.append({"t": "p", "c": merged})
             buf.clear()
