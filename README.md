@@ -95,9 +95,22 @@ JSON is also diffable, so extraction gets proof-read once.
     491 distinct external URLs, all 105 needing a ruling now decided
     426 expressions converted to LaTeX maths, 0 lost characters
     the whole book typesets: 1,571pp in one volume, no undefined references
+    six volumes: 221 / 351 / 305 / 489 / 233 / 249pp, 81 overfull, 0 undefined
 
 Both link counts match the source DOM exactly, which is the check that the
 walk is not quietly skipping a container.
+
+Rendering:
+
+```bash
+.venv/bin/python -m raz.render --volumes --pdf             # 4. the six books
+.venv/bin/python -m raz.render --volumes --only 3 --pdf    # ... just Book III
+.venv/bin/python -m raz.render --all --pdf                 # one continuous volume
+```
+
+Three LaTeX passes per volume, not two: one to place the pages, one to write
+the contents and resolve the `\ref` a repeated footnote is set from, one to
+typeset a contents list that may have grown a page in the meantime.
 
 ### Link health
 
@@ -314,9 +327,34 @@ currently **426 expressions, 0 lost characters**.
   `http://` and the book cannot promise a reader that they are all `https://`.
   A link whose anchor text *is* its address prints inline instead, with no
   note: the footnote would only repeat the line above it.
-* **Volume split.** Six volumes matching Books I–VI. The two-column 8.5×11
-  LaTeX build is 656pp, roughly 1,800–2,200pp at 6×9 single column — past what
-  perfect binding takes in one piece.
+* ~~Volume split~~ **done.** Six volumes matching Books I–VI: 1,848pp in
+  total, against 1,571 as one continuous book. The 277 extra pages are what
+  making each volume stand on its own costs — six title pages and tables of
+  contents, 26 part openers with their blank versos, and the glossary and
+  bibliography carried in every volume, because a reader holding Book IV
+  cannot look a term up in Book I.
+
+  Each volume runs: title page, contents, the book's own introduction where
+  it has one, its parts, then the glossary, the bibliography, and a page
+  about the author. Front matter is numbered in roman and the body restarts
+  at 1 — memoir's `\frontmatter`/`\mainmatter`, and the reason the contents
+  can be typeset before the pages it lists are numbered.
+
+  A part opens on a right-hand page and its first chapter opens on the next
+  right-hand page, so a part is announced by a spread rather than by a line
+  of type at the foot of a verso. That is two `\cleartorecto`, not one: the
+  second skips the blank verso the first leaves behind. Later chapters in the
+  part start wherever they fall. The glossary, the bibliography and the
+  contents open recto too.
+
+  The part letters run A–Z across the whole work rather than restarting each
+  volume, so Book II opens at Part E. That is what the cross-reference
+  footnotes cite, and chapter numbers are global for the same reason — Book
+  II's contents begins at 46.
+
+  The wiki's own book and sequence pages carry no text, only an ornament, so
+  the title pages and part openers are generated from the spine and nothing
+  is lost by replacing them.
 
 ## Licence
 

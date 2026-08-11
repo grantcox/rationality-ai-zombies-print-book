@@ -193,6 +193,26 @@ WRAP = {
 #: Two-thirds still reads unmistakably as display type.
 BANNER_SCALE = 2 / 3
 
+#: The volume number as the title page spells it. "Book Two", not "Book II":
+#: the roman numeral is how a cross-reference cites a volume mid-sentence, and
+#: on a title page the word reads as part of the sentence it belongs to.
+BOOK_WORDS = ["", "One", "Two", "Three", "Four", "Five", "Six"]
+
+#: Printed at the back of every volume. Supplied by the publisher rather than
+#: taken from the mirror, which has no such page.
+ABOUT_THE_AUTHOR = (
+    "Eliezer Yudkowsky is a decision theorist and computer scientist at the "
+    "Machine Intelligence Research Institute in Berkeley, California who is "
+    "known for his work in technological forecasting. His publications include "
+    "the Cambridge Handbook of Artificial Intelligence chapter \u201cThe Ethics of "
+    "Artificial Intelligence,\u201d co-authored with Nick Bostrom. Yudkowsky\u2019s "
+    "writings have helped spark a number of ongoing academic and public debates "
+    "about the long-term impact of AI, and he has written a number of popular "
+    "introductions to topics in cognitive science and formal epistemology, such "
+    "as Rationality: From AI to Zombies and \u201cHarry Potter and the Methods of "
+    "Rationality.\u201d"
+)
+
 #: A run of two or more spaces inside a fixed-width display. One space is an
 #: ordinary word space; several are the author lining up a column.
 COLUMN_GAP = re.compile("[ \u00a0]{2,}")
@@ -557,6 +577,65 @@ PREAMBLE = r"""\documentclass[11pt,twoside,openright]{memoir}
   {\parskip=0pt\centering\Large\bfseries #1\par}
   \vspace{1.1\baselineskip}}
 
+% A volume's title page. The book's own title at twice the body size, the
+% work's title, the volume's place in it and the author at one and a half.
+% No folio: a title page that numbered itself would be the only page in the
+% book announcing which page it is. Set as centred paragraphs rather than
+% single lines -- "How to Actually Change Your Mind" at 22pt is wider than a
+% 6in page's measure and has to be allowed to break.
+\newcommand{\razhalftitle}[2]{%
+  \thispagestyle{empty}%
+  {\parskip=0pt\centering
+   \null\vspace*{0.20\textheight}
+   {\fontsize{22}{26.4}\selectfont #1\par}
+   \vspace{2.2\baselineskip}
+   {\fontsize{16.5}{19.8}\selectfont Rationality: From AI to Zombies\par
+    Book #2\par}
+   \vspace{2.2\baselineskip}
+   {\fontsize{16.5}{19.8}\selectfont Eliezer Yudkowsky\par}
+   \par}}
+
+% A part opener. The letter runs A..Z across the whole work rather than
+% restarting each volume, which is what the cross-reference footnotes cite and
+% what the printed edition does -- Book II opens at Part E.
+\newcommand{\razpart}[2]{%
+  \thispagestyle{empty}%
+  {\parskip=0pt\centering
+   \null\vspace*{0.26\textheight}
+   \textcolor[gray]{0.55}{\large Part~#1}\par
+   \vspace{0.9\baselineskip}
+   {\fontsize{19.8}{23.8}\selectfont\bfseries #2\par}
+   \par}}
+
+% The last page of every volume. Given the folio-only style of a chapter
+% opening: it is a page of the book, not a jacket flap.
+\newcommand{\razabout}[1]{%
+  \thispagestyle{razopen}%
+  \chaptitle{About the Author}%
+  \noindent #1\par}
+
+% Contents. The heading is set exactly as a chapter title is, so the volume's
+% first page of type does not introduce a second style of heading. \cftparskip
+% governs the space between entries -- the body's half-line \parskip would
+% otherwise apply to every line of a sixty-entry list.
+\renewcommand*{\printtoctitle}[1]{\centering\Large\bfseries #1}
+\renewcommand*{\aftertoctitle}{\par\vspace{1.1\baselineskip}}
+% The running head over the contents, in the same case as every other head in
+% the book; memoir's default sets it in capitals.
+\renewcommand*{\tocmark}{\markboth{\contentsname}{\contentsname}}
+\settocdepth{chapter}
+\setlength{\cftparskip}{0pt}
+\setlength{\cftbeforechapterskip}{0.15\baselineskip}
+\setlength{\cftbeforepartskip}{1.2\baselineskip}
+% Chapters are numbered across the whole work, so the widest number is 333.
+\setlength{\cftchapternumwidth}{2.4em}
+\renewcommand*{\cftchapterfont}{\normalfont}
+\renewcommand*{\cftchapterpagefont}{\normalfont}
+\renewcommand*{\cftchapterdotsep}{\cftdotsep}
+\renewcommand*{\cftchapterleader}{\normalfont\cftdotfill{\cftchapterdotsep}}
+\renewcommand*{\cftpartfont}{\bfseries}
+\renewcommand*{\cftpartpagefont}{\bfseries}
+
 % A display of data or pseudocode: fixed-width, ragged right (justifying a
 % listing invents word spaces that are not in the data).
 \newenvironment{fixedwidth}
@@ -649,19 +728,107 @@ PREAMBLE = r"""\documentclass[11pt,twoside,openright]{memoir}
 """
 
 
-def chapter_tex(doc, variant, opts, report) -> str:
+def chapter_tex(doc, variant, opts, report, recto=False, toc=False) -> str:
+    r"""One chapter, opening on a fresh page.
+
+    ``recto`` forces a right-hand page, for the pieces the reader looks up
+    rather than reads through -- the back matter, and the first chapter after
+    a part opener. ``toc`` records the entry, which has to happen after the
+    page break so the number written is the chapter's own.
+    """
     r = Renderer(doc, variant, opts, report)
     body = r.blocks(doc["blocks"], flush_first=True)
     orphaned = set(r.notes) - r.used_notes
     if orphaned:
         report["fn_body_unused"] += len(orphaned)
-    head = [r"\thispagestyle{razopen}", r"\setcounter{footnote}{0}"]
+    title = esc(doc["title"])
     n = doc.get("number")
+    head = [r"\cleartorecto" if recto else r"\clearpage",
+            r"\thispagestyle{razopen}", r"\setcounter{footnote}{0}"]
+    if toc:
+        head.append(r"\addcontentsline{toc}{chapter}{\protect\numberline{%s}%s}"
+                    % (n or "", title))
     if n:
         head.append(r"\chapnum{%d}" % n)
-    head.append(r"\chaptitle{%s}" % esc(doc["title"]))
-    head.append(r"\markboth{%s}{%s}" % (esc(doc["title"]), esc(doc["title"])))
+    head.append(r"\chaptitle{%s}" % title)
+    head.append(r"\markboth{%s}{%s}" % (title, title))
     return "\n".join(head) + "\n\n" + body
+
+
+def part_tex(entry) -> str:
+    r"""A part opener on a recto, with the verso after it left blank.
+
+    Two \cleartorecto, not one: the second skips the blank verso so that the
+    part's first chapter opens on a right-hand page too. Chapters after that
+    fall wherever they fall.
+    """
+    letter, title = entry["sequence_letter"], esc(entry["title"])
+    return "\n".join([
+        r"\cleartorecto",
+        r"\razpart{%s}{%s}" % (letter, title),
+        r"\addcontentsline{toc}{part}{Part %s: %s}" % (letter, title),
+        r"\cleartorecto",
+    ])
+
+
+def volume_tex(book, entries, docs, variant, opts, report) -> str:
+    r"""One of the six volumes, front matter to colophon.
+
+    The order is the one the work itself has: title page, contents, the book's
+    own introduction where it has one, then its parts. The glossary and the
+    bibliography are the whole work's, not a volume's, so every volume carries
+    a copy -- a reader holding Book IV cannot look a term up in Book I.
+
+    Front matter is numbered in roman and the body restarts at 1, which is
+    memoir's \frontmatter/\mainmatter and the reason the contents can be
+    typeset before the pages it lists are numbered.
+    """
+    out = [r"\frontmatter",
+           r"\razhalftitle{%s}{%s}" % (esc(book["title"]),
+                                       BOOK_WORDS[book["number"]]),
+           r"\cleartorecto",
+           # Starred: the unstarred form lists the contents in the contents.
+           r"\tableofcontents*",
+           r"\mainmatter"]
+
+    first_of_part = False
+    for e in entries:
+        if e["kind"] == "book":
+            continue  # the title page has already said this
+        if e["kind"] == "sequence":
+            out.append(part_tex(e))
+            first_of_part = True
+            continue
+        out.append(chapter_tex(docs[e["page"]], variant, opts, report,
+                               recto=first_of_part, toc=True))
+        first_of_part = False
+
+    for page in ("Glossary", "Bibliography"):
+        out.append(chapter_tex(docs[page], variant, opts, report,
+                               recto=True, toc=True))
+    out.append(r"\cleartorecto" + "\n" + r"\razabout{%s}" % esc(ABOUT_THE_AUTHOR))
+    return "\n\n".join(out)
+
+
+def document(body: str, bank: UrlBank) -> str:
+    # The address definitions have to be written after the body, since
+    # rendering is what discovers them, but read before -- \urldef only works
+    # at the top level.
+    return (PREAMBLE.replace("%%URLDEFS%%", bank.preamble())
+            + body + "\n\\end{document}\n")
+
+
+def latex(name: str, passes: int) -> None:
+    for _ in range(passes):
+        rc = subprocess.run(
+            ["lualatex", "-interaction=nonstopmode", "-halt-on-error",
+             f"{name}.tex"], cwd=TEX, capture_output=True, text=True)
+    if rc.returncode != 0:
+        print(f"  lualatex failed on {name}:")
+        for l in [l for l in rc.stdout.splitlines() if l.startswith("!")][:6]:
+            print("   ", l)
+        sys.exit(1)
+    print(f"  build/tex/{name}.pdf")
 
 
 def convert_assets(report) -> None:
@@ -695,6 +862,9 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--chapters", help="comma-separated page names")
     ap.add_argument("--all", action="store_true")
+    ap.add_argument("--volumes", action="store_true",
+                    help="one document per book, with front and back matter")
+    ap.add_argument("--only", type=int, help="with --volumes, just this book")
     ap.add_argument("--variant", default="A", choices=sorted(VARIANTS))
     ap.add_argument("--ornaments", action="store_true",
                     help="keep the ❦ fleuron (dropped by default)")
@@ -707,46 +877,67 @@ def main():
     report = collections.Counter()
     convert_assets(report)
 
-    wanted = ([e["page"] for e in spine_entries] if args.all
+    wanted = ([e["page"] for e in spine_entries]
+              if (args.all or args.volumes)
               else (args.chapters or "").split(","))
-    docs = []
+    docs = {}
     for page in [w for w in wanted if w]:
         matches = sorted((BUILD / "chapters").glob(f"*-{page}.json"))
         if not matches:
             sys.exit(f"no extracted chapter for {page!r}")
         doc = json.loads(matches[0].read_text())
+        # Once per document, not once per rendering: 'remove' edits the text
+        # around a dropped link, and the back matter is rendered six times.
         doc["blocks"] = apply_decisions(doc["blocks"], rules, report)
         doc["footnotes"] = apply_decisions(doc["footnotes"], rules, report)
-        docs.append(doc)
-
-    opts = {"spine": spine, "ornaments": args.ornaments, "bank": UrlBank()}
-    parts = [chapter_tex(d, args.variant, opts, report) for d in docs]
-    # The address definitions have to be written after the chapters, since
-    # rendering is what discovers them, but read before -- \urldef only
-    # works at the top level.
-    tex = (PREAMBLE.replace("%%URLDEFS%%", opts["bank"].preamble())
-           + "\n\n\\clearpage\n\n".join(parts) + "\n\\end{document}\n")
+        docs[page] = doc
 
     TEX.mkdir(parents=True, exist_ok=True)
+    common = {"spine": spine, "ornaments": args.ornaments}
+
+    if args.volumes:
+        books = json.loads((BUILD / "toc.json").read_text())["books"]
+        # "Biases: An Introduction" precedes Book I in the spine and carries no
+        # book of its own; it is that volume's introduction.
+        owner = {"frontmatter": 1}
+        for book in books:
+            if args.only and book["number"] != args.only:
+                continue
+            entries = [e for e in spine_entries
+                       if owner.get(e["kind"], e.get("book")) == book["number"]]
+            vreport = collections.Counter()
+            opts = {**common, "bank": UrlBank()}
+            name = "book-%d" % book["number"]
+            (TEX / f"{name}.tex").write_text(
+                document(volume_tex(book, entries, docs, args.variant,
+                                    opts, vreport), opts["bank"]),
+                encoding="utf-8")
+            chapters = sum(1 for e in entries if e["kind"] == "chapter")
+            print(f"build/tex/{name}.tex — Book {book['roman']}: {book['title']} "
+                  f"({chapters} chapters, "
+                  f"{sum(1 for e in entries if e['kind'] == 'sequence')} parts)")
+            for k, v in sorted(vreport.items()):
+                print(f"    {k}: {v}")
+            if args.pdf:
+                # Three passes: one to place the pages, one to write the
+                # contents and resolve the \ref a repeated footnote is set
+                # from, one to typeset a contents list that may have grown.
+                latex(name, 3)
+        return
+
+    opts = {**common, "bank": UrlBank()}
+    parts = [chapter_tex(docs[p], args.variant, opts, report)
+             for p in wanted if p in docs]
     name = f"sample-{args.variant}"
-    (TEX / f"{name}.tex").write_text(tex, encoding="utf-8")
-    print(f"build/tex/{name}.tex — {len(docs)} chapter(s), variant {args.variant} "
+    (TEX / f"{name}.tex").write_text(document("\n\n".join(parts), opts["bank"]),
+                                     encoding="utf-8")
+    print(f"build/tex/{name}.tex — {len(parts)} chapter(s), variant {args.variant} "
           f"({VARIANTS[args.variant]['blurb']})")
     for k, v in sorted(report.items()):
         print(f"    {k}: {v}")
 
     if args.pdf:
-        for _ in range(2):
-            rc = subprocess.run(
-                ["lualatex", "-interaction=nonstopmode", "-halt-on-error",
-                 f"{name}.tex"], cwd=TEX, capture_output=True, text=True)
-        if rc.returncode != 0:
-            tail = [l for l in rc.stdout.splitlines() if l.startswith("!")][:6]
-            print("  lualatex failed:")
-            for l in tail:
-                print("   ", l)
-            sys.exit(1)
-        print(f"  build/tex/{name}.pdf")
+        latex(name, 2)
 
 
 if __name__ == "__main__":
