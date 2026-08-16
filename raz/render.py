@@ -86,7 +86,7 @@ class UrlBank:
     def clean(url: str) -> str:
         # The skin's soft hyphens would print as hyphens a reader could not
         # tell from part of the address.
-        return url.replace("­", "").replace("​", "")
+        return url.replace("­", "").replace("​", "").strip()
 
     def ref(self, url: str) -> str:
         url = self.clean(url)
@@ -124,6 +124,32 @@ def text_to_tex(text: str, bank: UrlBank) -> str:
         last = m.end()
     out.append(esc(text[last:]))
     return "".join(out)
+
+
+def _walk(value, want, out) -> None:
+    if isinstance(value, dict):
+        if value.get("t") == want:
+            out.append(value)
+        for v in value.values():
+            _walk(v, want, out)
+    elif isinstance(value, list):
+        for v in value:
+            _walk(v, want, out)
+
+
+def note_urls(blocks) -> set[str]:
+    """Every address a citation footnote's own text points at."""
+    from .common import printed_url
+    found: list = []
+    _walk(blocks, "link", found)
+    return {printed_url(n["_url"]) for n in found if n.get("_url")}
+
+
+def cited_notes(block) -> set[int]:
+    """The citation footnotes marked within one block."""
+    found: list = []
+    _walk(block, "fn", found)
+    return {n["n"] for n in found}
 
 
 def plain_text(node) -> str:
@@ -193,10 +219,15 @@ WRAP = {
 #: Two-thirds still reads unmistakably as display type.
 BANNER_SCALE = 2 / 3
 
-#: The volume number as the title page spells it. "Book Two", not "Book II":
-#: the roman numeral is how a cross-reference cites a volume mid-sentence, and
-#: on a title page the word reads as part of the sentence it belongs to.
-BOOK_WORDS = ["", "One", "Two", "Three", "Four", "Five", "Six"]
+#: A credit line the wiki left as ordinary body text. The six volume
+#: introductions are Rob Bensinger's; the wiki centres the credit on two of
+#: them and leaves it as a first paragraph on the other four.
+BYLINE = re.compile(r"^\s*by\s+\S[^.]{0,40}\s*$", re.I)
+
+#: The author's photograph, at the back of every volume. Lives in the
+#: repository root rather than build/, being a supplied asset and not something
+#: the mirror carries.
+AUTHOR_PHOTO = "eliezer-yudkowsky.jpeg"
 
 #: Printed at the back of every volume. Supplied by the publisher rather than
 #: taken from the mirror, which has no such page.
@@ -241,6 +272,12 @@ class Renderer:
         self.mono = False
         self.shared: dict[tuple, str] = {}
         self.bank = opts["bank"]
+        # Which citation footnote, if any, already points at each address.
+        self.note_urls: dict[str, int] = {}
+        for f in doc["footnotes"]:
+            for url in note_urls(f["blocks"]):
+                self.note_urls.setdefault(url, f["n"])
+        self.covered: set[str] = set()
 
     # -- footnote text -------------------------------------------------------
 
@@ -248,8 +285,14 @@ class Renderer:
         # \url takes the raw URL: it sets its own catcodes, so the text must
         # not be pre-escaped. The arrow is the literal glyph from EB Garamond
         # rather than a maths-font \rightarrow, so it matches the text.
+        #
+        # The gap after the arrow is a kern, not a space. An address that
+        # url.sty has to break leaves a first line whose only stretchable glue
+        # is that gap, and justification put the entire shortfall into it --
+        # half an inch of white between the arrow and the address. A rigid gap
+        # sends the slack to the right margin instead, where it belongs.
         from .common import printed_url
-        return "→\\ " + self.bank.ref(printed_url(node["_url"]))
+        return r"→\kern0.33em " + self.bank.ref(printed_url(node["_url"]))
 
     def xref_note(self, node) -> str:
         entry = self.opts["spine"].get(node["page"])
@@ -333,6 +376,16 @@ class Renderer:
                 self.report["link_printed_inline"] += 1
                 return self.bank.ref(plain_text(n))
 
+            # The author often links a phrase and then cites the same page in a
+            # footnote a few words later. Two marks side by side pointing at
+            # one source read as two sources, so the link defers to the
+            # citation: the phrase keeps its underline and the citation's own
+            # mark, already in the text, serves both.
+            from .common import printed_url
+            if printed_url(n["_url"]) in self.covered:
+                self.report["link_merged_into_citation"] += 1
+                return self.marked(body, self.v["underline_link"])
+
             return self.marked(body, self.v["underline_link"]) + \
                 self.note_mark(("link", n["_url"]), lambda: self.link_note(n))
 
@@ -390,6 +443,18 @@ class Renderer:
         return "\n\n".join(x for x in out if x)
 
     def block(self, b, inside_note=False, flush=False) -> str:
+        # "Nearby" is the block: a citation marked in the same paragraph is
+        # close enough to the anchor to stand in for its footnote. Nesting
+        # narrows the scope, which is what a quote or a list item wants.
+        was = self.covered
+        self.covered = {u for u, n in self.note_urls.items()
+                        if n in cited_notes(b)}
+        try:
+            return self._block(b, inside_note, flush)
+        finally:
+            self.covered = was
+
+    def _block(self, b, inside_note=False, flush=False) -> str:
         t = b.get("t")
         if t == "ornament":
             if not self.opts["ornaments"]:
@@ -577,6 +642,18 @@ PREAMBLE = r"""\documentclass[11pt,twoside,openright]{memoir}
   {\parskip=0pt\centering\Large\bfseries #1\par}
   \vspace{1.1\baselineskip}}
 
+% A chapter with a credit line of its own -- the six volume introductions are
+% Rob Bensinger's. Set close under the title and with the full gap below the
+% pair, so it reads as the second line of a heading rather than as the first
+% line of the chapter.
+\newcommand{\chaptitlebyline}[2]{%
+  {\parskip=0pt\centering
+   {\Large\bfseries #1\par}
+   \vspace{0.45\baselineskip}
+   {\itshape #2\par}
+   \par}
+  \vspace{1.3\baselineskip}}
+
 % A volume's title page. The book's own title at twice the body size, the
 % work's title, the volume's place in it and the author at one and a half.
 % No folio: a title page that numbered itself would be the only page in the
@@ -609,10 +686,12 @@ PREAMBLE = r"""\documentclass[11pt,twoside,openright]{memoir}
 
 % The last page of every volume. Given the folio-only style of a chapter
 % opening: it is a page of the book, not a jacket flap.
-\newcommand{\razabout}[1]{%
+\newcommand{\razabout}[2]{%
   \thispagestyle{razopen}%
   \chaptitle{About the Author}%
-  \noindent #1\par}
+  {\parskip=0pt\centering\includegraphics[width=1.9in]{#1}\par}
+  \vspace{1.1\baselineskip}
+  \noindent #2\par}
 
 % Contents. The heading is set exactly as a chapter title is, so the volume's
 % first page of type does not introduce a second style of heading. \cftparskip
@@ -695,7 +774,9 @@ PREAMBLE = r"""\documentclass[11pt,twoside,openright]{memoir}
 
 % Paragraphs are separated by space rather than by a first-line indent. Doing
 % both is belt and braces; the half-line gap already marks the break.
-\graphicspath{{../assets_pdf/}}
+% build/assets_pdf holds the mirror's own plates; the repository root holds the
+% few assets supplied for the print edition, the author's photograph among them.
+\graphicspath{{../assets_pdf/}{../../}}
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{0.5\baselineskip plus 1pt minus 1pt}
 % Half a line means half a line. \flushbottom would meet the bottom margin
@@ -728,6 +809,24 @@ PREAMBLE = r"""\documentclass[11pt,twoside,openright]{memoir}
 """
 
 
+def split_byline(blocks):
+    """Lift a leading credit line out of the body, if the chapter has one.
+
+    Returns (remaining blocks, byline text or ''). Matches on a first paragraph
+    that is a single short "by ..." run, which across the 333 chapters picks
+    out the six introductions and nothing else.
+    """
+    first = blocks[0] if blocks else None
+    if not first or first.get("t") != "p":
+        return blocks, ""
+    kids = first.get("c") or []
+    if len(kids) != 1 or kids[0].get("t") != "text":
+        return blocks, ""
+    if not BYLINE.match(kids[0]["v"]):
+        return blocks, ""
+    return blocks[1:], kids[0]["v"].strip()
+
+
 def chapter_tex(doc, variant, opts, report, recto=False, toc=False) -> str:
     r"""One chapter, opening on a fresh page.
 
@@ -737,7 +836,10 @@ def chapter_tex(doc, variant, opts, report, recto=False, toc=False) -> str:
     page break so the number written is the chapter's own.
     """
     r = Renderer(doc, variant, opts, report)
-    body = r.blocks(doc["blocks"], flush_first=True)
+    blocks, byline = split_byline(doc["blocks"])
+    if byline:
+        report["byline"] += 1
+    body = r.blocks(blocks, flush_first=True)
     orphaned = set(r.notes) - r.used_notes
     if orphaned:
         report["fn_body_unused"] += len(orphaned)
@@ -750,7 +852,8 @@ def chapter_tex(doc, variant, opts, report, recto=False, toc=False) -> str:
                     % (n or "", title))
     if n:
         head.append(r"\chapnum{%d}" % n)
-    head.append(r"\chaptitle{%s}" % title)
+    head.append(r"\chaptitlebyline{%s}{%s}" % (title, esc(byline)) if byline
+                else r"\chaptitle{%s}" % title)
     head.append(r"\markboth{%s}{%s}" % (title, title))
     return "\n".join(head) + "\n\n" + body
 
@@ -784,8 +887,7 @@ def volume_tex(book, entries, docs, variant, opts, report) -> str:
     typeset before the pages it lists are numbered.
     """
     out = [r"\frontmatter",
-           r"\razhalftitle{%s}{%s}" % (esc(book["title"]),
-                                       BOOK_WORDS[book["number"]]),
+           r"\razhalftitle{%s}{%s}" % (esc(book["title"]), book["roman"]),
            r"\cleartorecto",
            # Starred: the unstarred form lists the contents in the contents.
            r"\tableofcontents*",
@@ -803,10 +905,16 @@ def volume_tex(book, entries, docs, variant, opts, report) -> str:
                                recto=first_of_part, toc=True))
         first_of_part = False
 
+    # The back matter belongs to no part, so it is set off from the last part's
+    # chapters by the same gap that separates the parts from each other. The
+    # write has to precede the Glossary's own \addcontentsline, and both are
+    # written to the .toc in the order they are executed.
+    out.append(r"\addtocontents{toc}{\vspace{\cftbeforepartskip}}")
     for page in ("Glossary", "Bibliography"):
         out.append(chapter_tex(docs[page], variant, opts, report,
                                recto=True, toc=True))
-    out.append(r"\cleartorecto" + "\n" + r"\razabout{%s}" % esc(ABOUT_THE_AUTHOR))
+    out.append(r"\cleartorecto" + "\n" +
+               r"\razabout{%s}{%s}" % (AUTHOR_PHOTO, esc(ABOUT_THE_AUTHOR)))
     return "\n\n".join(out)
 
 

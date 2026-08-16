@@ -73,13 +73,17 @@ Point `$RAZ_MIRROR` at the `www.readthesequences.com` mirror if it is not at
 the default path in `raz/common.py`.
 
 Everything under `build/` is derived and none of it is committed — `rm -rf
-build` is always safe. Two files live at the repository root instead:
+build` is always safe. Three things live at the repository root instead:
 
 * `overrides.csv` — the only file edited by hand, and the only durable human
   input in the repository.
 * `link_status.json` — the cached HTTP probe results. Not derived from the
   mirror but from the open web, and several minutes of requests to rebuild,
   so it must not sit in a folder people delete.
+* Assets supplied for the print edition rather than taken from the mirror —
+  at present `eliezer-yudkowsky.jpeg`, on the About the Author page. The root
+  is on `\graphicspath` alongside `build/assets_pdf`, which holds the plates
+  the mirror does carry.
 
 The intermediate JSON is deliberate: footnote and cross-reference design will
 be iterated on many times, and re-running extraction for each experiment —
@@ -95,7 +99,7 @@ JSON is also diffable, so extraction gets proof-read once.
     491 distinct external URLs, all 105 needing a ruling now decided
     426 expressions converted to LaTeX maths, 0 lost characters
     the whole book typesets: 1,571pp in one volume, no undefined references
-    six volumes: 221 / 351 / 305 / 489 / 233 / 249pp, 81 overfull, 0 undefined
+    six volumes: 221 / 349 / 307 / 489 / 233 / 249pp, 82 overfull, 0 undefined
 
 Both link counts match the source DOM exactly, which is the check that the
 walk is not quietly skipping a container.
@@ -301,6 +305,14 @@ currently **426 expressions, 0 lost characters**.
   in quotations as well as in the body. A chapter that cites the same address
   or the same other chapter twice gets one note, marked twice.
 
+  A link also defers to a citation footnote in the same paragraph that points
+  at the same address. The author often links a phrase and cites the source a
+  few words later; two marks side by side pointing at one place read as two
+  places, so the phrase keeps its underline and the citation's mark serves
+  both. Five occurrences across the six volumes, four of them in Book II's
+  introduction — the paragraph and the citation are the same edit, which is
+  why they cluster.
+
   Every vertical gap is that same half line. Three separate things were
   inflating it, each on different pages: `\flushbottom` stretching short
   pages, the `center` *environment*'s `\topsep`, and LaTeX's display
@@ -336,9 +348,12 @@ currently **426 expressions, 0 lost characters**.
 
   Each volume runs: title page, contents, the book's own introduction where
   it has one, its parts, then the glossary, the bibliography, and a page
-  about the author. Front matter is numbered in roman and the body restarts
-  at 1 — memoir's `\frontmatter`/`\mainmatter`, and the reason the contents
-  can be typeset before the pages it lists are numbered.
+  about the author with his photograph. Front matter is numbered in roman
+  and the body restarts at 1 — memoir's `\frontmatter`/`\mainmatter`, and the
+  reason the contents can be typeset before the pages it lists are numbered.
+  The glossary and bibliography are set off in the contents by the same gap
+  that separates the parts: they belong to no part, and without it they read
+  as the tail of the last one.
 
   A part opens on a right-hand page and its first chapter opens on the next
   right-hand page, so a part is announced by a spread rather than by a line
@@ -355,6 +370,14 @@ currently **426 expressions, 0 lost characters**.
   The wiki's own book and sequence pages carry no text, only an ornament, so
   the title pages and part openers are generated from the spine and nothing
   is lost by replacing them.
+
+  The six introductions are Rob Bensinger's, not Yudkowsky's, and the wiki
+  marks the credit inconsistently — centred on two of them, an ordinary first
+  paragraph on the other four. All six are now set as a subheading under the
+  chapter title, close under it and with the full gap below the pair, so the
+  two lines read as one heading. The rule is a first paragraph that is a
+  single short "by …" run, which across the 333 chapters picks out those six
+  and nothing else.
 
 ## Licence
 
