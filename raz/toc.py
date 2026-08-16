@@ -82,6 +82,11 @@ def build():
         )
         return entries[-1]
 
+    # The author's preface lives on the site's front page and the Contents does
+    # not list it, so the spine has to name it rather than read it: a page of
+    # the book that the book's own table of contents leaves out.
+    add("preface", "HomePage", "Preface")
+
     for li in _direct_items(root):
         page, title = _entry(li)
         lists = _child_lists(li)

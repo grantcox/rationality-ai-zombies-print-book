@@ -24,10 +24,10 @@ import sys
 
 from bs4 import BeautifulSoup
 
-from .common import BUILD, NAV_CLASSES, mirror_path
-from .extract import looks_like_css
+from .common import BUILD, mirror_path
+from .extract import DROP_SELECTORS, ORNAMENT_CHARS, looks_like_css
 
-ORNAMENTS = set("❦✦✳❖*")
+ORNAMENTS = set(ORNAMENT_CHARS)
 # "back to citation" arrows; navigation within the page, dropped on purpose.
 ARROWS = {"↩", "↩︎"}
 
@@ -68,7 +68,9 @@ def main() -> int:
             "lxml",
         )
         body = soup.find(id="wikitext")
-        for sel in [f".{c}" for c in NAV_CLASSES] + ["div.toc", "h1", "style"]:
+        # extract's own list, not a copy of it: a container dropped there and
+        # not here is reported as prose that went missing.
+        for sel in list(DROP_SELECTORS) + ["h1", "style"]:
             for n in body.select(sel):
                 n.decompose()
         # Mirrors extract's rule, so stylesheet text the crawl leaked into two

@@ -37,6 +37,11 @@ ASSETS = BUILD / "assets"
 DROP_SELECTORS = (
     *(f".{c}" for c in NAV_CLASSES),
     "div.toc",  # per-book / per-sequence inline contents listings
+    "div.main_toc",  # the front page's listing of the six books
+    # The front page's masthead: three SVGs setting the work's title, subtitle
+    # and author. The volume has a title page of its own, and these are the
+    # only pages in the mirror carrying these classes.
+    "p.title", "p.subtitle", "p.author_line",
 )
 
 SIMPLE_INLINE = {
@@ -467,7 +472,10 @@ def inline(node) -> list[dict]:
 
 # --- block walk --------------------------------------------------------------
 
-ORNAMENT = re.compile(r"^[❦✦✳❖*\s]+$")
+#: Characters that, alone in a paragraph, make it a section ornament rather
+#: than prose. Shared with raz.verify, which must not count them as lost text.
+ORNAMENT_CHARS = "❦❧✦✳❖*"
+ORNAMENT = re.compile(r"^[%s\s]+$" % ORNAMENT_CHARS)
 
 BLOCK_TAGS = {"p", "blockquote", "ul", "ol", "dl", "table", "hr", "pre",
               "div", "h1", "h2", "h3", "h4"}

@@ -52,6 +52,12 @@ counters at each book boundary. The result —
 cross-reference can be rendered as `Book III, chapter 132, "The Wonder of
 Evolution"` with confidence.
 
+One page of the book is not in `Contents.html`: the author's preface, which
+the site puts on its front page (`HomePage`) and lists nowhere. `raz/toc.py`
+names it into the spine rather than reading it, which is why the pipeline
+reports 379 pages against the Contents' 378. It is unnumbered, and belongs to
+Book I's front matter along with `Biases: An Introduction`.
+
 ## Pipeline
 
 ```bash
@@ -92,14 +98,14 @@ JSON is also diffable, so extraction gets proof-read once.
 
 ### Current output
 
-    378 pages · 317 citations · 676 external references · 1,790 cross-references
-    citation markers reconcile with bodies on 378/378 pages
-    2,416,765 characters of prose, 0 unaccounted for
+    379 pages · 317 citations · 677 external references · 1,790 cross-references
+    citation markers reconcile with bodies on 379/379 pages
+    2,421,845 characters of prose, 0 unaccounted for
     323/323 cross-reference targets resolve to a numbered place in the book
     491 distinct external URLs, all 105 needing a ruling now decided
     426 expressions converted to LaTeX maths, 0 lost characters
-    the whole book typesets: 1,571pp in one volume, no undefined references
-    six volumes: 221 / 349 / 307 / 489 / 233 / 249pp, 82 overfull, 0 undefined
+    the whole book typesets: 1,573pp in one volume, no undefined references
+    six volumes: 223 / 349 / 307 / 489 / 233 / 249pp, 82 overfull, 0 undefined
 
 Both link counts match the source DOM exactly, which is the check that the
 walk is not quietly skipping a container.
@@ -340,7 +346,7 @@ currently **426 expressions, 0 lost characters**.
   A link whose anchor text *is* its address prints inline instead, with no
   note: the footnote would only repeat the line above it.
 * ~~Volume split~~ **done.** Six volumes matching Books I–VI: 1,848pp in
-  total, against 1,571 as one continuous book. The 277 extra pages are what
+  total, against 1,573 as one continuous book. The 277 extra pages are what
   making each volume stand on its own costs — six title pages and tables of
   contents, 26 part openers with their blank versos, and the glossary and
   bibliography carried in every volume, because a reader holding Book IV
@@ -348,7 +354,9 @@ currently **426 expressions, 0 lost characters**.
 
   Each volume runs: title page, contents, the book's own introduction where
   it has one, its parts, then the glossary, the bibliography, and a page
-  about the author with his photograph. Front matter is numbered in roman
+  about the author with his photograph. Book I opens with the author's
+  preface ahead of its introduction — the site's own front page, which the
+  Contents does not list; see *Numbering*. Front matter is numbered in roman
   and the body restarts at 1 — memoir's `\frontmatter`/`\mainmatter`, and the
   reason the contents can be typeset before the pages it lists are numbered.
   The glossary and bibliography are set off in the contents by the same gap
@@ -375,9 +383,13 @@ currently **426 expressions, 0 lost characters**.
   marks the credit inconsistently — centred on two of them, an ordinary first
   paragraph on the other four. All six are now set as a subheading under the
   chapter title, close under it and with the full gap below the pair, so the
-  two lines read as one heading. The rule is a first paragraph that is a
-  single short "by …" run, which across the 333 chapters picks out those six
+  two lines read as one heading. The rule is a first paragraph whose whole
+  text is a short "by …" line, which across the 379 pages picks out those six
   and nothing else.
+
+  The preface closes with a signature the wiki gives no markup to, and is the
+  only signed piece in the book; a trailing "—Name, Month Year" paragraph is
+  retyped as a `byline` block, which is already flush right and italic.
 
 ## Licence
 

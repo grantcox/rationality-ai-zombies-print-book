@@ -224,6 +224,11 @@ BANNER_SCALE = 2 / 3
 #: them and leaves it as a first paragraph on the other four.
 BYLINE = re.compile(r"^\s*by\s+\S[^.]{0,40}\s*$", re.I)
 
+#: A closing signature -- "—Eliezer Yudkowsky, February 2015". The preface is
+#: the only piece in the book that is signed, and the wiki gives the line no
+#: markup to say so.
+SIGNATURE = re.compile(r"^\s*[—–]\s*\S[^.]{0,60}\s*$")
+
 #: The author's photograph, at the back of every volume. Lives in the
 #: repository root rather than build/, being a supplied asset and not something
 #: the mirror carries.
@@ -809,22 +814,45 @@ PREAMBLE = r"""\documentclass[11pt,twoside,openright]{memoir}
 """
 
 
+def matches(block, pattern) -> bool:
+    """Is this block a plain paragraph whose whole text matches?
+
+    On the paragraph's text rather than on a single node: the preface's
+    signature carries a ``year`` span around 2015, so it is three nodes and
+    not one, and the credit lines are one node only by luck.
+    """
+    if not block or block.get("t") != "p":
+        return False
+    return bool(pattern.match(plain_text(block)))
+
+
 def split_byline(blocks):
     """Lift a leading credit line out of the body, if the chapter has one.
 
     Returns (remaining blocks, byline text or ''). Matches on a first paragraph
-    that is a single short "by ..." run, which across the 333 chapters picks
+    whose whole text is a short "by ..." line, which across the 379 pages picks
     out the six introductions and nothing else.
     """
-    first = blocks[0] if blocks else None
-    if not first or first.get("t") != "p":
+    if not blocks or not matches(blocks[0], BYLINE):
         return blocks, ""
-    kids = first.get("c") or []
-    if len(kids) != 1 or kids[0].get("t") != "text":
-        return blocks, ""
-    if not BYLINE.match(kids[0]["v"]):
-        return blocks, ""
-    return blocks[1:], kids[0]["v"].strip()
+    return blocks[1:], plain_text(blocks[0]).strip()
+
+
+def sign_off(blocks):
+    r"""Set a closing signature as one, rather than as a last paragraph.
+
+    The preface is the only signed piece in the book, and the wiki gives the
+    line no markup to say so. Retyped as a ``byline`` block, which is already
+    flush right and italic. Trailing ornaments are skipped: the front page
+    closes with two, and the signature sits above them.
+    """
+    last = next((i for i in reversed(range(len(blocks)))
+                 if blocks[i].get("t") != "ornament"), None)
+    if last is None or not matches(blocks[last], SIGNATURE):
+        return blocks
+    signed = list(blocks)
+    signed[last] = {"t": "byline", "c": blocks[last]["c"]}
+    return signed
 
 
 def chapter_tex(doc, variant, opts, report, recto=False, toc=False) -> str:
@@ -839,6 +867,7 @@ def chapter_tex(doc, variant, opts, report, recto=False, toc=False) -> str:
     blocks, byline = split_byline(doc["blocks"])
     if byline:
         report["byline"] += 1
+    blocks = sign_off(blocks)
     body = r.blocks(blocks, flush_first=True)
     orphaned = set(r.notes) - r.used_notes
     if orphaned:
@@ -1005,9 +1034,9 @@ def main():
 
     if args.volumes:
         books = json.loads((BUILD / "toc.json").read_text())["books"]
-        # "Biases: An Introduction" precedes Book I in the spine and carries no
-        # book of its own; it is that volume's introduction.
-        owner = {"frontmatter": 1}
+        # The preface and "Biases: An Introduction" precede Book I in the spine
+        # and carry no book of their own; they are that volume's front matter.
+        owner = {"preface": 1, "frontmatter": 1}
         for book in books:
             if args.only and book["number"] != args.only:
                 continue
