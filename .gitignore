@@ -9,3 +9,11 @@ build/
 
 # The source mirror (14MB of book text); not ours to redistribute.
 www.readthesequences.com/
+
+# covers/coverN.jpg are durable inputs and are committed. What sits beside
+# them is working material -- 56MB of intermediate upscales and the mockups
+# they were judged from.
+covers/upscaling/
+covers/mockups/
+
+.DS_Store
