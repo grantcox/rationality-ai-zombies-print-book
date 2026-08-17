@@ -597,8 +597,20 @@ class Renderer:
 # --- documents ---------------------------------------------------------------
 
 PREAMBLE = r"""\documentclass[11pt,twoside,openright]{memoir}
-\setstocksize{9in}{6in}
+% The printer wants 6.125 x 9.25 pages for a 6 x 9 book: an eighth of an inch
+% of bleed at the head, the foot and the fore-edge, and none at the spine,
+% which is bound rather than cut. \settrims takes the head and fore-edge
+% amounts and gives whatever is left over to the foot and the spine, and
+% memoir mirrors the fore-edge onto the versos.
+%
+% Nothing in the interior actually runs off the page, so the bleed is empty
+% paper. It is there so the guillotine can wander an eighth of an inch without
+% cutting into the text block, and every margin below is measured from the
+% trimmed 6 x 9 page, not from the sheet -- so nothing moves and the page
+% counts do not change.
+\setstocksize{9.25in}{6.125in}
 \settrimmedsize{9in}{6in}{*}
+\settrims{0.125in}{0.125in}
 \setlrmarginsandblock{0.9in}{0.7in}{*}
 % 0.75/0.85 rather than 0.8/0.9: an eighth of an inch off the head and foot
 % buys a 40th line on every page, which over a 439-page volume is worth more

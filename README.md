@@ -122,6 +122,35 @@ Three LaTeX passes per volume, not two: one to place the pages, one to write
 the contents and resolve the `\ref` a repeated footnote is set from, one to
 typeset a contents list that may have grown a page in the meantime.
 
+#### Page size and bleed
+
+The book is 6 × 9in trimmed, and the PDF pages are 6.125 × 9.25 — an eighth of
+an inch of bleed at the head, the foot and the fore-edge, and none at the
+spine, which is bound rather than cut. That is what the printer asks for, and
+it is the standard interior-with-bleed spec.
+
+```latex
+\setstocksize{9.25in}{6.125in}
+\settrimmedsize{9in}{6in}{*}
+\settrims{0.125in}{0.125in}
+```
+
+`\settrims` takes the head and fore-edge amounts and gives whatever is left to
+the foot and the spine; memoir mirrors the fore-edge onto the versos, so the
+bleed is on the right of a recto and the left of a verso. Confirmed by
+measuring: text starts 0.903in from the sheet edge on a recto and 0.815in on a
+verso, which is the 0.9in gutter against the 0.125 + 0.7in fore-edge.
+
+Every margin is measured from the trimmed 6 × 9 page rather than from the
+sheet, so widening the sheet moves nothing and the page counts are unchanged.
+Nothing in the interior actually runs off the edge — the bleed is empty paper,
+there so the guillotine can wander an eighth of an inch without cutting into
+the text block.
+
+The PDFs carry no `TrimBox`, only a `MediaBox` at the full 6.125 × 9.25. If the
+printer wants the trim marked in the file, that has to be added per page,
+because its position mirrors between recto and verso.
+
 ### Covers
 
 ```bash
