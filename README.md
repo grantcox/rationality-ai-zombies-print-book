@@ -87,9 +87,9 @@ build` is always safe. Three things live at the repository root instead:
   mirror but from the open web, and several minutes of requests to rebuild,
   so it must not sit in a folder people delete.
 * Assets supplied for the print edition rather than taken from the mirror —
-  at present `eliezer-yudkowsky.jpeg`, on the About the Author page. The root
-  is on `\graphicspath` alongside `build/assets_pdf`, which holds the plates
-  the mirror does carry.
+  `eliezer-yudkowsky.jpeg`, on the About the Author page, and `covers/`, the
+  six pieces of jacket artwork. The root is on `\graphicspath` alongside
+  `build/assets_pdf`, which holds the plates the mirror does carry.
 
 The intermediate JSON is deliberate: footnote and cross-reference design will
 be iterated on many times, and re-running extraction for each experiment —
@@ -104,8 +104,8 @@ JSON is also diffable, so extraction gets proof-read once.
     323/323 cross-reference targets resolve to a numbered place in the book
     491 distinct external URLs, all 105 needing a ruling now decided
     426 expressions converted to LaTeX maths, 0 lost characters
-    the whole book typesets: 1,573pp in one volume, no undefined references
-    six volumes: 223 / 349 / 307 / 489 / 233 / 249pp, 82 overfull, 0 undefined
+    the whole book typesets: 1,540pp in one volume, no undefined references
+    six volumes: 215 / 339 / 297 / 475 / 221 / 237pp, 64 overfull, 0 undefined
 
 Both link counts match the source DOM exactly, which is the check that the
 walk is not quietly skipping a container.
@@ -121,6 +121,83 @@ Rendering:
 Three LaTeX passes per volume, not two: one to place the pages, one to write
 the contents and resolve the `\ref` a repeated footnote is set from, one to
 typeset a contents list that may have grown a page in the meantime.
+
+### Covers
+
+```bash
+.venv/bin/python -m raz.covers --pdf                       # 5. six jackets
+.venv/bin/python -m raz.covers --pdf --style serif         # ... in the text face
+.venv/bin/python -m raz.covers --only 4 --pdf --png --guides
+```
+
+One sheet per book: back cover, spine and front cover side by side, with
+`covers/coverN.jpg` running full bleed underneath. The artwork is hung off the
+right edge and clipped at the left, so the part of it the front cover shows is
+the part that was composed to be looked at, and the same file serves every
+spine width.
+
+The blurb on the back is not retyped. Every book's page on the mirror opens
+with the paragraph Rob Bensinger wrote for it in "Biases: An Introduction",
+and `raz/covers.py` takes it from there. The site signs the paragraph with the
+chapter as well as the name; the chapter means nothing on a jacket, so only
+the name is kept.
+
+The front and spine are set in tracked upper-case Montserrat, the blurb in
+EB Garamond as the interior is. `--style serif` sets the display lines in
+Garamond too, which is what the design was chosen against.
+
+The display face doubles its word space. Letterspacing pushes every pair of
+letters apart without touching the space between words, so at the tracking
+these lines want, "MERE REALITY" closes up into one word; the space has to
+grow with the tracking to stay a space.
+
+`--guides` draws the trim in cyan, the two folds in magenta and the safe area
+in dashed yellow. It is for proofing on screen and must not be left on in
+anything sent to the printer.
+
+#### Where the geometry comes from
+
+The printer quotes three numbers for Book I: exported PDF 13.819 × 9.861,
+trim 13.207 × 9.249, bleed 0.306 all round. Everything else is derived.
+
+The trim is 0.249in taller than the 9in page, which is the case boards
+standing 0.1245in proud of the text block at head and tail. The same overhang
+at the fore-edge makes each panel 6.1245in wide, and whatever is left of the
+trim width once two panels come out of it is the spine:
+
+| Book | Exported PDF | Spine |
+|---|---|---|
+| I | 13.819 | 0.957 |
+| II | 14.069 | 1.207 |
+| III | 13.944 | 1.082 |
+| IV | 14.319 | 1.457 |
+| V | 13.819 | 0.957 |
+| VI | 13.819 | 0.957 |
+
+Those spines are exact eighths of an inch apart, which is the pattern in the
+widths the printer quoted for the other five volumes — so the model is the
+printer's own, not a guess that happens to fit. `FINAL_W` is therefore the
+only per-book input; if a volume's page count changes, the printer's new
+exported width is the one number to update.
+
+#### Legibility
+
+The artwork is not ours to choose and the next one may be pale where this one
+is dark, so the type carries its own ground rather than trusting the picture:
+a wash over the whole sheet, gradients into the head and foot, and a soft
+elliptical pool behind each block of type. Book VI is the test case — its
+front cover has a bright golden core directly behind the title.
+
+The gradients run the full width of the sheet rather than stopping at a fold.
+Stopping one at a fold puts a hard vertical edge down the cover, which is the
+one artefact of all this that the eye does pick out.
+
+The spine is set as a single box the length of the spine's run with the three
+items sprung apart inside it, rather than three separately anchored ones.
+"How to Actually Change Your Mind" is long enough to reach the middle of the
+spine and collide with a series mark pinned there; sprung, the gaps can only
+close up, never cross. They still have to stay open, so the size is set from
+how much lettering there is.
 
 ### Link health
 
