@@ -600,7 +600,12 @@ PREAMBLE = r"""\documentclass[11pt,twoside,openright]{memoir}
 \setstocksize{9in}{6in}
 \settrimmedsize{9in}{6in}{*}
 \setlrmarginsandblock{0.9in}{0.7in}{*}
-\setulmarginsandblock{0.8in}{0.9in}{*}
+% 0.75/0.85 rather than 0.8/0.9: an eighth of an inch off the head and foot
+% buys a 40th line on every page, which over a 439-page volume is worth more
+% than the whole bibliography. Book IV has to come in under the printer's
+% 480-page ceiling and is the one that sets this. The folio still clears the
+% trim by 0.38in.
+\setulmarginsandblock{0.75in}{0.85in}{*}
 \checkandfixthelayout
 
 \usepackage{fontspec}
@@ -622,6 +627,7 @@ PREAMBLE = r"""\documentclass[11pt,twoside,openright]{memoir}
 % be set in Computer Modern, a different century from the text around them.
 \setmathfont{Garamond-Math.otf}
 \usepackage{xfrac}   % \sfrac: the diagonal fraction the skin sets with OpenType
+\usepackage{multicol}
 
 % Running head carries the chapter title on the outer edge; the page number
 % sits centred in the foot. A chapter's opening page shows the folio only --
@@ -719,6 +725,16 @@ PREAMBLE = r"""\documentclass[11pt,twoside,openright]{memoir}
 \renewcommand*{\cftchapterleader}{\normalfont\cftdotfill{\cftchapterdotsep}}
 \renewcommand*{\cftpartfont}{\bfseries}
 \renewcommand*{\cftpartpagefont}{\bfseries}
+
+% The glossary and the bibliography, two columns to the page at 10pt. They are
+% looked things up in rather than read through, and they are carried in all six
+% volumes, so what they cost is paid six times over. This and the margins are
+% what bring Book IV under its printer's 480-page ceiling with room to spare.
+% Ragged: a 2.1in column cannot justify a bibliography's long names and
+% addresses without inventing word spaces.
+\newenvironment{referencematter}
+  {\small\raggedright\setlength{\columnsep}{1.4em}\begin{multicols}{2}}
+  {\end{multicols}}
 
 % A display of data or pseudocode: fixed-width, ragged right (justifying a
 % listing invents word spaces that are not in the data).
@@ -855,13 +871,15 @@ def sign_off(blocks):
     return signed
 
 
-def chapter_tex(doc, variant, opts, report, recto=False, toc=False) -> str:
+def chapter_tex(doc, variant, opts, report, recto=False, toc=False,
+                columns=False) -> str:
     r"""One chapter, opening on a fresh page.
 
     ``recto`` forces a right-hand page, for the pieces the reader looks up
     rather than reads through -- the back matter, and the first chapter after
     a part opener. ``toc`` records the entry, which has to happen after the
-    page break so the number written is the chapter's own.
+    page break so the number written is the chapter's own. ``columns`` sets
+    the body two to the page, the heading staying full width above them.
     """
     r = Renderer(doc, variant, opts, report)
     blocks, byline = split_byline(doc["blocks"])
@@ -884,6 +902,8 @@ def chapter_tex(doc, variant, opts, report, recto=False, toc=False) -> str:
     head.append(r"\chaptitlebyline{%s}{%s}" % (title, esc(byline)) if byline
                 else r"\chaptitle{%s}" % title)
     head.append(r"\markboth{%s}{%s}" % (title, title))
+    if columns:
+        body = "\\begin{referencematter}\n%s\n\\end{referencematter}" % body
     return "\n".join(head) + "\n\n" + body
 
 
@@ -941,7 +961,7 @@ def volume_tex(book, entries, docs, variant, opts, report) -> str:
     out.append(r"\addtocontents{toc}{\vspace{\cftbeforepartskip}}")
     for page in ("Glossary", "Bibliography"):
         out.append(chapter_tex(docs[page], variant, opts, report,
-                               recto=True, toc=True))
+                               recto=True, toc=True, columns=True))
     out.append(r"\cleartorecto" + "\n" +
                r"\razabout{%s}{%s}" % (AUTHOR_PHOTO, esc(ABOUT_THE_AUTHOR)))
     return "\n\n".join(out)
